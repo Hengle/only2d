@@ -15,6 +15,11 @@ namespace only2d
     class Image : public Drawable
     {
     public:
+        Image(std::shared_ptr<ImageData> data);
+
+        ~Image();
+
+        virtual void draw() override;
 
     protected:
         std::shared_ptr<ImageData> data;

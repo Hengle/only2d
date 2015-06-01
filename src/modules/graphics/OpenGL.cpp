@@ -100,6 +100,85 @@ namespace only2d
         while (glGetError() != GL_NO_ERROR);
     }
 
+    GLuint OpenGL::createShader(GLenum type)
+    {
+        return glCreateShader(type);
+    }
+
+    void OpenGL::deleteShader(GLuint shader)
+    {
+        glDeleteShader(shader);
+    }
+
+    void OpenGL::setShaderSource(GLuint shader, const std::string &source)
+    {
+        const char *src = source.c_str();
+        GLint len = (GLint) source.length();
+        glShaderSource(shader, 1, &src, &len);
+    }
+
+    bool OpenGL::compileShader(GLuint shader)
+    {
+        glCompileShader(shader);
+        GLint status;
+        glGetShaderiv(shader, GL_COMPILE_STATUS, &status);
+        if (status == GL_FALSE)
+        {
+            GLint errorLength = 0;
+            glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &errorLength);
+            if (errorLength > 0)
+            {
+                GLchar *error = new GLchar[errorLength];
+                glGetShaderInfoLog(shader, errorLength, nullptr, error);
+                Console::log << "[OpenGL] compile shader log: " << error << Console::endl;
+                delete[] error;
+            }
+            return false;
+        }
+        return true;
+    }
+
+    GLuint OpenGL::createProgram()
+    {
+        return glCreateProgram();
+    }
+
+    void OpenGL::deleteProgram(GLuint program)
+    {
+        glDeleteProgram(program);
+    }
+
+    void OpenGL::attachShader(GLuint program, GLuint shader)
+    {
+        glAttachShader(program, shader);
+    }
+
+    bool OpenGL::linkProgram(GLuint program)
+    {
+        glLinkProgram(program);
+        GLint status;
+        glGetProgramiv(program, GL_LINK_STATUS, &status);
+        if (status == GL_FALSE)
+        {
+            GLint errorLength = 0;
+            glGetProgramiv(program, GL_INFO_LOG_LENGTH, &errorLength);
+            if (errorLength > 0)
+            {
+                GLchar *error = new GLchar[errorLength];
+                glGetProgramInfoLog(program, errorLength, nullptr, error);
+                Console::log << "[OpenGL] link program log: " << error << Console::endl;
+                delete[] error;
+            }
+            return false;
+        }
+        return true;
+    }
+
+    void OpenGL::useProgram(GLuint program)
+    {
+        glUseProgram(program);
+    }
+
     int32_t OpenGL::getMaxTextureSize() const
     {
         return maxTextureSize;

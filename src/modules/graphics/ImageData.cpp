@@ -31,6 +31,8 @@ namespace only2d
 
     ImageData::~ImageData()
     {
+        unloadData();
+        data.reset();
     }
 
     int32_t ImageData::getWidth() const
@@ -120,7 +122,7 @@ namespace only2d
         if (!gl->setTextureData(width, height, data))
         {
             Console::log << "[ImageData] update texture data fail." << Console::endl;
-            gl->deleteTexture(texture);
+            unloadData();
         }
     }
 
@@ -150,7 +152,16 @@ namespace only2d
         if (!gl->setTextureData(2, 2, std::shared_ptr<Data>(&defaultData)))
         {
             Console::log << "[ImageData] update texture data fail." << Console::endl;
+            unloadData();
+        }
+    }
+
+    void ImageData::unloadData()
+    {
+        if (texture != 0)
+        {
             gl->deleteTexture(texture);
+            texture = 0;
         }
     }
 }

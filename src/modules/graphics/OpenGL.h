@@ -42,6 +42,24 @@ namespace only2d
 
         void cleanErrors();
 
+        GLuint createShader(GLenum type);
+
+        void deleteShader(GLuint shader);
+
+        void setShaderSource(GLuint shader, const std::string &source);
+
+        bool compileShader(GLuint shader);
+
+        GLuint createProgram();
+
+        void deleteProgram(GLuint program);
+
+        void attachShader(GLuint program, GLuint shader);
+
+        bool linkProgram(GLuint program);
+
+        void useProgram(GLuint program);
+
         int32_t getMaxTextureSize() const;
 
         int32_t getMaxTextureCount() const;

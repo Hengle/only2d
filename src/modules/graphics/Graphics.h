@@ -6,6 +6,9 @@
 #define ONLY2D_GRAPHICS_H
 
 #include "OpenGL.h"
+#include "Shader.h"
+#include "Image.h"
+#include "ImageData.h"
 
 #include "common/Color.h"
 #include "common/Module.h"
@@ -33,6 +36,7 @@ namespace only2d
 
     private:
         OpenGL gl;
+        std::vector<Shader> shaders;
         Color backgroundColor;
     };
 }

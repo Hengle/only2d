@@ -20,6 +20,7 @@ namespace only2d
     {
         registerModule(this);
         gl.initContext();
+
     }
 
     Graphics::~Graphics()

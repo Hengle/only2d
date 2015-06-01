@@ -72,6 +72,8 @@ namespace only2d
 
         void loadDefaultData();
 
+        void unloadData();
+
     protected:
         int32_t width;
         int32_t height;
