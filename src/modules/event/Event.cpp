@@ -38,6 +38,9 @@ namespace only2d
             {
                 case SDL_QUIT:
                     getInstance<Only2D>(ModuleType::ONLY2D)->quit();
+                    break;
+                case SDL_KEYDOWN:
+                    break;
                 default:
                     break;
             }

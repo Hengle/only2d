@@ -60,6 +60,8 @@ namespace only2d
         while (running)
         {
             event.pollEvent();
+            graphics.clear();
+            window.swapBuffers();
         }
         return 0;
     }

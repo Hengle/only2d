@@ -29,6 +29,8 @@ namespace only2d
 
         void setBackgroundColor(const Color &backgroundColor);
 
+        OpenGL &getOpenGL();
+
     private:
         OpenGL gl;
         Color backgroundColor;

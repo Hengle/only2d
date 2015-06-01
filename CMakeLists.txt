@@ -2,6 +2,17 @@ cmake_minimum_required(VERSION 3.2)
 project(only2d)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/sample)
+
+find_library(3rd_SDL2 SDL2)
+if(MINGW)
+    find_library(3rd_OpenGL OpenGL32)
+    find_library(3rd_GLEW GLEW32)
+elseif(APPLE)
+    include_directories(/usr/local/include)
+    find_library(3rd_OpenGL OpenGL)
+    find_library(3rd_GLEW GLEW)
+endif()
 
 include_directories(src)
 add_definitions("-DSDL_MAIN_HANDLED -DSTB_IMAGE_IMPLEMENTATION")
@@ -11,6 +22,8 @@ set(common_src
     src/common/Console.cpp
     src/common/Data.cpp
     src/common/Module.cpp
+    src/common/Vector.cpp
+    src/common/Vertex.cpp
 )
 
 set(library_stb_src
@@ -32,8 +45,12 @@ set(module_filesystem_src
 )
 
 set(module_graphics_src
+    src/modules/graphics/Drawable.cpp
     src/modules/graphics/Graphics.cpp
+    src/modules/graphics/Image.cpp
+    src/modules/graphics/ImageData.cpp
     src/modules/graphics/OpenGL.cpp
+    src/modules/graphics/Viewport.cpp
 )
 
 set(module_only2d_src
@@ -67,4 +84,4 @@ set(src src/main.cpp
 )
 
 add_executable(only2d ${src})
-target_link_libraries(only2d sdl2 glew32 opengl32)
+target_link_libraries(only2d ${3rd_OpenGL} ${3rd_SDL2} ${3rd_GLEW})

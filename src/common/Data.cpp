@@ -30,4 +30,9 @@ namespace only2d
     {
         return data.size();
     }
+
+    char &Data::operator[](size_t index)
+    {
+        return data[index];
+    }
 }

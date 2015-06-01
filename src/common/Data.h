@@ -23,6 +23,8 @@ namespace only2d
 
         size_t getSize();
 
+        char &operator[](size_t index);
+
     private:
         std::vector<char> data;
     };

@@ -29,9 +29,8 @@ namespace only2d
 
     void Graphics::clear()
     {
-        glClearColor(backgroundColor.r / 255.0f, backgroundColor.g / 255.0f, backgroundColor.b / 255.0f,
-                     backgroundColor.a / 255.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        gl.clear(backgroundColor.r / 255.0f, backgroundColor.g / 255.0f, backgroundColor.b / 255.0f,
+                 backgroundColor.a / 255.0f);
     }
 
     const Color &Graphics::getBackgroundColor() const
@@ -42,5 +41,10 @@ namespace only2d
     void Graphics::setBackgroundColor(const Color &backgroundColor)
     {
         this->backgroundColor = backgroundColor;
+    }
+
+    OpenGL &Graphics::getOpenGL()
+    {
+        return gl;
     }
 }

@@ -38,12 +38,10 @@ namespace only2d
             Console::error << "initialize file system fail." << Console::endl;
         }
         separator = sourceDir.back();
-        if (path == nullptr || path[0] == '\0')
+        if (path && path[0] != '\0')
         {
-            Console::error << "no source path specified.\n"
-            << "usage: only2d.exe {souce_path}" << Console::endl;
+            sourceDir = path;
         }
-        sourceDir = path;
         sourceDir.append(separator);
         std::string config = sourceDir + "setting";
         std::fstream file(config);
