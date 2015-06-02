@@ -14,7 +14,7 @@ namespace only2d
     {
     public:
         Vector position;
-        Vector texture;
+        Vector texcoord;
         Color color;
     };
 }

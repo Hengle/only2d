@@ -47,6 +47,8 @@ namespace only2d
 
         virtual ~ImageData();
 
+        void bind();
+
         int32_t getWidth() const;
 
         void setWidth(int32_t width);
@@ -55,7 +57,7 @@ namespace only2d
 
         void setHeight(int32_t height);
 
-        const Vertex *getVertices() const;
+        const std::vector<Vertex> &getVertices() const;
 
         const ImageDataWrap &getWrap() const;
 
@@ -77,7 +79,7 @@ namespace only2d
     protected:
         int32_t width;
         int32_t height;
-        Vertex vertices[4];
+        std::vector<Vertex> vertices;
         GLuint texture;
         ImageDataWrap wrap;
         ImageDataFilter filter;

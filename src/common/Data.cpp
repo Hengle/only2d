@@ -6,9 +6,9 @@
 
 namespace only2d
 {
-    Data::Data(size_t size)
+    Data::Data(size_t size) :
+            data(size)
     {
-        data.reserve(size);
     }
 
     Data::~Data()

@@ -15,11 +15,11 @@ namespace only2d
     class TextureData : public Data
     {
     public:
-        TextureData(Data &data);
+        TextureData(std::shared_ptr<Data> data);
 
         TextureData(int32_t width, int32_t height);
 
-        TextureData(int32_t width, int32_t height, Data &data);
+        TextureData(int32_t width, int32_t height, std::shared_ptr<Data> data);
 
         virtual ~TextureData();
 

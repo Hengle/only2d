@@ -28,16 +28,27 @@ namespace only2d
 
         void clear();
 
-        const Color &getBackgroundColor() const;
+        std::shared_ptr<Shader> createShader(std::string &vertex, std::string fragment);
+
+        std::shared_ptr<ImageData> createImageData(int32_t width, int32_t height, std::shared_ptr<Data> data);
+
+        std::shared_ptr<Image> createImage(std::shared_ptr<ImageData> data);
+
+        std::shared_ptr<Shader> &getDefaultShader();
+
+        Color getBackgroundColor() const;
 
         void setBackgroundColor(const Color &backgroundColor);
 
         OpenGL &getOpenGL();
 
     private:
+        void createDefaultShader();
+
+    private:
         OpenGL gl;
-        std::vector<Shader> shaders;
-        Color backgroundColor;
+        std::shared_ptr<Shader> defaultShader;
+        FloatColor backgroundColor;
     };
 }
 

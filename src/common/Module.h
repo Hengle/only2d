@@ -5,7 +5,7 @@
 #ifndef ONLY2D_MODULE_H
 #define ONLY2D_MODULE_H
 
-#include <string>
+#include <cstdint>
 
 namespace only2d
 {

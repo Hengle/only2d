@@ -36,9 +36,9 @@ namespace only2d
 
         std::shared_ptr<File> appendBinaryFile(const std::string &filename);
 
-        std::shared_ptr<File> readFile(const std::string &filename);
+        std::shared_ptr<File> openFile(const std::string &filename);
 
-        std::shared_ptr<File> readBinaryFile(const std::string &filename);
+        std::shared_ptr<File> openBinaryFile(const std::string &filename);
 
         std::shared_ptr<FileData> newFileData(size_t size, const std::string &filename);
 

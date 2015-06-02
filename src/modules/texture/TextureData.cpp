@@ -10,8 +10,8 @@
 
 namespace only2d
 {
-    TextureData::TextureData(Data &data) :
-            Data(data),
+    TextureData::TextureData(std::shared_ptr<Data> data) :
+            Data(*data),
             width(0),
             height(0),
             encoded(true)
@@ -27,13 +27,13 @@ namespace only2d
     {
     }
 
-    TextureData::TextureData(int32_t width, int32_t height, Data &data) :
-            Data(data),
+    TextureData::TextureData(int32_t width, int32_t height, std::shared_ptr<Data> data) :
+            Data(*data),
             width(width),
             height(height),
             encoded(false)
     {
-        if (data.getSize() < width * height * sizeof(Pixel))
+        if (data->getSize() < width * height * sizeof(Pixel))
         {
             Console::error << "invalid texture data" << Console::endl;
         }

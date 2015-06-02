@@ -9,7 +9,8 @@
 
 #include "common/Data.h"
 
-#include <GL/glew.h>
+#include "library/glad/glad.h"
+
 #include <memory>
 
 namespace only2d
@@ -60,9 +61,20 @@ namespace only2d
 
         void useProgram(GLuint program);
 
-        int32_t getMaxTextureSize() const;
+        GLint getProgramAttributeLocation(GLuint shader, const std::string &name);
 
-        int32_t getMaxTextureCount() const;
+        void enableProgrameAttribute(GLuint position);
+
+        void setProgramAttributePointer(GLuint position, GLint size, GLenum type, GLboolean normalized, GLsizei stride,
+                                        const GLvoid *pointer);
+
+        void drawArrays(GLenum mode, GLint first, GLsizei count);
+
+        int32_t getDrawCalls() const;
+
+        int32_t getTextureCount() const;
+
+        int32_t getMaxTextureSize() const;
 
         void setViewport(const Viewport &viewport);
 
@@ -73,6 +85,8 @@ namespace only2d
         const Viewport &getScissor() const;
 
     private:
+        int32_t drawCalls;
+        int32_t textureCount;
         int32_t maxTextureSize;
         int32_t maxTextureCount;
         Viewport viewport;

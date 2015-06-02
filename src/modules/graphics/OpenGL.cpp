@@ -7,7 +7,9 @@
 
 namespace only2d
 {
-    OpenGL::OpenGL()
+    OpenGL::OpenGL() :
+            drawCalls(0),
+            textureCount(0)
     {
     }
 
@@ -17,9 +19,9 @@ namespace only2d
 
     void OpenGL::initContext()
     {
-        if (glewInit() != GLEW_OK)
+        if (!gladLoadGL())
         {
-            Console::error << "initialize glew fail." << Console::endl;
+            Console::error << "[OpenGL] initialize glew fail." << Console::endl;
         }
         glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxTextureSize);
         glGetIntegerv(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS, &maxTextureCount);
@@ -34,11 +36,20 @@ namespace only2d
 
     void OpenGL::generateTexture(GLuint &texture)
     {
-        glGenTextures(1, &texture);
+        if (textureCount < maxTextureCount)
+        {
+            ++textureCount;
+            glGenTextures(1, &texture);
+        }
+        else
+        {
+            Console::error << "[OpenGL] too many textures!" << Console::endl;
+        }
     }
 
     void OpenGL::deleteTexture(GLuint &texture)
     {
+        --textureCount;
         glDeleteTextures(1, &texture);
     }
 
@@ -179,14 +190,41 @@ namespace only2d
         glUseProgram(program);
     }
 
+    GLint OpenGL::getProgramAttributeLocation(GLuint shader, const std::string &name)
+    {
+        return glGetAttribLocation(shader, name.c_str());
+    }
+
+    void OpenGL::enableProgrameAttribute(GLuint position)
+    {
+        glEnableVertexAttribArray(position);
+    }
+
+    void OpenGL::setProgramAttributePointer(GLuint position, GLint size, GLenum type, GLboolean normalized,
+                                            GLsizei stride, const GLvoid *pointer)
+    {
+        glVertexAttribPointer(position, size, type, normalized, stride, pointer);
+    }
+
+    void OpenGL::drawArrays(GLenum mode, GLint first, GLsizei count)
+    {
+        glDrawArrays(mode, first, count);
+        ++drawCalls;
+    }
+
+    int32_t OpenGL::getDrawCalls() const
+    {
+        return drawCalls;
+    }
+
+    int32_t OpenGL::getTextureCount() const
+    {
+        return textureCount;
+    }
+
     int32_t OpenGL::getMaxTextureSize() const
     {
         return maxTextureSize;
-    }
-
-    int32_t OpenGL::getMaxTextureCount() const
-    {
-        return maxTextureCount;
     }
 
     void OpenGL::setViewport(const Viewport &viewport)

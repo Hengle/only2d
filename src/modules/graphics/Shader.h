@@ -7,10 +7,29 @@
 
 #include "OpenGL.h"
 
+#include "common/Vertex.h"
+
+#include <map>
 #include <string>
 
 namespace only2d
 {
+    class DefaultShaderAttribute
+    {
+    public:
+        static const std::string POSITION;
+        static const std::string TEXCOORD;
+        static const std::string COLOR;
+    };
+
+    class DefaultShaderUniform
+    {
+    public:
+        static const std::string MVP_MATRIX;
+        static const std::string ALPHA;
+        static const std::string TEXTURE;
+    };
+
     class Shader
     {
     public:
@@ -18,9 +37,18 @@ namespace only2d
 
         ~Shader();
 
+        bool match(const std::string &vertex, const std::string &fragment);
+
+        void setVertexData(const std::vector<Vertex> &vertices);
+
+        void setAttributeData(const std::string &name, GLint size, GLenum type, GLboolean normalized, GLsizei stride,
+                              const GLvoid *pointer);
+
         void attach();
 
         void detach();
+
+        void draw();
 
     private:
         void load();
@@ -33,6 +61,8 @@ namespace only2d
         std::string vertex;
         std::string fragment;
         GLuint program;
+        std::map<const std::string, GLint> attributes;
+        std::map<const std::string, GLint> uniforms;
         std::shared_ptr<OpenGL> gl;
     };
 }

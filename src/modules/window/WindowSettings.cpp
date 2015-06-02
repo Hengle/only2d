@@ -27,7 +27,7 @@ namespace only2d
 
     void WindowSettings::load(const std::vector<std::pair<std::string, std::string>> &settings)
     {
-        for (const std::pair<std::string, std::string> setting : settings)
+        for (auto setting : settings)
         {
             if (setting.first == "x")
             {

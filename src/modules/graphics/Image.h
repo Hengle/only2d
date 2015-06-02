@@ -7,6 +7,7 @@
 
 #include "Drawable.h"
 #include "ImageData.h"
+#include "Shader.h"
 
 #include <memory>
 
@@ -23,6 +24,7 @@ namespace only2d
 
     protected:
         std::shared_ptr<ImageData> data;
+        std::shared_ptr<Shader> shader;
     };
 }
 

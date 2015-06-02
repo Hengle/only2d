@@ -12,6 +12,7 @@ namespace only2d
     ImageData::ImageData(int32_t width, int32_t height, std::shared_ptr<Data> data) :
             width(width),
             height(height),
+            vertices(4),
             texture(0),
             data(data),
             usingDefaultData(false)
@@ -35,6 +36,11 @@ namespace only2d
         data.reset();
     }
 
+    void ImageData::bind()
+    {
+        gl->bindTexture(texture);
+    }
+
     int32_t ImageData::getWidth() const
     {
         return width;
@@ -55,7 +61,7 @@ namespace only2d
         this->height = height;
     }
 
-    const Vertex *ImageData::getVertices() const
+    const std::vector<Vertex> &ImageData::getVertices() const
     {
         return vertices;
     }
@@ -97,10 +103,10 @@ namespace only2d
         vertices[2].position.set(width, 0.0f);
         vertices[3].position.set(width, height);
 
-        vertices[0].texture.set(0.0f, 0.0f);
-        vertices[1].texture.set(0.0f, 1.0f);
-        vertices[2].texture.set(1.0f, 0.0f);
-        vertices[3].texture.set(width, height);
+        vertices[0].texcoord.set(0.0f, 0.0f);
+        vertices[1].texcoord.set(0.0f, 1.0f);
+        vertices[2].texcoord.set(1.0f, 0.0f);
+        vertices[3].texcoord.set(width, height);
 
         vertices[0].color.set(255, 255, 255, 255);
         vertices[1].color.set(255, 255, 255, 255);

@@ -41,8 +41,8 @@ namespace only2d
         if (path && path[0] != '\0')
         {
             sourceDir = path;
+            sourceDir.append(separator);
         }
-        sourceDir.append(separator);
         std::string config = sourceDir + "setting";
         std::fstream file(config);
         if (!file.good())
@@ -96,12 +96,12 @@ namespace only2d
         return std::shared_ptr<File>(new File(filename, FileMode::BINARY_APPEND));
     }
 
-    std::shared_ptr<File> FileSystem::readFile(const std::string &filename)
+    std::shared_ptr<File> FileSystem::openFile(const std::string &filename)
     {
         return std::shared_ptr<File>(new File(filename, FileMode::READ));
     }
 
-    std::shared_ptr<File> FileSystem::readBinaryFile(const std::string &filename)
+    std::shared_ptr<File> FileSystem::openBinaryFile(const std::string &filename)
     {
         return std::shared_ptr<File>(new File(filename, FileMode::BINARY_READ));
     }

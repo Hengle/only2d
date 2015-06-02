@@ -26,7 +26,7 @@ namespace only2d
         deregisterModule(this);
     }
 
-    std::shared_ptr<TextureData> Texture::createTextureData(Data &data)
+    std::shared_ptr<TextureData> Texture::createTextureData(std::shared_ptr<Data> data)
     {
         return std::shared_ptr<TextureData>(new TextureData(data));
     }
@@ -36,7 +36,7 @@ namespace only2d
         return std::shared_ptr<TextureData>(new TextureData(width, height));
     }
 
-    std::shared_ptr<TextureData> Texture::createTextureData(int32_t width, int32_t height, Data &data)
+    std::shared_ptr<TextureData> Texture::createTextureData(int32_t width, int32_t height, std::shared_ptr<Data> data)
     {
         return std::shared_ptr<TextureData>(new TextureData(width, height, data));
     }

@@ -24,11 +24,11 @@ namespace only2d
 
         virtual const char *getName() const override;
 
-        std::shared_ptr<TextureData> createTextureData(Data &data);
+        std::shared_ptr<TextureData> createTextureData(std::shared_ptr<Data> data);
 
         std::shared_ptr<TextureData> createTextureData(int32_t width, int32_t height);
 
-        std::shared_ptr<TextureData> createTextureData(int32_t width, int32_t height, Data &data);
+        std::shared_ptr<TextureData> createTextureData(int32_t width, int32_t height, std::shared_ptr<Data> data);
     };
 }
 
