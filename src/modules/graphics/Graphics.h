@@ -40,13 +40,13 @@ namespace only2d
 
         void setBackgroundColor(const Color &backgroundColor);
 
-        OpenGL &getOpenGL();
+        std::shared_ptr<OpenGL> &getOpenGL();
 
     private:
         void createDefaultShader();
 
     private:
-        OpenGL gl;
+        std::shared_ptr<OpenGL> gl;
         std::shared_ptr<Shader> defaultShader;
         FloatColor backgroundColor;
     };

@@ -28,7 +28,7 @@ namespace only2d
         }
         else
         {
-            gl = std::shared_ptr<OpenGL>(&graphics->getOpenGL());
+            gl = graphics->getOpenGL();
         }
         if (vertex.empty() || fragment.empty())
         {

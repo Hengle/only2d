@@ -17,10 +17,11 @@ namespace only2d
         return "Graphics";
     }
 
-    Graphics::Graphics()
+    Graphics::Graphics() :
+            gl(new OpenGL)
     {
         registerModule(this);
-        gl.initContext();
+        gl->initContext();
         createDefaultShader();
     }
 
@@ -31,7 +32,7 @@ namespace only2d
 
     void Graphics::clear()
     {
-        gl.clear(backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
+        gl->clear(backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
     }
 
     std::shared_ptr<Shader> Graphics::createShader(std::string &vertex, std::string fragment)
@@ -68,7 +69,7 @@ namespace only2d
                                   backgroundColor.a / 255.0f);
     }
 
-    OpenGL &Graphics::getOpenGL()
+    std::shared_ptr<OpenGL> &Graphics::getOpenGL()
     {
         return gl;
     }
