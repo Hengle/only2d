@@ -2,8 +2,11 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#include "common/Console.h"
 #include "Window.h"
+
+#include "common/Console.h"
+
+#include <algorithm>
 
 namespace only2d
 {

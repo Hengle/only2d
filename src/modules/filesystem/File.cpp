@@ -6,6 +6,8 @@
 
 #include "common/Console.h"
 
+#include <algorithm>
+
 namespace only2d
 {
     File::File(const std::string &filename, FileMode mode) :

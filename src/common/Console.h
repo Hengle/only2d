@@ -21,7 +21,7 @@ namespace only2d
 
         const Console &operator<<(const std::string &endl) const
         {
-            std::cout << endl;
+            std::cout << endl.c_str();
             if (this == &error && endl == Console::endl)
             {
                 exit(1);
