@@ -12,11 +12,11 @@ namespace only2d
 {
     bool TextureParser::recognize(TextureData &data)
     {
-        int32_t width = 0;
-        int32_t height = 0;
-        int32_t components = 0;
-        int32_t status = stbi_info_from_memory((stbi_uc *) data.getBuffer(), static_cast<int32_t>(data.getSize()),
-                                               &width, &height, &components);
+        auto width = 0;
+        auto height = 0;
+        auto components = 0;
+        auto status = stbi_info_from_memory(data.getBuffer(), static_cast<int32_t>(data.getSize()), &width, &height,
+                                            &components);
         if (status == 1 && width > 0 && height > 0)
         {
             data.setWidth(width);
@@ -28,12 +28,11 @@ namespace only2d
 
     void TextureParser::parse(TextureData &data)
     {
-        int32_t width = 0;
-        int32_t height = 0;
-        int32_t components = 0;
-        char *buffer = (char *) stbi_load_from_memory((stbi_uc *) data.getBuffer(),
-                                                      static_cast<int32_t>(data.getSize()), &width, &height,
-                                                      &components, 4);
+        auto width = 0;
+        auto height = 0;
+        auto components = 0;
+        auto buffer = stbi_load_from_memory(data.getBuffer(), static_cast<int32_t>(data.getSize()), &width, &height,
+                                            &components, 4);
         data.assign(buffer, buffer + data.getWidth() * data.getHeight() * sizeof(Pixel));
         delete[] buffer;
     }

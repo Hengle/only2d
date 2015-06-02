@@ -57,12 +57,25 @@ namespace only2d
 
         Event event;
 
+        std::shared_ptr<File> file = fileSystem.openBinaryFile(fileSystem.getSourceDir() + "mario.png");
+        std::shared_ptr<FileData> filedata = file->read(FileReadMode::ALL);
+        file.reset();
+        std::shared_ptr<TextureData> texturedata = texture.createTextureData(filedata);
+        filedata.reset();
+        std::shared_ptr<ImageData> imagedata = graphics.createImageData(texturedata->getWidth(),
+                                                                        texturedata->getHeight(), texturedata);
+        texturedata.reset();
+        std::shared_ptr<Image> image = graphics.createImage(imagedata);
+        imagedata.reset();
+
         while (running)
         {
             event.pollEvent();
             graphics.clear();
+            image->draw();
             window.swapBuffers();
         }
+        image.reset();
         return 0;
     }
 

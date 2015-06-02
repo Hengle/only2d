@@ -9,7 +9,7 @@
 
 namespace only2d
 {
-    struct WindowSettings;
+    class WindowSettings;
 
     class Only2D : public Module
     {

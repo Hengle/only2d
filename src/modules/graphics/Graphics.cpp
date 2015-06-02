@@ -37,17 +37,17 @@ namespace only2d
 
     std::shared_ptr<Shader> Graphics::createShader(std::string &vertex, std::string fragment)
     {
-        return std::shared_ptr<Shader>(new Shader(vertex, fragment));
+        return std::make_shared<Shader>(vertex, fragment);
     }
 
     std::shared_ptr<ImageData> Graphics::createImageData(int32_t width, int32_t height, std::shared_ptr<Data> data)
     {
-        return std::shared_ptr<ImageData>(new ImageData(width, height, data));
+        return std::make_shared<ImageData>(width, height, data);
     }
 
     std::shared_ptr<Image> Graphics::createImage(std::shared_ptr<ImageData> data)
     {
-        return std::shared_ptr<Image>(new Image(data));
+        return std::make_shared<Image>(data);
     }
 
     std::shared_ptr<Shader> &Graphics::getDefaultShader()
@@ -110,6 +110,6 @@ namespace only2d
                 "void main() {\n"
                 "\tgl_FragColor = texture2D(uTexture, vTexcoord) * vColor;\n"
                 "}";
-        defaultShader = std::shared_ptr<Shader>(new Shader(defaultVertexShader, defaultFragmentShader));
+        defaultShader = std::make_shared<Shader>(defaultVertexShader, defaultFragmentShader);
     }
 }

@@ -11,7 +11,7 @@ namespace only2d
 
     void Module::registerModule(Module *module)
     {
-        int32_t index = static_cast<int32_t>(module->getType());
+        auto index = static_cast<int32_t>(module->getType());
         if (modules[index] == nullptr)
         {
             modules[index] = module;
@@ -24,7 +24,7 @@ namespace only2d
 
     void Module::deregisterModule(Module *module)
     {
-        int32_t index = static_cast<int32_t>(module->getType());
+        auto index = static_cast<int32_t>(module->getType());
         if (modules[index] == module)
         {
             modules[index] = nullptr;
@@ -33,5 +33,9 @@ namespace only2d
         {
             Console::error << "deregister an unregisted module, type: " << module->getName() << Console::endl;
         }
+    }
+
+    Module::~Module()
+    {
     }
 }

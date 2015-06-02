@@ -23,6 +23,8 @@ namespace only2d
     class Module
     {
     public:
+        virtual ~Module();
+
         virtual ModuleType getType() const = 0;
 
         virtual const char *getName() const = 0;

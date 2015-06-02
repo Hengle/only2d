@@ -123,8 +123,8 @@ namespace only2d
 
     void OpenGL::setShaderSource(GLuint shader, const std::string &source)
     {
-        const char *src = source.c_str();
-        GLint len = (GLint) source.length();
+        auto src = source.c_str();
+        auto len = static_cast<GLint>(source.length());
         glShaderSource(shader, 1, &src, &len);
     }
 
@@ -135,11 +135,11 @@ namespace only2d
         glGetShaderiv(shader, GL_COMPILE_STATUS, &status);
         if (status == GL_FALSE)
         {
-            GLint errorLength = 0;
+            auto errorLength = 0;
             glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &errorLength);
             if (errorLength > 0)
             {
-                GLchar *error = new GLchar[errorLength];
+                auto error = new GLchar[errorLength];
                 glGetShaderInfoLog(shader, errorLength, nullptr, error);
                 Console::log << "[OpenGL] compile shader log: " << error << Console::endl;
                 delete[] error;
@@ -171,11 +171,11 @@ namespace only2d
         glGetProgramiv(program, GL_LINK_STATUS, &status);
         if (status == GL_FALSE)
         {
-            GLint errorLength = 0;
+            auto errorLength = 0;
             glGetProgramiv(program, GL_INFO_LOG_LENGTH, &errorLength);
             if (errorLength > 0)
             {
-                GLchar *error = new GLchar[errorLength];
+                auto error = new GLchar[errorLength];
                 glGetProgramInfoLog(program, errorLength, nullptr, error);
                 Console::log << "[OpenGL] link program log: " << error << Console::endl;
                 delete[] error;

@@ -15,7 +15,7 @@ namespace only2d
     class TextureData : public Data
     {
     public:
-        TextureData(std::shared_ptr<Data> data);
+        explicit TextureData(std::shared_ptr<Data> data);
 
         TextureData(int32_t width, int32_t height);
 

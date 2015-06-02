@@ -64,7 +64,7 @@ namespace only2d
         {
             return;
         }
-        GLint position = 0;
+        auto position = 0;
         if (attributes.find(name) == attributes.end())
         {
             position = gl->getProgramAttributeLocation(program, name);
@@ -104,8 +104,8 @@ namespace only2d
 
     void Shader::load()
     {
-        GLuint vertexShader = compile(GL_VERTEX_SHADER, vertex);
-        GLuint fragmentShader = compile(GL_FRAGMENT_SHADER, fragment);
+        auto vertexShader = compile(GL_VERTEX_SHADER, vertex);
+        auto fragmentShader = compile(GL_FRAGMENT_SHADER, fragment);
         if (vertexShader == 0 || fragmentShader == 0)
         {
             if (vertexShader == 0)
@@ -146,7 +146,7 @@ namespace only2d
 
     GLuint Shader::compile(GLenum type, const std::string &source)
     {
-        GLuint shader = gl->createShader(type);
+        auto shader = gl->createShader(type);
         if (shader == 0)
         {
             Console::error << "[Shader] create " << ((type == GL_VERTEX_SHADER) ? "vertex" : "fragment")

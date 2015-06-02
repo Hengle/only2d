@@ -20,7 +20,7 @@ namespace only2d
 
         const std::string &getFilename() const;
 
-        const std::string getExtention() const;
+        std::string getExtention();
 
     private:
         std::string filename;

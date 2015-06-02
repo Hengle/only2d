@@ -19,9 +19,9 @@ namespace only2d
 
         virtual ~Window();
 
-        virtual ModuleType getType() const;
+        virtual ModuleType getType() const override;
 
-        virtual const char *getName() const;
+        virtual const char *getName() const override;
 
         void create(int32_t x, int32_t y, int32_t width, int32_t height, uint32_t flags);
 

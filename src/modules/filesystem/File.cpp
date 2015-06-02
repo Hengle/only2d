@@ -83,8 +83,8 @@ namespace only2d
             {
                 size = available();
             }
-            out = std::shared_ptr<FileData>(new FileData(size, filename));
-            handle.read(out->getBuffer(), size);
+            out = std::make_shared<FileData>(size, filename);
+            handle.read((char *) out->getBuffer(), size);
         }
         return out;
     }
@@ -103,7 +103,7 @@ namespace only2d
     {
         if (good() && !isRead() && isBinary())
         {
-            handle.write(data->getBuffer(), data->getSize());
+            handle.write((char *) data->getBuffer(), data->getSize());
         }
         return false;
     }

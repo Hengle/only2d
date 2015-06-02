@@ -43,7 +43,7 @@ namespace only2d
             sourceDir = path;
             sourceDir.append(separator);
         }
-        std::string config = sourceDir + "setting";
+        auto config = sourceDir + "setting";
         std::fstream file(config);
         if (!file.good())
         {
@@ -78,37 +78,37 @@ namespace only2d
 
     std::shared_ptr<File> FileSystem::createFile(const std::string &filename)
     {
-        return std::shared_ptr<File>(new File(filename, FileMode::WRITE));
+        return std::make_shared<File>(filename, FileMode::WRITE);
     }
 
     std::shared_ptr<File> FileSystem::createBinaryFile(const std::string &filename)
     {
-        return std::shared_ptr<File>(new File(filename, FileMode::BINARY_WRITE));
+        return std::make_shared<File>(filename, FileMode::BINARY_WRITE);
     }
 
     std::shared_ptr<File> FileSystem::appendFile(const std::string &filename)
     {
-        return std::shared_ptr<File>(new File(filename, FileMode::APPEND));
+        return std::make_shared<File>(filename, FileMode::APPEND);
     }
 
     std::shared_ptr<File> FileSystem::appendBinaryFile(const std::string &filename)
     {
-        return std::shared_ptr<File>(new File(filename, FileMode::BINARY_APPEND));
+        return std::make_shared<File>(filename, FileMode::BINARY_APPEND);
     }
 
     std::shared_ptr<File> FileSystem::openFile(const std::string &filename)
     {
-        return std::shared_ptr<File>(new File(filename, FileMode::READ));
+        return std::make_shared<File>(filename, FileMode::READ);
     }
 
     std::shared_ptr<File> FileSystem::openBinaryFile(const std::string &filename)
     {
-        return std::shared_ptr<File>(new File(filename, FileMode::BINARY_READ));
+        return std::make_shared<File>(filename, FileMode::BINARY_READ);
     }
 
     std::shared_ptr<FileData> FileSystem::newFileData(size_t size, const std::string &filename)
     {
-        return std::shared_ptr<FileData>(new FileData(size, filename));
+        return std::make_shared<FileData>(size, filename);
     }
 
     const std::vector<std::pair<std::string, std::string>> &FileSystem::getSettings() const

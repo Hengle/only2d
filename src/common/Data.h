@@ -5,7 +5,7 @@
 #ifndef ONLY2D_DATA_H
 #define ONLY2D_DATA_H
 
-#include <cstddef>
+#include <cstdint>
 #include <vector>
 
 namespace only2d
@@ -13,20 +13,20 @@ namespace only2d
     class Data
     {
     public:
-        Data(size_t size);
+        explicit Data(size_t size);
 
         virtual ~Data();
 
-        void assign(char *begin, char *end);
+        void assign(uint8_t *begin, uint8_t *end);
 
-        char *getBuffer();
+        uint8_t *getBuffer();
 
         size_t getSize();
 
-        char &operator[](size_t index);
+        uint8_t &operator[](size_t index);
 
     private:
-        std::vector<char> data;
+        std::vector<uint8_t> data;
     };
 }
 

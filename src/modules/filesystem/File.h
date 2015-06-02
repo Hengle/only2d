@@ -7,7 +7,6 @@
 
 #include "FileData.h"
 
-#include <string>
 #include <fstream>
 #include <memory>
 

@@ -22,9 +22,9 @@ namespace only2d
 
         virtual ~Graphics();
 
-        virtual ModuleType getType() const;
+        virtual ModuleType getType() const override;
 
-        virtual const char *getName() const;
+        virtual const char *getName() const override;
 
         void clear();
 

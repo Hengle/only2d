@@ -16,12 +16,12 @@ namespace only2d
         data.clear();
     }
 
-    void Data::assign(char *begin, char *end)
+    void Data::assign(uint8_t *begin, uint8_t *end)
     {
         data.assign(begin, end);
     }
 
-    char *Data::getBuffer()
+    uint8_t *Data::getBuffer()
     {
         return data.data();
     }
@@ -31,7 +31,7 @@ namespace only2d
         return data.size();
     }
 
-    char &Data::operator[](size_t index)
+    uint8_t &Data::operator[](size_t index)
     {
         return data[index];
     }

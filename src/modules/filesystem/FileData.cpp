@@ -21,7 +21,7 @@ namespace only2d
         return filename;
     }
 
-    const std::string FileData::getExtention() const
+    std::string FileData::getExtention()
     {
         auto index = filename.rfind('.');
         if (index != std::string::npos)
