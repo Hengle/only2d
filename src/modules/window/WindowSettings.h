@@ -5,6 +5,8 @@
 #ifndef ONLY2D_WINDOWSETTINGS_H
 #define ONLY2D_WINDOWSETTINGS_H
 
+#include "common/Color.h"
+
 #include <cstdint>
 #include <utility>
 #include <string>
@@ -19,18 +21,26 @@ namespace only2d
 
         void load(const std::vector<std::pair<std::string, std::string>> &settings);
 
-        int32_t x = 0;
-        int32_t y = 0;
-        int32_t width = 0;
-        int32_t height = 0;
-        int32_t minWidth = 0;
-        int32_t minHeight = 0;
-        int32_t maxWidth = 0;
-        int32_t maxHeight = 0;
-        bool fullscreen = false;
-        bool borderless = false;
-        bool resizeable = false;
-        bool highdpi = false;
+        int32_t x;
+        int32_t y;
+        int32_t width;
+        int32_t height;
+        int32_t minWidth;
+        int32_t minHeight;
+        int32_t maxWidth;
+        int32_t maxHeight;
+        bool fullscreen;
+        bool borderless;
+        bool resizeable;
+        bool highdpi;
+        Color background;
+
+        bool event;
+        bool filesystem;
+        bool graphics;
+        bool texture;
+        bool timer;
+        bool window;
     };
 }
 

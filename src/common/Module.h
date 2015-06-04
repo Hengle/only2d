@@ -11,11 +11,12 @@ namespace only2d
 {
     enum class ModuleType : int32_t
     {
+        APPLICATION,
         EVENT,
         FILESYSTEM,
         GRAPHICS,
-        ONLY2D,
         TEXTURE,
+        TIMER,
         WINDOW,
         MAX_COUNT
     };

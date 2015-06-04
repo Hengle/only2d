@@ -3,7 +3,7 @@
 //
 
 #include "Event.h"
-#include "modules/only2d/Only2D.h"
+#include "modules/application/Application.h"
 
 #include <SDL2/SDL_events.h>
 
@@ -37,7 +37,7 @@ namespace only2d
             switch (event.type)
             {
                 case SDL_QUIT:
-                    getInstance<Only2D>(ModuleType::ONLY2D)->quit();
+                    getInstance<Application>(ModuleType::APPLICATION)->quit();
                     break;
                 case SDL_KEYDOWN:
                     break;

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 project(only2d)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/sample)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/sample/build)
 
 find_library(3rd_SDL2 SDL2)
 if(MINGW)
@@ -37,6 +37,10 @@ set(library_src
     ${library_stb_src}
 )
 
+set(module_application_src
+    src/modules/application/Application.cpp
+)
+
 set(module_event_src
     src/modules/event/Event.cpp
 )
@@ -57,14 +61,14 @@ set(module_graphics_src
     src/modules/graphics/Viewport.cpp
 )
 
-set(module_only2d_src
-    src/modules/only2d/Only2D.cpp
-)
-
 set(module_texture_src
     src/modules/texture/Texture.cpp
     src/modules/texture/TextureData.cpp
     src/modules/texture/TextureParser.cpp
+)
+
+set(module_timer_src
+    src/modules/timer/Timer.cpp
 )
 
 set(module_window_src
@@ -73,19 +77,28 @@ set(module_window_src
 )
 
 set(module_src
+    ${module_application_src}
     ${module_event_src}
     ${module_filesystem_src}
     ${module_graphics_src}
     ${module_only2d_src}
     ${module_texture_src}
+    ${module_timer_src}
     ${module_window_src}
 )
 
-set(src src/main.cpp
+set(only2d_src
     ${common_src}
     ${library_src}
     ${module_src}
 )
 
-add_executable(only2d ${src})
-target_link_libraries(only2d ${3rd_SDL2})
+add_library(only2d ${only2d_src})
+
+set(sample_src
+    sample/src/main.cpp
+    sample/src/Sample.cpp
+)
+
+add_executable(sample ${sample_src})
+target_link_libraries(sample only2d ${3rd_SDL2})

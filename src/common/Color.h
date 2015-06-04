@@ -108,6 +108,14 @@ namespace only2d
     typedef ColorTemplate<uint8_t> Color;
     typedef ColorTemplate<float> FloatColor;
     typedef Color Pixel;
+
+    static Color colorFromInt(int32_t color)
+    {
+        return Color(static_cast<uint8_t>((color >> 24) & 0xFF),
+                     static_cast<uint8_t>((color >> 16) & 0xFF),
+                     static_cast<uint8_t>((color >> 8) & 0xFF),
+                     static_cast<uint8_t>(color & 0xFF));
+    }
 }
 
 #endif //ONLY2D_COLOR_H

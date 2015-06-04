@@ -4,6 +4,8 @@
 
 #include "WindowSettings.h"
 
+#include "common/Console.h"
+
 #include <sstream>
 
 namespace only2d
@@ -20,7 +22,14 @@ namespace only2d
             fullscreen(false),
             borderless(false),
             resizeable(false),
-            highdpi(false)
+            highdpi(false),
+            background(ColorBlack),
+            event(true),
+            filesystem(true),
+            graphics(true),
+            texture(true),
+            timer(true),
+            window(true)
     {
     }
 
@@ -95,6 +104,37 @@ namespace only2d
             {
                 highdpi = setting.second == "true";
                 continue;
+            }
+            else if (setting.first == "background")
+            {
+                int32_t color;
+                std::stringstream ss(setting.second);
+                ss >> std::hex >> color;
+                background = colorFromInt(color);
+            }
+            else if (setting.first == "event")
+            {
+                event = !(setting.second == "disable");
+            }
+            else if (setting.first == "filesystem")
+            {
+                filesystem = !(setting.second == "disable");
+            }
+            else if (setting.first == "graphics")
+            {
+                graphics = !(setting.second == "disable");
+            }
+            else if (setting.first == "texture")
+            {
+                texture = !(setting.second == "disable");
+            }
+            else if (setting.first == "timer")
+            {
+                timer = !(setting.second == "disable");
+            }
+            else if (setting.first == "window")
+            {
+                window = !(setting.second == "disable");
             }
             else
             {
