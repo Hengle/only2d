@@ -108,10 +108,10 @@ namespace only2d
         vertices[2].position.set(static_cast<float>(width), 0.0f);
         vertices[3].position.set(static_cast<float>(width), static_cast<float>(height));
 
-        vertices[0].texcoord.set(0.0f, 0.0f);
-        vertices[1].texcoord.set(0.0f, 1.0f);
-        vertices[2].texcoord.set(1.0f, 0.0f);
-        vertices[3].texcoord.set(1.0f, 1.0f);
+        vertices[0].texcoord.set(0.0f, 1.0f);
+        vertices[1].texcoord.set(0.0f, 0.0f);
+        vertices[2].texcoord.set(1.0f, 1.0f);
+        vertices[3].texcoord.set(1.0f, 0.0f);
     }
 
     void ImageData::loadData()

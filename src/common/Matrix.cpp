@@ -68,8 +68,8 @@ namespace only2d
     void Matrix::setRotation(float rotation)
     {
         setIdentity();
-        float cos = cosf(rotation);
-        float sin = sinf(rotation);
+        auto cos = cosf(rotation);
+        auto sin = sinf(rotation);
         data[0] = data[5] = cos;
         data[1] = sin;
         data[4] = -sin;
@@ -105,8 +105,8 @@ namespace only2d
                                    float offsetY, float skewX, float skewY)
     {
         std::memset(data, 0, 16 * sizeof(float));
-        float cos = cosf(rotation);
-        float sin = sinf(rotation);
+        auto cos = cosf(rotation);
+        auto sin = sinf(rotation);
         data[10] = data[15] = 1.0f;
         data[0] = cos * scaleX - skewY * sin * scaleY;
         data[1] = sin * scaleX + skewY * cos * scaleY;
@@ -189,7 +189,7 @@ namespace only2d
 
     void Matrix::operator*=(const Matrix &matrix)
     {
-        Matrix temp = *this * matrix;
+        auto temp = *this * matrix;
         std::memcpy(data, temp.data, 16 * sizeof(float));
     }
 

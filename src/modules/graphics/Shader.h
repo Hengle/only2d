@@ -7,6 +7,7 @@
 
 #include "OpenGL.h"
 
+#include "common/Color.h"
 #include "common/Vertex.h"
 
 #include <map>
@@ -18,7 +19,6 @@ namespace only2d
     public:
         static const std::string POSITION;
         static const std::string TEXCOORD;
-        static const std::string COLOR;
     };
 
     class DefaultShaderUniform
@@ -26,6 +26,7 @@ namespace only2d
     public:
         static const std::string PROJECTION_MATRIX;
         static const std::string MVP_MATRIX;
+        static const std::string COLOR;
         static const std::string ALPHA;
         static const std::string TEXTURE;
     };
@@ -41,12 +42,12 @@ namespace only2d
 
         void setVertexData(const std::vector<Vertex> &vertices);
 
-        void setColor(const Color &color);
-
         void setAttributeData(const std::string &name, GLint size, GLenum type, GLboolean normalized, GLsizei stride,
                               const GLvoid *pointer);
 
         void setTexture(const GLuint &texture);
+
+        void setColor(const Color &color);
 
         void setAlpha(const float &alpha);
 

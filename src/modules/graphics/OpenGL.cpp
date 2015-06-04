@@ -19,7 +19,7 @@ namespace only2d
 
     void OpenGL::initContext()
     {
-        if (glewInit() != GLEW_OK)
+        if (!gladLoadGL())
         {
             Console::error << "[OpenGL] initialize glew fail." << Console::endl;
         }

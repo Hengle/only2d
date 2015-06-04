@@ -10,7 +10,8 @@
 namespace only2d
 {
     Image::Image(std::shared_ptr<ImageData> data) :
-            data(data)
+            data(data),
+            color(255, 255, 255, 255)
     {
         auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
         if (!graphics)

@@ -2,7 +2,6 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#include <common/Console.h>
 #include "WindowSettings.h"
 
 #include <sstream>

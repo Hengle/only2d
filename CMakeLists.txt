@@ -6,16 +6,13 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/sample)
 
 find_library(3rd_SDL2 SDL2)
 if(MINGW)
-    find_library(3rd_OpenGL OpenGL32)
-    find_library(3rd_GLEW GLEW32)
+    add_definitions("-DSDL_MAIN_HANDLED")
 elseif(APPLE)
     include_directories(/usr/local/include)
-    find_library(3rd_OpenGL OpenGL)
-    find_library(3rd_GLEW GLEW)
 endif()
 
 include_directories(src)
-add_definitions("-DSDL_MAIN_HANDLED -DSTB_IMAGE_IMPLEMENTATION")
+add_definitions("-DSTB_IMAGE_IMPLEMENTATION")
 
 set(common_src
     src/common/Color.h
@@ -27,11 +24,16 @@ set(common_src
     src/common/Vertex.cpp
 )
 
+set(library_glad_src
+    src/library/glad/glad.c
+)
+
 set(library_stb_src
     src/library/stb/stb_image.h
 )
 
 set(library_src
+    ${library_glad_src}
     ${library_stb_src}
 )
 
@@ -86,4 +88,4 @@ set(src src/main.cpp
 )
 
 add_executable(only2d ${src})
-target_link_libraries(only2d ${3rd_OpenGL} ${3rd_GLEW} ${3rd_SDL2})
+target_link_libraries(only2d ${3rd_SDL2})

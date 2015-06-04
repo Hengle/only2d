@@ -10,7 +10,7 @@
 #include "common/Data.h"
 #include "common/Matrix.h"
 
-#include <GL/glew.h>
+#include "library/glad/glad.h"
 
 #include <memory>
 

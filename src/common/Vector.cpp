@@ -33,7 +33,7 @@ namespace only2d
 
     float Vector::normalize(float length)
     {
-        float length_current = getLength();
+        auto length_current = getLength();
         if (length_current > 0)
         {
             (*this) *= length / length_current;

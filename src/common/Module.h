@@ -29,7 +29,6 @@ namespace only2d
 
         virtual const char *getName() const = 0;
 
-    public:
         static void registerModule(Module *module);
 
         static void deregisterModule(Module *module);

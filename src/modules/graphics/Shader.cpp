@@ -11,9 +11,9 @@ namespace only2d
 {
     const std::string DefaultShaderAttribute::POSITION = "aPosition";
     const std::string DefaultShaderAttribute::TEXCOORD = "aTexcoord";
-    const std::string DefaultShaderAttribute::COLOR = "aColor";
     const std::string DefaultShaderUniform::PROJECTION_MATRIX = "uProjectionMatrix";
     const std::string DefaultShaderUniform::MVP_MATRIX = "uMVPMatrix";
+    const std::string DefaultShaderUniform::COLOR = "uColor";
     const std::string DefaultShaderUniform::ALPHA = "uAlpha";
     const std::string DefaultShaderUniform::TEXTURE = "uTexture";
 
@@ -56,11 +56,6 @@ namespace only2d
                          &vertices.data()[0].texcoord);
     }
 
-    void Shader::setColor(const Color &color)
-    {
-        setAttributeData(DefaultShaderAttribute::COLOR, 2, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(Color), &color);
-    }
-
     void Shader::setAttributeData(const std::string &name, GLint size, GLenum type, GLboolean normalized,
                                   GLsizei stride, const GLvoid *pointer)
     {
@@ -90,14 +85,24 @@ namespace only2d
 
     void Shader::setTexture(const GLuint &texture)
     {
-        std::vector<int32_t> data(1);
-        data[0] = texture;
+        static std::vector<int32_t> data(1);
+        data[0] = 0;
         setUniformIntData(DefaultShaderUniform::TEXTURE, data);
+    }
+
+    void Shader::setColor(const Color &color)
+    {
+        static std::vector<float> data(4);
+        data[0] = color.r / 255.0f;
+        data[1] = color.g / 255.0f;
+        data[2] = color.b / 255.0f;
+        data[3] = color.a / 255.0f;
+        setUniformFloatData(DefaultShaderUniform::COLOR, data);
     }
 
     void Shader::setAlpha(const float &alpha)
     {
-        std::vector<float> data(1);
+        static std::vector<float> data(1);
         data[0] = alpha;
         setUniformFloatData(DefaultShaderUniform::ALPHA, data);
     }

@@ -2,7 +2,6 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#include <common/Console.h>
 #include "Graphics.h"
 
 namespace only2d
@@ -39,7 +38,7 @@ namespace only2d
         {
             defaultShader.reset();
         }
-        projectionMatrix.setOrthographic(0, width, 0, height);
+        projectionMatrix.setOrthographic(0.0f, static_cast<float>(width), 0.0f, static_cast<float>(height));
         createDefaultShader();
     }
 
@@ -104,16 +103,12 @@ namespace only2d
                 "#endif\n"
                 "attribute vec4 aPosition;\n"
                 "attribute vec4 aTexcoord;\n"
-                "attribute vec4 aColor;\n"
                 "uniform mat4 uMVPMatrix;\n"
                 "uniform mat4 uProjectionMatrix;\n"
-                "uniform float uAlpha;\n"
                 "varying vec4 vTexcoord;\n"
                 "varying vec4 vColor;\n"
                 "void main() {\n"
                 "\tvTexcoord = aTexcoord;\n"
-                "\tvColor = aColor;\n"
-                "\tvColor.a = vColor.a * uAlpha;\n"
                 "\tgl_Position = uProjectionMatrix * uMVPMatrix * aPosition;\n"
                 "}";
         std::string defaultFragmentShader = "#ifndef GL_ES\n"
@@ -127,8 +122,11 @@ namespace only2d
                 "varying vec4 vTexcoord;\n"
                 "varying vec4 vColor;\n"
                 "uniform sampler2D uTexture;\n"
+                "uniform vec4 uColor;\n"
+                "uniform float uAlpha;\n"
                 "void main() {\n"
-                "\tgl_FragColor = texture2D(uTexture, vTexcoord) * vColor;\n"
+                "\tuColor.a = uColor.a * uAlpha;\n"
+                "\tgl_FragColor = texture2D(uTexture, vTexcoord) * uColor;\n"
                 "}";
         defaultShader = std::make_shared<Shader>(defaultVertexShader, defaultFragmentShader);
     }

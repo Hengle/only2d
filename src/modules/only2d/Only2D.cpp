@@ -2,7 +2,6 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#include <common/Console.h>
 #include "Only2D.h"
 
 #include "modules/event/Event.h"
@@ -62,7 +61,7 @@ namespace only2d
         std::shared_ptr<File> file = fileSystem.openBinaryFile(fileSystem.getSourceDir() + "mario.png");
         std::shared_ptr<FileData> filedata = file->read(FileReadMode::ALL);
         file.reset();
-        std::shared_ptr<TextureData> texturedata = texture.createTextureData(100, 100, ColorGreen);
+        std::shared_ptr<TextureData> texturedata = texture.createTextureData(filedata);
         filedata.reset();
         std::shared_ptr<ImageData> imagedata = graphics.createImageData(texturedata->getWidth(),
                                                                         texturedata->getHeight(), texturedata);
@@ -70,7 +69,7 @@ namespace only2d
         std::shared_ptr<Image> image = graphics.createImage(imagedata);
         imagedata.reset();
 
-        image->setColor(ColorBlue);
+//        image->setColor(ColorBlue);
 
         while (running)
         {
