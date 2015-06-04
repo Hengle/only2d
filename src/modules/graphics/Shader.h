@@ -11,6 +11,7 @@
 #include "common/Vertex.h"
 
 #include <map>
+#include <string>
 
 namespace only2d
 {
