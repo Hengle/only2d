@@ -21,7 +21,7 @@ set(common_src
     src/common/Matrix.cpp
     src/common/Module.cpp
     src/common/Vector.cpp
-    src/common/Vertex.cpp
+    src/common/Vertex.h
 )
 
 set(library_glad_src
@@ -87,7 +87,7 @@ set(module_src
     ${module_window_src}
 )
 
-set(only2d_src
+set(only2d_src src/Only2D.h
     ${common_src}
     ${library_src}
     ${module_src}
