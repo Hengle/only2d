@@ -8,8 +8,9 @@
 #include "Viewport.h"
 
 #include "common/Data.h"
+#include "common/Matrix.h"
 
-#include "library/glad/glad.h"
+#include <GL/glew.h>
 
 #include <memory>
 
@@ -63,10 +64,18 @@ namespace only2d
 
         GLint getProgramAttributeLocation(GLuint shader, const std::string &name);
 
-        void enableProgrameAttribute(GLuint position);
+        void enableProgramAttribute(GLuint position);
 
         void setProgramAttributePointer(GLuint position, GLint size, GLenum type, GLboolean normalized, GLsizei stride,
                                         const GLvoid *pointer);
+
+        GLint getProgramUniformLocation(GLuint shader, const std::string &name);
+
+        void setProgramIntUniformData(GLuint position, const std::vector<int32_t> &data);
+
+        void setProgramFloatUniformData(GLuint position, const std::vector<float> &data);
+
+        void setProgramMatrixUniformData(GLuint position, const Matrix &matrix);
 
         void drawArrays(GLenum mode, GLint first, GLsizei count);
 

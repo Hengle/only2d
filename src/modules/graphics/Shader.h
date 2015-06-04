@@ -24,6 +24,7 @@ namespace only2d
     class DefaultShaderUniform
     {
     public:
+        static const std::string PROJECTION_MATRIX;
         static const std::string MVP_MATRIX;
         static const std::string ALPHA;
         static const std::string TEXTURE;
@@ -40,8 +41,22 @@ namespace only2d
 
         void setVertexData(const std::vector<Vertex> &vertices);
 
+        void setColor(const Color &color);
+
         void setAttributeData(const std::string &name, GLint size, GLenum type, GLboolean normalized, GLsizei stride,
                               const GLvoid *pointer);
+
+        void setTexture(const GLuint &texture);
+
+        void setAlpha(const float &alpha);
+
+        void setMVPMatrix(const Matrix &matrix);
+
+        void setUniformIntData(const std::string &name, const std::vector<int32_t> &data);
+
+        void setUniformFloatData(const std::string &name, const std::vector<float> &data);
+
+        void setUniformMatrixData(const std::string &name, const Matrix &matrix);
 
         void attach();
 

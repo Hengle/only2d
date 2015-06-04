@@ -15,7 +15,6 @@ namespace only2d
     public:
         Vector position;
         Vector texcoord;
-        Color color;
     };
 }
 

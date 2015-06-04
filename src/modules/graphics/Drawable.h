@@ -5,6 +5,8 @@
 #ifndef ONLY2D_DRAWABLE_H
 #define ONLY2D_DRAWABLE_H
 
+#include "common/Matrix.h"
+
 namespace only2d
 {
     class Drawable
@@ -60,6 +62,8 @@ namespace only2d
 
         void setVisible(bool visible);
 
+        const Matrix &getMatrix();
+
     protected:
         float x;
         float y;
@@ -72,6 +76,10 @@ namespace only2d
         float skewY;
         float alpha;
         bool visible;
+
+    private:
+        bool update;
+        Matrix matrix;
     };
 }
 

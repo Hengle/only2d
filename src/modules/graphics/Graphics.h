@@ -26,6 +26,8 @@ namespace only2d
 
         virtual const char *getName() const override;
 
+        void setResolution(int32_t width, int32_t height);
+
         void clear();
 
         std::shared_ptr<Shader> createShader(std::string &vertex, std::string fragment);
@@ -40,6 +42,8 @@ namespace only2d
 
         void setBackgroundColor(const Color &backgroundColor);
 
+        const Matrix &getProjectionMatrix() const;
+
         std::shared_ptr<OpenGL> &getOpenGL();
 
     private:
@@ -49,6 +53,8 @@ namespace only2d
         std::shared_ptr<OpenGL> gl;
         std::shared_ptr<Shader> defaultShader;
         FloatColor backgroundColor;
+        Viewport viewport;
+        Matrix projectionMatrix;
     };
 }
 

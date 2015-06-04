@@ -30,9 +30,26 @@ namespace only2d
 
     void only2d::Image::draw()
     {
-        data->bind();
-        shader->attach();
-        shader->setVertexData(data->getVertices());
-        shader->draw();
+        if (visible)
+        {
+            data->bind();
+            shader->attach();
+            shader->setVertexData(data->getVertices());
+            shader->setColor(color);
+            shader->setTexture(data->getTexture());
+            shader->setAlpha(alpha);
+            shader->setMVPMatrix(getMatrix());
+            shader->draw();
+        }
+    }
+
+    const Color &Image::getColor() const
+    {
+        return color;
+    }
+
+    void Image::setColor(const Color &color)
+    {
+        this->color = color;
     }
 }

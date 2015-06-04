@@ -5,6 +5,7 @@
 #ifndef ONLY2D_TEXTUREDATA_H
 #define ONLY2D_TEXTUREDATA_H
 
+#include "common/Color.h"
 #include "common/Data.h"
 
 #include <cstdint>
@@ -17,9 +18,7 @@ namespace only2d
     public:
         explicit TextureData(std::shared_ptr<Data> data);
 
-        TextureData(int32_t width, int32_t height);
-
-        TextureData(int32_t width, int32_t height, std::shared_ptr<Data> data);
+        TextureData(int32_t width, int32_t height, const Color &color);
 
         virtual ~TextureData();
 

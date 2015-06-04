@@ -66,6 +66,11 @@ namespace only2d
         return vertices;
     }
 
+    const GLuint &ImageData::getTexture() const
+    {
+        return texture;
+    }
+
     const ImageDataWrap &ImageData::getWrap() const
     {
         return wrap;
@@ -106,12 +111,7 @@ namespace only2d
         vertices[0].texcoord.set(0.0f, 0.0f);
         vertices[1].texcoord.set(0.0f, 1.0f);
         vertices[2].texcoord.set(1.0f, 0.0f);
-        vertices[3].texcoord.set(static_cast<float>(width), static_cast<float>(height));
-
-        vertices[0].color.set(255, 255, 255, 255);
-        vertices[1].color.set(255, 255, 255, 255);
-        vertices[2].color.set(255, 255, 255, 255);
-        vertices[3].color.set(255, 255, 255, 255);
+        vertices[3].texcoord.set(1.0f, 1.0f);
     }
 
     void ImageData::loadData()

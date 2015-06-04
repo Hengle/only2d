@@ -5,7 +5,6 @@
 #include "TextureData.h"
 #include "TextureParser.h"
 
-#include "common/Color.h"
 #include "common/Console.h"
 
 namespace only2d
@@ -19,23 +18,17 @@ namespace only2d
         decode();
     }
 
-    TextureData::TextureData(int32_t width, int32_t height) :
+    TextureData::TextureData(int32_t width, int32_t height, const Color &color) :
             Data(width * height * sizeof(Pixel)),
             width(width),
             height(height),
             encoded(false)
     {
-    }
-
-    TextureData::TextureData(int32_t width, int32_t height, std::shared_ptr<Data> data) :
-            Data(*data),
-            width(width),
-            height(height),
-            encoded(false)
-    {
-        if (data->getSize() < width * height * sizeof(Pixel))
+        auto pointer = (Pixel *) getBuffer();
+        for (auto i = 0; i < width * height; ++i)
         {
-            Console::error << "invalid texture data" << Console::endl;
+            *pointer = color;
+            ++pointer;
         }
     }
 

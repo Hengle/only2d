@@ -12,6 +12,7 @@ namespace only2d
     const std::string DefaultShaderAttribute::POSITION = "aPosition";
     const std::string DefaultShaderAttribute::TEXCOORD = "aTexcoord";
     const std::string DefaultShaderAttribute::COLOR = "aColor";
+    const std::string DefaultShaderUniform::PROJECTION_MATRIX = "uProjectionMatrix";
     const std::string DefaultShaderUniform::MVP_MATRIX = "uMVPMatrix";
     const std::string DefaultShaderUniform::ALPHA = "uAlpha";
     const std::string DefaultShaderUniform::TEXTURE = "uTexture";
@@ -53,8 +54,11 @@ namespace only2d
                          &vertices.data()[0].position);
         setAttributeData(DefaultShaderAttribute::TEXCOORD, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
                          &vertices.data()[0].texcoord);
-        setAttributeData(DefaultShaderAttribute::COLOR, 2, GL_UNSIGNED_BYTE, GL_FALSE, sizeof(Vertex),
-                         &vertices.data()[0].color);
+    }
+
+    void Shader::setColor(const Color &color)
+    {
+        setAttributeData(DefaultShaderAttribute::COLOR, 2, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(Color), &color);
     }
 
     void Shader::setAttributeData(const std::string &name, GLint size, GLenum type, GLboolean normalized,
@@ -71,7 +75,7 @@ namespace only2d
             attributes.insert(std::pair<const std::string, GLint>(name, position));
             if (position != -1)
             {
-                gl->enableProgrameAttribute(static_cast<GLuint>(position));
+                gl->enableProgramAttribute(static_cast<GLuint>(position));
             }
         }
         else
@@ -81,6 +85,91 @@ namespace only2d
         if (position != -1)
         {
             gl->setProgramAttributePointer(static_cast<GLuint>(position), size, type, normalized, stride, pointer);
+        }
+    }
+
+    void Shader::setTexture(const GLuint &texture)
+    {
+        std::vector<int32_t> data(1);
+        data[0] = texture;
+        setUniformIntData(DefaultShaderUniform::TEXTURE, data);
+    }
+
+    void Shader::setAlpha(const float &alpha)
+    {
+        std::vector<float> data(1);
+        data[0] = alpha;
+        setUniformFloatData(DefaultShaderUniform::ALPHA, data);
+    }
+
+    void Shader::setMVPMatrix(const Matrix &matrix)
+    {
+        setUniformMatrixData(DefaultShaderUniform::MVP_MATRIX, matrix);
+    }
+
+    void Shader::setUniformIntData(const std::string &name, const std::vector<int32_t> &data)
+    {
+        if (program == 0)
+        {
+            return;
+        }
+        auto position = 0;
+        if (uniforms.find(name) == uniforms.end())
+        {
+            position = gl->getProgramUniformLocation(program, name);
+            uniforms.insert(std::pair<const std::string, GLint>(name, position));
+        }
+        else
+        {
+            position = uniforms.at(name);
+        }
+        if (position != -1)
+        {
+            gl->setProgramIntUniformData(static_cast<GLuint>(position), data);
+        }
+    }
+
+    void Shader::setUniformFloatData(const std::string &name, const std::vector<float> &data)
+    {
+        if (program == 0)
+        {
+            return;
+        }
+        auto position = 0;
+        if (uniforms.find(name) == uniforms.end())
+        {
+            position = gl->getProgramUniformLocation(program, name);
+            uniforms.insert(std::pair<const std::string, GLint>(name, position));
+        }
+        else
+        {
+            position = uniforms.at(name);
+        }
+        if (position != -1)
+        {
+            gl->setProgramFloatUniformData(static_cast<GLuint>(position), data);
+        }
+    }
+
+    void Shader::setUniformMatrixData(const std::string &name, const Matrix &matrix)
+    {
+        if (program == 0)
+        {
+            return;
+        }
+        auto position = 0;
+        if (uniforms.find(name) == uniforms.end())
+        {
+            position = gl->getProgramUniformLocation(program, name);
+            uniforms.insert(std::pair<const std::string, GLint>(name, position));
+        }
+        else
+        {
+            position = uniforms.at(name);
+        }
+        if (position != -1)
+        {
+            gl->setProgramMatrixUniformData(static_cast<GLuint>(position), matrix);
         }
     }
 
@@ -134,6 +223,10 @@ namespace only2d
         }
         gl->deleteShader(vertexShader);
         gl->deleteShader(fragmentShader);
+        attach();
+        auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
+        setUniformMatrixData(DefaultShaderUniform::PROJECTION_MATRIX, graphics->getProjectionMatrix());
+        detach();
     }
 
     void Shader::unload()

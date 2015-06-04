@@ -17,7 +17,8 @@ namespace only2d
             skewX(0.0f),
             skewY(0.0f),
             alpha(1.0f),
-            visible(true)
+            visible(true),
+            update(true)
     {
     }
 
@@ -32,6 +33,7 @@ namespace only2d
 
     void Drawable::setX(float x)
     {
+        update = true;
         this->x = x;
     }
 
@@ -42,6 +44,7 @@ namespace only2d
 
     void Drawable::setY(float y)
     {
+        update = true;
         this->y = y;
     }
 
@@ -52,6 +55,7 @@ namespace only2d
 
     void Drawable::setRotation(float rotation)
     {
+        update = true;
         this->rotation = rotation;
     }
 
@@ -62,6 +66,7 @@ namespace only2d
 
     void Drawable::setScaleX(float scaleX)
     {
+        update = true;
         this->scaleX = scaleX;
     }
 
@@ -72,6 +77,7 @@ namespace only2d
 
     void Drawable::setScaleY(float scaleY)
     {
+        update = true;
         this->scaleY = scaleY;
     }
 
@@ -82,6 +88,7 @@ namespace only2d
 
     void Drawable::setOffsetX(float offsetX)
     {
+        update = true;
         this->offsetX = offsetX;
     }
 
@@ -92,6 +99,7 @@ namespace only2d
 
     void Drawable::setOffsetY(float offsetY)
     {
+        update = true;
         this->offsetY = offsetY;
     }
 
@@ -102,6 +110,7 @@ namespace only2d
 
     void Drawable::setSkewX(float skewX)
     {
+        update = true;
         this->skewX = skewX;
     }
 
@@ -112,6 +121,7 @@ namespace only2d
 
     void Drawable::setSkewY(float skewY)
     {
+        update = true;
         this->skewY = skewY;
     }
 
@@ -133,5 +143,15 @@ namespace only2d
     void Drawable::setVisible(bool visible)
     {
         this->visible = visible;
+    }
+
+    const Matrix &Drawable::getMatrix()
+    {
+        if (update)
+        {
+            matrix.setTransformation(x, y, rotation, scaleX, scaleY, offsetX, offsetY, skewX, skewY);
+            update = false;
+        }
+        return matrix;
     }
 }

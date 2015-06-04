@@ -59,6 +59,8 @@ namespace only2d
 
         const std::vector<Vertex> &getVertices() const;
 
+        const GLuint &getTexture() const;
+
         const ImageDataWrap &getWrap() const;
 
         void setWrap(const ImageDataWrap &wrap);

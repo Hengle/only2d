@@ -19,7 +19,7 @@ namespace only2d
 
     void OpenGL::initContext()
     {
-        if (!gladLoadGL())
+        if (glewInit() != GLEW_OK)
         {
             Console::error << "[OpenGL] initialize glew fail." << Console::endl;
         }
@@ -195,7 +195,7 @@ namespace only2d
         return glGetAttribLocation(shader, name.c_str());
     }
 
-    void OpenGL::enableProgrameAttribute(GLuint position)
+    void OpenGL::enableProgramAttribute(GLuint position)
     {
         glEnableVertexAttribArray(position);
     }
@@ -204,6 +204,60 @@ namespace only2d
                                             GLsizei stride, const GLvoid *pointer)
     {
         glVertexAttribPointer(position, size, type, normalized, stride, pointer);
+    }
+
+    GLint OpenGL::getProgramUniformLocation(GLuint shader, const std::string &name)
+    {
+        return glGetUniformLocation(shader, name.c_str());
+    }
+
+    void OpenGL::setProgramIntUniformData(GLuint position, const std::vector<int32_t> &data)
+    {
+        switch (data.size())
+        {
+            case 1:
+                glUniform1i(position, data[0]);
+                break;
+            case 2:
+                glUniform2i(position, data[0], data[1]);
+                break;
+            case 3:
+                glUniform3i(position, data[0], data[1], data[2]);
+                break;
+            case 4:
+                glUniform4i(position, data[0], data[1], data[2], data[3]);
+                break;
+            default:
+                Console::error << "[OpenGL] wrong int uniform data size." << Console::endl;
+                break;
+        }
+    }
+
+    void OpenGL::setProgramFloatUniformData(GLuint position, const std::vector<float> &data)
+    {
+        switch (data.size())
+        {
+            case 1:
+                glUniform1f(position, data[0]);
+                break;
+            case 2:
+                glUniform2f(position, data[0], data[1]);
+                break;
+            case 3:
+                glUniform3f(position, data[0], data[1], data[2]);
+                break;
+            case 4:
+                glUniform4f(position, data[0], data[1], data[2], data[3]);
+                break;
+            default:
+                Console::error << "[OpenGL] wrong float uniform data size." << Console::endl;
+                break;
+        }
+    }
+
+    void OpenGL::setProgramMatrixUniformData(GLuint position, const Matrix &matrix)
+    {
+        glUniformMatrix4fv(position, 1, GL_FALSE, matrix.getBuffer());
     }
 
     void OpenGL::drawArrays(GLenum mode, GLint first, GLsizei count)

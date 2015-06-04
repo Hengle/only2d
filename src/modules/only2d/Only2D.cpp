@@ -52,6 +52,8 @@ namespace only2d
         window.setSettings(settings);
 
         Graphics graphics;
+        graphics.setResolution(settings.width, settings.height);
+        graphics.setBackgroundColor(ColorGray);
 
         Texture texture;
 
@@ -60,13 +62,15 @@ namespace only2d
         std::shared_ptr<File> file = fileSystem.openBinaryFile(fileSystem.getSourceDir() + "mario.png");
         std::shared_ptr<FileData> filedata = file->read(FileReadMode::ALL);
         file.reset();
-        std::shared_ptr<TextureData> texturedata = texture.createTextureData(filedata);
+        std::shared_ptr<TextureData> texturedata = texture.createTextureData(100, 100, ColorGreen);
         filedata.reset();
         std::shared_ptr<ImageData> imagedata = graphics.createImageData(texturedata->getWidth(),
                                                                         texturedata->getHeight(), texturedata);
         texturedata.reset();
         std::shared_ptr<Image> image = graphics.createImage(imagedata);
         imagedata.reset();
+
+        image->setColor(ColorBlue);
 
         while (running)
         {

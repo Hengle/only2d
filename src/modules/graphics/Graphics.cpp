@@ -22,12 +22,25 @@ namespace only2d
     {
         registerModule(this);
         gl->initContext();
-        createDefaultShader();
     }
 
     Graphics::~Graphics()
     {
         deregisterModule(this);
+    }
+
+    void Graphics::setResolution(int32_t width, int32_t height)
+    {
+        viewport.x = viewport.y = 0;
+        viewport.width = width;
+        viewport.height = height;
+        gl->setViewport(viewport);
+        if (defaultShader)
+        {
+            defaultShader.reset();
+        }
+        projectionMatrix.setOrthographic(0, width, 0, height);
+        createDefaultShader();
     }
 
     void Graphics::clear()
@@ -69,6 +82,11 @@ namespace only2d
                                   backgroundColor.a / 255.0f);
     }
 
+    const Matrix &Graphics::getProjectionMatrix() const
+    {
+        return projectionMatrix;
+    }
+
     std::shared_ptr<OpenGL> &Graphics::getOpenGL()
     {
         return gl;
@@ -88,13 +106,15 @@ namespace only2d
                 "attribute vec4 aTexcoord;\n"
                 "attribute vec4 aColor;\n"
                 "uniform mat4 uMVPMatrix;\n"
-                "uniform vec4 uAlpha;\n"
+                "uniform mat4 uProjectionMatrix;\n"
+                "uniform float uAlpha;\n"
                 "varying vec4 vTexcoord;\n"
                 "varying vec4 vColor;\n"
                 "void main() {\n"
-                "\tvTexcoord = aPosition;\n"
-                "\tvColor = aColor * uAlpha;\n"
-                "\tgl_Position = uMVPMatrix * aPosition;\n"
+                "\tvTexcoord = aTexcoord;\n"
+                "\tvColor = aColor;\n"
+                "\tvColor.a = vColor.a * uAlpha;\n"
+                "\tgl_Position = uProjectionMatrix * uMVPMatrix * aPosition;\n"
                 "}";
         std::string defaultFragmentShader = "#ifndef GL_ES\n"
                 "#define lowp\n"

@@ -22,9 +22,14 @@ namespace only2d
 
         virtual void draw() override;
 
+        const Color &getColor() const;
+
+        void setColor(const Color &color);
+
     protected:
         std::shared_ptr<ImageData> data;
         std::shared_ptr<Shader> shader;
+        Color color;
     };
 }
 

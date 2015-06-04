@@ -26,9 +26,7 @@ namespace only2d
 
         std::shared_ptr<TextureData> createTextureData(std::shared_ptr<Data> data);
 
-        std::shared_ptr<TextureData> createTextureData(int32_t width, int32_t height);
-
-        std::shared_ptr<TextureData> createTextureData(int32_t width, int32_t height, std::shared_ptr<Data> data);
+        std::shared_ptr<TextureData> createTextureData(int32_t width, int32_t height, const Color &color);
     };
 }
 
