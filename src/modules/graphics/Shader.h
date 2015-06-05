@@ -15,22 +15,7 @@
 
 namespace only2d
 {
-    class DefaultShaderAttribute
-    {
-    public:
-        static const std::string POSITION;
-        static const std::string TEXCOORD;
-    };
 
-    class DefaultShaderUniform
-    {
-    public:
-        static const std::string PROJECTION_MATRIX;
-        static const std::string MVP_MATRIX;
-        static const std::string COLOR;
-        static const std::string ALPHA;
-        static const std::string TEXTURE;
-    };
 
     class Shader
     {
@@ -41,18 +26,9 @@ namespace only2d
 
         bool match(const std::string &vertex, const std::string &fragment);
 
-        void setVertexData(const std::vector<Vertex> &vertices);
 
         void setAttributeData(const std::string &name, GLint size, GLenum type, GLboolean normalized, GLsizei stride,
                               const GLvoid *pointer);
-
-        void setTexture(const GLuint &texture);
-
-        void setColor(const Color &color);
-
-        void setAlpha(const float &alpha);
-
-        void setMVPMatrix(const Matrix &matrix);
 
         void setUniformIntData(const std::string &name, const std::vector<int32_t> &data);
 
@@ -63,8 +39,6 @@ namespace only2d
         void attach();
 
         void detach();
-
-        void draw();
 
     private:
         void load();

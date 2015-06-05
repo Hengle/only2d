@@ -7,7 +7,7 @@
 
 #include "Drawable.h"
 #include "ImageData.h"
-#include "Shader.h"
+#include "ImageShader.h"
 
 #include <memory>
 
@@ -26,10 +26,24 @@ namespace only2d
 
         void setColor(const Color &color);
 
+        int32_t getHeight() const;
+
+        void setHeight(int32_t height);
+
+        int32_t getWidth() const;
+
+        void setWidth(int32_t width);
+
+    private:
+        void updateVertices();
+
     protected:
         std::shared_ptr<ImageData> data;
-        std::shared_ptr<Shader> shader;
+        std::shared_ptr<ImageShader> shader;
         Color color;
+        std::vector<Vertex> vertices;
+        int32_t width;
+        int32_t height;
     };
 }
 

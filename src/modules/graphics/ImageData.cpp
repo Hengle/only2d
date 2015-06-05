@@ -12,7 +12,6 @@ namespace only2d
     ImageData::ImageData(int32_t width, int32_t height, std::shared_ptr<Data> data) :
             width(width),
             height(height),
-            vertices(4),
             texture(0),
             data(data),
             usingDefaultData(false)
@@ -26,7 +25,6 @@ namespace only2d
         {
             gl = graphics->getOpenGL();
         }
-        prepareVertices();
         loadData();
     }
 
@@ -61,11 +59,6 @@ namespace only2d
         this->height = height;
     }
 
-    const std::vector<Vertex> &ImageData::getVertices() const
-    {
-        return vertices;
-    }
-
     const GLuint &ImageData::getTexture() const
     {
         return texture;
@@ -93,25 +86,6 @@ namespace only2d
         this->filter = filter;
         gl->bindTexture(texture);
         gl->setTextureFilter(this->filter);
-    }
-
-    /**
-     * 0----2
-     * |  / |
-     * | /  |
-     * 1----3
-     */
-    void ImageData::prepareVertices()
-    {
-        vertices[0].position.set(0.0f, 0.0f);
-        vertices[1].position.set(0.0f, static_cast<float>(height));
-        vertices[2].position.set(static_cast<float>(width), 0.0f);
-        vertices[3].position.set(static_cast<float>(width), static_cast<float>(height));
-
-        vertices[0].texcoord.set(0.0f, 1.0f);
-        vertices[1].texcoord.set(0.0f, 0.0f);
-        vertices[2].texcoord.set(1.0f, 1.0f);
-        vertices[3].texcoord.set(1.0f, 0.0f);
     }
 
     void ImageData::loadData()

@@ -34,12 +34,8 @@ namespace only2d
         viewport.width = width;
         viewport.height = height;
         gl->setViewport(viewport);
-        if (defaultShader)
-        {
-            defaultShader.reset();
-        }
         projectionMatrix.setOrthographic(0.0f, static_cast<float>(width), 0.0f, static_cast<float>(height));
-        createDefaultShader();
+        imageShader = std::make_shared<ImageShader>();
     }
 
     void Graphics::clear()
@@ -62,9 +58,9 @@ namespace only2d
         return std::make_shared<Image>(data);
     }
 
-    std::shared_ptr<Shader> &Graphics::getDefaultShader()
+    std::shared_ptr<ImageShader> &Graphics::getImageShader()
     {
-        return defaultShader;
+        return imageShader;
     }
 
     Color Graphics::getBackgroundColor() const
@@ -89,46 +85,5 @@ namespace only2d
     std::shared_ptr<OpenGL> &Graphics::getOpenGL()
     {
         return gl;
-    }
-
-    void Graphics::createDefaultShader()
-    {
-        std::string defaultVertexShader = "#ifndef GL_ES\n"
-                "#define lowp\n"
-                "#define mediump\n"
-                "#define highp\n"
-                "#endif\n"
-                "#ifdef GL_ES\n"
-                "precision mediump float;\n"
-                "#endif\n"
-                "attribute vec4 aPosition;\n"
-                "attribute vec2 aTexcoord;\n"
-                "uniform mat4 uMVPMatrix;\n"
-                "uniform mat4 uProjectionMatrix;\n"
-                "varying vec2 vTexcoord;\n"
-                "varying vec4 vColor;\n"
-                "void main() {\n"
-                "\tvTexcoord = aTexcoord;\n"
-                "\tgl_Position = uProjectionMatrix * uMVPMatrix * aPosition;\n"
-                "}";
-        std::string defaultFragmentShader = "#ifndef GL_ES\n"
-                "#define lowp\n"
-                "#define mediump\n"
-                "#define highp\n"
-                "#endif\n"
-                "#ifdef GL_ES\n"
-                "precision mediump float;\n"
-                "#endif\n"
-                "varying vec2 vTexcoord;\n"
-                "varying vec4 vColor;\n"
-                "uniform sampler2D uTexture;\n"
-                "uniform vec4 uColor;\n"
-                "uniform float uAlpha;\n"
-                "void main() {\n"
-                "\tvec4 color = uColor;\n"
-                "\tcolor.a *= uAlpha;\n"
-                "\tgl_FragColor = texture2D(uTexture, vTexcoord) * color;\n"
-                "}";
-        defaultShader = std::make_shared<Shader>(defaultVertexShader, defaultFragmentShader);
     }
 }

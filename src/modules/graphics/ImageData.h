@@ -57,7 +57,6 @@ namespace only2d
 
         void setHeight(int32_t height);
 
-        const std::vector<Vertex> &getVertices() const;
 
         const GLuint &getTexture() const;
 
@@ -81,7 +80,6 @@ namespace only2d
     protected:
         int32_t width;
         int32_t height;
-        std::vector<Vertex> vertices;
         GLuint texture;
         ImageDataWrap wrap;
         ImageDataFilter filter;

@@ -9,14 +9,6 @@
 
 namespace only2d
 {
-    const std::string DefaultShaderAttribute::POSITION = "aPosition";
-    const std::string DefaultShaderAttribute::TEXCOORD = "aTexcoord";
-    const std::string DefaultShaderUniform::PROJECTION_MATRIX = "uProjectionMatrix";
-    const std::string DefaultShaderUniform::MVP_MATRIX = "uMVPMatrix";
-    const std::string DefaultShaderUniform::COLOR = "uColor";
-    const std::string DefaultShaderUniform::ALPHA = "uAlpha";
-    const std::string DefaultShaderUniform::TEXTURE = "uTexture";
-
     Shader::Shader(std::string &vertex, std::string &fragment) :
             vertex(vertex),
             fragment(fragment),
@@ -48,13 +40,6 @@ namespace only2d
         return this->vertex == vertex && this->fragment == fragment;
     }
 
-    void Shader::setVertexData(const std::vector<Vertex> &vertices)
-    {
-        setAttributeData(DefaultShaderAttribute::POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                         &vertices.data()[0].position);
-        setAttributeData(DefaultShaderAttribute::TEXCOORD, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                         &vertices.data()[0].texcoord);
-    }
 
     void Shader::setAttributeData(const std::string &name, GLint size, GLenum type, GLboolean normalized,
                                   GLsizei stride, const GLvoid *pointer)
@@ -81,35 +66,6 @@ namespace only2d
         {
             gl->setProgramAttributePointer(static_cast<GLuint>(position), size, type, normalized, stride, pointer);
         }
-    }
-
-    void Shader::setTexture(const GLuint &texture)
-    {
-        static std::vector<int32_t> data(1);
-        data[0] = 0;
-        setUniformIntData(DefaultShaderUniform::TEXTURE, data);
-    }
-
-    void Shader::setColor(const Color &color)
-    {
-        static std::vector<float> data(4);
-        data[0] = color.r / 255.0f;
-        data[1] = color.g / 255.0f;
-        data[2] = color.b / 255.0f;
-        data[3] = color.a / 255.0f;
-        setUniformFloatData(DefaultShaderUniform::COLOR, data);
-    }
-
-    void Shader::setAlpha(const float &alpha)
-    {
-        static std::vector<float> data(1);
-        data[0] = alpha;
-        setUniformFloatData(DefaultShaderUniform::ALPHA, data);
-    }
-
-    void Shader::setMVPMatrix(const Matrix &matrix)
-    {
-        setUniformMatrixData(DefaultShaderUniform::MVP_MATRIX, matrix);
     }
 
     void Shader::setUniformIntData(const std::string &name, const std::vector<int32_t> &data)
@@ -191,11 +147,6 @@ namespace only2d
         gl->useProgram(0);
     }
 
-    void Shader::draw()
-    {
-        gl->drawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    }
-
     void Shader::load()
     {
         auto vertexShader = compile(GL_VERTEX_SHADER, vertex);
@@ -228,10 +179,6 @@ namespace only2d
         }
         gl->deleteShader(vertexShader);
         gl->deleteShader(fragmentShader);
-        attach();
-        auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
-        setUniformMatrixData(DefaultShaderUniform::PROJECTION_MATRIX, graphics->getProjectionMatrix());
-        detach();
     }
 
     void Shader::unload()

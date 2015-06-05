@@ -36,7 +36,7 @@ namespace only2d
 
         std::shared_ptr<Image> createImage(std::shared_ptr<ImageData> data);
 
-        std::shared_ptr<Shader> &getDefaultShader();
+        std::shared_ptr<ImageShader> &getImageShader();
 
         Color getBackgroundColor() const;
 
@@ -47,11 +47,8 @@ namespace only2d
         std::shared_ptr<OpenGL> &getOpenGL();
 
     private:
-        void createDefaultShader();
-
-    private:
         std::shared_ptr<OpenGL> gl;
-        std::shared_ptr<Shader> defaultShader;
+        std::shared_ptr<ImageShader> imageShader;
         FloatColor backgroundColor;
         Viewport viewport;
         Matrix projectionMatrix;

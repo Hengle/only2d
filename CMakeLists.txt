@@ -56,6 +56,7 @@ set(module_graphics_src
     src/modules/graphics/Graphics.cpp
     src/modules/graphics/Image.cpp
     src/modules/graphics/ImageData.cpp
+    src/modules/graphics/ImageShader.cpp
     src/modules/graphics/OpenGL.cpp
     src/modules/graphics/Shader.cpp
     src/modules/graphics/Viewport.cpp
