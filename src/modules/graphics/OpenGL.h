@@ -77,6 +77,16 @@ namespace only2d
 
         void setProgramMatrixUniformData(GLuint position, const Matrix &matrix);
 
+        void generateBuffer(GLuint &buffer);
+
+        void deleteBuffer(GLuint &buffer);
+
+        void bindBuffer(GLenum target, GLuint buffer);
+
+        void setBufferData(GLenum target, GLsizeiptr size, const GLvoid *data, GLenum usage);
+
+        void drawElements(GLenum mode, GLsizei count, GLenum type, const GLvoid *buffer);
+
         void drawArrays(GLenum mode, GLint first, GLsizei count);
 
         int32_t getDrawCalls() const;

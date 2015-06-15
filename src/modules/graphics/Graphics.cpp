@@ -36,6 +36,7 @@ namespace only2d
         gl->setViewport(viewport);
         projectionMatrix.setOrthographic(0.0f, static_cast<float>(width), 0.0f, static_cast<float>(height));
         imageShader = std::make_shared<ImageShader>();
+        imageBatchShader = std::make_shared<ImageBatchShader>();
     }
 
     void Graphics::clear()
@@ -58,9 +59,19 @@ namespace only2d
         return std::make_shared<Image>(data);
     }
 
-    std::shared_ptr<ImageShader> &Graphics::getImageShader()
+    std::shared_ptr<ImageBatch> Graphics::createImageBatch()
+    {
+        return std::make_shared<ImageBatch>();
+    }
+
+    std::shared_ptr<ImageShader> Graphics::getImageShader()
     {
         return imageShader;
+    }
+
+    std::shared_ptr<ImageBatchShader> Graphics::getImageBatchShader()
+    {
+        return imageBatchShader;
     }
 
     Color Graphics::getBackgroundColor() const

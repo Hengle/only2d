@@ -26,7 +26,6 @@ namespace only2d
 
         bool match(const std::string &vertex, const std::string &fragment);
 
-
         void setAttributeData(const std::string &name, GLint size, GLenum type, GLboolean normalized, GLsizei stride,
                               const GLvoid *pointer);
 

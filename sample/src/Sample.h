@@ -24,6 +24,8 @@ public:
 
 private:
     std::shared_ptr<Image> image;
+    std::shared_ptr<Image> image2;
+    std::shared_ptr<ImageBatch> batch;
 };
 
 

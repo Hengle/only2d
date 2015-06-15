@@ -5,6 +5,8 @@
 #ifndef ONLY2D_MATRIX_H
 #define ONLY2D_MATRIX_H
 
+#include "Vector.h"
+
 namespace only2d
 {
     class Matrix
@@ -31,6 +33,8 @@ namespace only2d
 
         void setTransformation(float x, float y, float rotation, float scaleX, float scaleY, float offsetX,
                                float offsetY, float skewX, float skewY);
+
+        Vector transform(const Vector vector) const;
 
         void translate(float x, float y, float offsetX, float offsetY);
 

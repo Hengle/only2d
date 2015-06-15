@@ -17,9 +17,9 @@ namespace only2d
 
         virtual ~Data();
 
-        void assign(uint8_t *begin, uint8_t *end);
+        void assign(uint8_t *buffer, size_t length = 0, size_t offset = 0);
 
-        uint8_t *getBuffer();
+        uint8_t *getBuffer(size_t offset = 0);
 
         size_t getSize();
 

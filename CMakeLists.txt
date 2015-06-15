@@ -55,10 +55,15 @@ set(module_graphics_src
     src/modules/graphics/Drawable.cpp
     src/modules/graphics/Graphics.cpp
     src/modules/graphics/Image.cpp
+    src/modules/graphics/ImageBatch.cpp
+    src/modules/graphics/ImageBatchShader.cpp
     src/modules/graphics/ImageData.cpp
     src/modules/graphics/ImageShader.cpp
     src/modules/graphics/OpenGL.cpp
+    src/modules/graphics/OpenGLData.cpp
     src/modules/graphics/Shader.cpp
+    src/modules/graphics/VertexData.cpp
+    src/modules/graphics/VertexIndexData.cpp
     src/modules/graphics/Viewport.cpp
 )
 

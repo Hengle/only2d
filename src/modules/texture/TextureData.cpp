@@ -10,12 +10,12 @@
 namespace only2d
 {
     TextureData::TextureData(std::shared_ptr<Data> data) :
-            Data(*data),
+            Data(0),
             width(0),
             height(0),
             encoded(true)
     {
-        decode();
+        decode(data);
     }
 
     TextureData::TextureData(int32_t width, int32_t height, const Color &color) :
@@ -36,7 +36,7 @@ namespace only2d
     {
     }
 
-    void TextureData::encode()
+    void TextureData::encode(std::shared_ptr<Data> data)
     {
         if (encoded)
         {
@@ -45,35 +45,25 @@ namespace only2d
         }
     }
 
-    void TextureData::decode()
+    void TextureData::decode(std::shared_ptr<Data> data)
     {
         if (!encoded)
         {
             Console::debug << "texture already decoded!" << Console::endl;
             return;
         }
-        if (!TextureParser::recognize(*this))
+        if (!TextureParser::recognize(*this, data))
         {
             Console::debug << "could not recognize data!" << Console::endl;
             return;
         }
-        TextureParser::parse(*this);
+        TextureParser::parse(*this, data);
         encoded = false;
-    }
-
-    void TextureData::setWidth(int32_t width)
-    {
-        this->width = width;
     }
 
     int32_t TextureData::getWidth() const
     {
         return width;
-    }
-
-    void TextureData::setHeight(int32_t height)
-    {
-        this->height = height;
     }
 
     int32_t TextureData::getHeight() const

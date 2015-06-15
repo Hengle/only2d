@@ -22,10 +22,6 @@ namespace only2d
 
         virtual void draw() override;
 
-        const Color &getColor() const;
-
-        void setColor(const Color &color);
-
         int32_t getHeight() const;
 
         void setHeight(int32_t height);
@@ -40,10 +36,11 @@ namespace only2d
     protected:
         std::shared_ptr<ImageData> data;
         std::shared_ptr<ImageShader> shader;
-        Color color;
         std::vector<Vertex> vertices;
         int32_t width;
         int32_t height;
+
+        friend class ImageBatch;
     };
 }
 

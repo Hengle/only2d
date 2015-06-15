@@ -13,9 +13,6 @@
 #include "common/Vector.h"
 #include "common/Vertex.h"
 
-#include "library/glad/glad.h"
-//#include "library/stb/stb_image.h"
-
 #include "modules/application/Application.h"
 
 #include "modules/event/Event.h"
@@ -27,9 +24,15 @@
 #include "modules/graphics/Drawable.h"
 #include "modules/graphics/Graphics.h"
 #include "modules/graphics/Image.h"
+#include "modules/graphics/ImageBatch.h"
+#include "modules/graphics/ImageBatchShader.h"
 #include "modules/graphics/ImageData.h"
+#include "modules/graphics/ImageShader.h"
 #include "modules/graphics/OpenGL.h"
+#include "modules/graphics/OpenGLData.h"
 #include "modules/graphics/Shader.h"
+#include "modules/graphics/VertexData.h"
+#include "modules/graphics/VertexIndexData.h"
 #include "modules/graphics/Viewport.h"
 
 #include "modules/texture/Texture.h"

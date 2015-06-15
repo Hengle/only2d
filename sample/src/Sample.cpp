@@ -25,6 +25,11 @@ void Sample::initialize()
     auto texturedata = texture->createTextureData(filedata);
     auto imagedata = graphics->createImageData(texturedata->getWidth(), texturedata->getHeight(), texturedata);
     image = graphics->createImage(imagedata);
+    image2 = graphics->createImage(imagedata);
+    image2->setX(100);
+
+    batch = graphics->createImageBatch();
+    batch->addImage(image);
 
     file.reset();
     filedata.reset();
@@ -37,7 +42,9 @@ void Sample::initialize()
 
 void Sample::update(float delta)
 {
-    image->draw();
+    batch->draw();
+//    image->draw();
+//    image2->draw();
 }
 
 void Sample::finalize()

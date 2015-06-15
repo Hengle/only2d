@@ -49,6 +49,8 @@ namespace only2d
 
         void bind();
 
+        void unbind();
+
         int32_t getWidth() const;
 
         void setWidth(int32_t width);

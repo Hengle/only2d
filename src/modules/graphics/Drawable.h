@@ -5,6 +5,7 @@
 #ifndef ONLY2D_DRAWABLE_H
 #define ONLY2D_DRAWABLE_H
 
+#include "common/Color.h"
 #include "common/Matrix.h"
 
 namespace only2d
@@ -64,6 +65,10 @@ namespace only2d
 
         const Matrix &getMatrix();
 
+        const Color &getColor() const;
+
+        void setColor(const Color &color);
+
     protected:
         float x;
         float y;
@@ -76,6 +81,7 @@ namespace only2d
         float skewY;
         float alpha;
         bool visible;
+        Color color;
 
     private:
         bool update;

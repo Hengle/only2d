@@ -39,6 +39,11 @@ namespace only2d
         gl->bindTexture(texture);
     }
 
+    void ImageData::unbind()
+    {
+        gl->bindTexture(0);
+    }
+
     int32_t ImageData::getWidth() const
     {
         return width;

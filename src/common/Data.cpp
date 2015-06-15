@@ -4,6 +4,8 @@
 
 #include "Data.h"
 
+#include <cstring>
+
 namespace only2d
 {
     Data::Data(size_t size) :
@@ -16,14 +18,25 @@ namespace only2d
         data.clear();
     }
 
-    void Data::assign(uint8_t *begin, uint8_t *end)
+    void Data::assign(uint8_t *buffer, size_t length, size_t offset)
     {
-        data.assign(begin, end);
+        if (length == 0)
+        {
+            length = data.size();
+        }
+        if (length + offset > data.size())
+        {
+            data.reserve(length + offset);
+        }
+        if (buffer)
+        {
+            std::memcpy(data.data() + offset, buffer, length);
+        }
     }
 
-    uint8_t *Data::getBuffer()
+    uint8_t *Data::getBuffer(size_t offset)
     {
-        return data.data();
+        return data.data() + offset;
     }
 
     size_t Data::getSize()

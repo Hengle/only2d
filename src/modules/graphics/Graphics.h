@@ -8,6 +8,7 @@
 #include "OpenGL.h"
 #include "Shader.h"
 #include "Image.h"
+#include "ImageBatch.h"
 #include "ImageData.h"
 
 #include "common/Color.h"
@@ -36,7 +37,11 @@ namespace only2d
 
         std::shared_ptr<Image> createImage(std::shared_ptr<ImageData> data);
 
-        std::shared_ptr<ImageShader> &getImageShader();
+        std::shared_ptr<ImageBatch> createImageBatch();
+
+        std::shared_ptr<ImageShader> getImageShader();
+
+        std::shared_ptr<ImageBatchShader> getImageBatchShader();
 
         Color getBackgroundColor() const;
 
@@ -49,6 +54,7 @@ namespace only2d
     private:
         std::shared_ptr<OpenGL> gl;
         std::shared_ptr<ImageShader> imageShader;
+        std::shared_ptr<ImageBatchShader> imageBatchShader;
         FloatColor backgroundColor;
         Viewport viewport;
         Matrix projectionMatrix;

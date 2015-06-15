@@ -11,7 +11,6 @@ namespace only2d
 {
     Image::Image(std::shared_ptr<ImageData> data) :
             data(data),
-            color(255, 255, 255, 255),
             vertices(4),
             width(data->getWidth()),
             height(data->getHeight())
@@ -51,17 +50,9 @@ namespace only2d
             shader->setAlpha(alpha);
             shader->setMVPMatrix(getMatrix());
             shader->draw();
+            data->unbind();
+            shader->detach();
         }
-    }
-
-    const Color &Image::getColor() const
-    {
-        return color;
-    }
-
-    void Image::setColor(const Color &color)
-    {
-        this->color = color;
     }
 
     int32_t Image::getHeight() const

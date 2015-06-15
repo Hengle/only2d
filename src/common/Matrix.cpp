@@ -116,6 +116,12 @@ namespace only2d
         data[13] = y - offsetX * data[1] - offsetY * data[5];
     }
 
+    Vector Matrix::transform(const Vector vector) const
+    {
+        return Vector(data[0] * vector.x + data[4] * vector.y + data[12],
+                      data[1] * vector.x + data[5] * vector.y + data[13]);
+    }
+
     void Matrix::translate(float x, float y, float offsetX, float offsetY)
     {
         Matrix matrix;

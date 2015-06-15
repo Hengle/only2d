@@ -22,15 +22,11 @@ namespace only2d
 
         virtual ~TextureData();
 
-        void encode();
+        void encode(std::shared_ptr<Data> data);
 
-        void decode();
-
-        void setWidth(int32_t width);
+        void decode(std::shared_ptr<Data> data);
 
         int32_t getWidth() const;
-
-        void setHeight(int32_t height);
 
         int32_t getHeight() const;
 
@@ -38,6 +34,8 @@ namespace only2d
         int32_t width;
         int32_t height;
         bool encoded;
+
+        friend class TextureParser;
     };
 }
 

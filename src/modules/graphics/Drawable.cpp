@@ -17,6 +17,7 @@ namespace only2d
             skewX(0.0f),
             skewY(0.0f),
             alpha(1.0f),
+            color(255, 255, 255, 255),
             visible(true),
             update(true)
     {
@@ -153,5 +154,15 @@ namespace only2d
             update = false;
         }
         return matrix;
+    }
+
+    const Color &Drawable::getColor() const
+    {
+        return color;
+    }
+
+    void Drawable::setColor(const Color &color)
+    {
+        this->color = color;
     }
 }

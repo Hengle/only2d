@@ -260,6 +260,32 @@ namespace only2d
         glUniformMatrix4fv(position, 1, GL_FALSE, matrix.getBuffer());
     }
 
+    void OpenGL::generateBuffer(GLuint &buffer)
+    {
+        return glGenBuffers(1, &buffer);
+    }
+
+    void OpenGL::deleteBuffer(GLuint &buffer)
+    {
+        glDeleteBuffers(1, &buffer);
+    }
+
+    void OpenGL::bindBuffer(GLenum target, GLuint buffer)
+    {
+        glBindBuffer(target, buffer);
+    }
+
+    void OpenGL::setBufferData(GLenum target, GLsizeiptr size, const GLvoid *data, GLenum usage)
+    {
+        glBufferData(target, size, data, usage);
+    }
+
+    void OpenGL::drawElements(GLenum mode, GLsizei count, GLenum type, const GLvoid *buffer)
+    {
+        glDrawElements(mode, count, type, buffer);
+        ++drawCalls;
+    }
+
     void OpenGL::drawArrays(GLenum mode, GLint first, GLsizei count)
     {
         glDrawArrays(mode, first, count);
