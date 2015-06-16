@@ -9,9 +9,9 @@
 namespace only2d
 {
     VertexData::VertexData() :
+            OpenGLData(GL_ARRAY_BUFFER, GL_DYNAMIC_DRAW, 4 * 16 * sizeof(Vertex)),
             size(0),
-            capacity(16),
-            OpenGLData(GL_ARRAY_BUFFER, GL_DYNAMIC_DRAW, 4 * capacity * sizeof(Vertex))
+            capacity(16)
     {
     }
 

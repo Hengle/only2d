@@ -11,9 +11,9 @@
 namespace only2d
 {
     VertexIndexData::VertexIndexData() :
+            OpenGLData(GL_ELEMENT_ARRAY_BUFFER, GL_STATIC_DRAW, 6 * 16 * sizeof(GLushort)),
             size(0),
-            capacity(16),
-            OpenGLData(GL_ELEMENT_ARRAY_BUFFER, GL_STATIC_DRAW, 6 * capacity * sizeof(GLushort))
+            capacity(16)
     {
         fill(capacity);
     }
