@@ -44,6 +44,11 @@ namespace only2d
         gl->clear(backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
     }
 
+    void Graphics::checkOpenGLError()
+    {
+        gl->checkErrors();
+    }
+
     std::shared_ptr<Shader> Graphics::createShader(std::string &vertex, std::string fragment)
     {
         return std::make_shared<Shader>(vertex, fragment);

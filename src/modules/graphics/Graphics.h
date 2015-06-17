@@ -31,6 +31,8 @@ namespace only2d
 
         void clear();
 
+        void checkOpenGLError();
+
         std::shared_ptr<Shader> createShader(std::string &vertex, std::string fragment);
 
         std::shared_ptr<ImageData> createImageData(int32_t width, int32_t height, std::shared_ptr<Data> data);

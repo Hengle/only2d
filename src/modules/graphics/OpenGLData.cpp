@@ -49,9 +49,6 @@ namespace only2d
     void OpenGLData::load()
     {
         gl->generateBuffer(buffer);
-        bind();
-        gl->setBufferData(target, getSize(), nullptr, usage);
-        unbind();
     }
 
     void OpenGLData::unload()

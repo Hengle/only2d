@@ -96,7 +96,7 @@ namespace only2d
     {
         if (data)
         {
-            cleanErrors();
+            checkErrors();
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data->getBuffer());
             if (glGetError() == GL_NO_ERROR)
             {
@@ -106,9 +106,35 @@ namespace only2d
         return false;
     }
 
-    void OpenGL::cleanErrors()
+    void OpenGL::checkErrors()
     {
-        while (glGetError() != GL_NO_ERROR);
+        GLenum error;
+        while ((error = glGetError()) != GL_NO_ERROR)
+        {
+            switch (error)
+            {
+                case GL_NO_ERROR:
+                    Console::debug << "GL_NO_ERROR" << Console::endl;
+                    break;
+                case GL_INVALID_ENUM:
+                    Console::debug << "GL_INVALID_ENUM" << Console::endl;
+                    break;
+                case GL_INVALID_OPERATION:
+                    Console::debug << "GL_INVALID_OPERATION" << Console::endl;
+                    break;
+                case GL_INVALID_VALUE:
+                    Console::debug << "GL_INVALID_VALUE" << Console::endl;
+                    break;
+                case GL_INVALID_FRAMEBUFFER_OPERATION:
+                    Console::debug << "GL_INVALID_FRAMEBUFFER_OPERATION" << Console::endl;
+                    break;
+                case GL_OUT_OF_MEMORY:
+                    Console::debug << "GL_OUT_OF_MEMORY" << Console::endl;
+                    break;
+                default:
+                    Console::debug << "UNKNOWN_ERROR" << Console::endl;
+            }
+        }
     }
 
     GLuint OpenGL::createShader(GLenum type)

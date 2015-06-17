@@ -68,6 +68,7 @@ namespace only2d
             graphics.clear();
             update(timer.step());
             window.swapBuffers();
+            graphics.checkOpenGLError();
         }
 
         finalize();

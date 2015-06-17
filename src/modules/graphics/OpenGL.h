@@ -42,7 +42,7 @@ namespace only2d
 
         bool setTextureData(GLsizei width, GLsizei height, std::shared_ptr<Data> data);
 
-        void cleanErrors();
+        void checkErrors();
 
         GLuint createShader(GLenum type);
 
