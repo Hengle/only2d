@@ -159,9 +159,6 @@
     <ClCompile Include="..\..\src\common\Vector.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\common\Vertex.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\library\glad\glad.c">
       <Filter>library\glad</Filter>
     </ClCompile>
