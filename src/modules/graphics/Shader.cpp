@@ -33,6 +33,7 @@ namespace only2d
     Shader::~Shader()
     {
         unload();
+		gl.reset();
     }
 
     bool Shader::match(const std::string &vertex, const std::string &fragment)

@@ -69,6 +69,7 @@ namespace only2d
                 case ImageDataFilterMode::NEAREST:
                     return GL_NEAREST;
             }
+			return GL_LINEAR;
         };
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, glFilterMode(filter.min));
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, glFilterMode(filter.mag));
@@ -87,6 +88,7 @@ namespace only2d
                 case ImageDataWrapMode::MIRRORED_REPEAT:
                     return GL_MIRRORED_REPEAT;
             }
+			return GL_CLAMP_TO_EDGE;
         };
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, glWrapMode(wrap.s));
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, glWrapMode(wrap.t));

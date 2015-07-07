@@ -37,6 +37,7 @@ namespace only2d
     Image::~Image()
     {
         data.reset();
+		shader.reset();
     }
 
     void only2d::Image::draw()

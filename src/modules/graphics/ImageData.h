@@ -71,8 +71,6 @@ namespace only2d
         void setFilter(const ImageDataFilter &filter);
 
     private:
-        void prepareVertices();
-
         void loadData();
 
         void loadDefaultData();

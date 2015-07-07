@@ -32,6 +32,7 @@ namespace only2d
     {
         unloadData();
         data.reset();
+		gl.reset();
     }
 
     void ImageData::bind()

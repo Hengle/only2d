@@ -64,7 +64,7 @@ namespace only2d
     void VertexIndexData::fill(int32_t length, int32_t offset)
     {
         auto data = new GLushort[6 * length];
-        for (int32_t i = 0; i < length; ++i)
+        for (auto i = 0; i < length; ++i)
         {
             data[i * 6 + 0] = static_cast<GLushort>(i * 4 + 0);
             data[i * 6 + 1] = static_cast<GLushort>(i * 4 + 1);
@@ -73,7 +73,7 @@ namespace only2d
             data[i * 6 + 4] = static_cast<GLushort>(i * 4 + 1);
             data[i * 6 + 5] = static_cast<GLushort>(i * 4 + 3);
         }
-        assign((uint8_t *) data, 6 * length * sizeof(GLushort), 6 * offset * sizeof(GLushort));
+        assign(reinterpret_cast<uint8_t *>(data), 6 * length * sizeof(GLushort), 6 * offset * sizeof(GLushort));
         delete[] data;
     }
 }

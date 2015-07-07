@@ -23,7 +23,7 @@ namespace only2d
 
         void clear();
 
-        void draw();
+        virtual void draw() override;
 
     private:
         std::shared_ptr<ImageData> data;

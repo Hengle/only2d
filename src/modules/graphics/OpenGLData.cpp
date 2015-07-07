@@ -29,6 +29,7 @@ namespace only2d
     OpenGLData::~OpenGLData()
     {
         unload();
+		gl.reset();
     }
 
     void OpenGLData::syncBuffer()

@@ -24,7 +24,7 @@ namespace only2d
             height(height),
             encoded(false)
     {
-        auto pointer = (Pixel *) getBuffer();
+        auto pointer = reinterpret_cast<Pixel *>(getBuffer());
         for (auto i = 0; i < width * height; ++i)
         {
             *pointer = color;

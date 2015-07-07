@@ -22,7 +22,7 @@ namespace only2d
     public:
         Shader(std::string &vertex, std::string &fragment);
 
-        ~Shader();
+        virtual ~Shader();
 
         bool match(const std::string &vertex, const std::string &fragment);
 

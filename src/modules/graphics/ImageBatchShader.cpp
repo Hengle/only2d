@@ -65,9 +65,9 @@ namespace only2d
     void ImageBatchShader::setVertexData(VertexData &vertices)
     {
         setAttributeData(attribute_POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                         vertices.getBuffer(offsetof(Vertex, position)));
+                         reinterpret_cast<GLvoid *>(offsetof(Vertex, position)));
         setAttributeData(attribute_TEXCOORD, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                         vertices.getBuffer(offsetof(Vertex, texcoord)));
+                         reinterpret_cast<GLvoid *>(offsetof(Vertex, texcoord)));
     }
 
     void ImageBatchShader::setColor(const Color &color)
@@ -94,6 +94,6 @@ namespace only2d
 
     void ImageBatchShader::draw(VertexIndexData &indices)
     {
-        gl->drawElements(GL_TRIANGLES, indices.getIndexCount(), GL_UNSIGNED_SHORT, indices.getBuffer());
+        gl->drawElements(GL_TRIANGLES, indices.getIndexCount(), GL_UNSIGNED_SHORT, nullptr);
     }
 }

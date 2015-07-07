@@ -20,7 +20,7 @@ namespace only2d
 
         virtual void syncBuffer() override;
 
-        void add(const std::vector<Vertex> vertices);
+        void add(std::vector<Vertex> vertices);
 
         void clear();
 

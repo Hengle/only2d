@@ -25,6 +25,8 @@ namespace only2d
 
     ImageBatch::~ImageBatch()
     {
+		data.reset();
+		shader.reset();
     }
 
     void ImageBatch::addImage(std::shared_ptr<Image> image)
@@ -35,11 +37,11 @@ namespace only2d
         }
         else if (image->data != data)
         {
-            Console::debug << "[ImageBatch] add image with diffferent image data";
+            Console::debug << "[ImageBatch] add image with diffferent image data" << Console::endl;
         }
         needSyncBuffer = true;
-        std::vector<Vertex> imageVertices(image->vertices);
-        for (int32_t i = 0; i < 4; ++i)
+        auto imageVertices(image->vertices);
+        for (auto i = 0; i < 4; ++i)
         {
             imageVertices[i].position = image->getMatrix().transform(image->vertices[i].position);
         }
@@ -78,6 +80,5 @@ namespace only2d
             data->unbind();
             shader->detach();
         }
-
     }
 }

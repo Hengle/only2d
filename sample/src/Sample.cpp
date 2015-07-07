@@ -20,6 +20,8 @@ void Sample::initialize()
     auto texture = Module::getInstance<Texture>(ModuleType::TEXTURE);
     auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
 
+	graphics->setBackgroundColor(ColorGray);
+
     auto file = fileSystem->openBinaryFile(fileSystem->getSourceDir() + "mario.png");
     auto filedata = file->read(FileReadMode::ALL);
     auto texturedata = texture->createTextureData(filedata);
@@ -30,6 +32,7 @@ void Sample::initialize()
 
     batch = graphics->createImageBatch();
     batch->addImage(image);
+	batch->addImage(image2);
 
     file.reset();
     filedata.reset();

@@ -24,7 +24,7 @@ namespace only2d
         gl->setBufferData(target, 4 * size * sizeof(Vertex), getBuffer(), usage);
     }
 
-    void VertexData::add(const std::vector<Vertex> vertices)
+    void VertexData::add(std::vector<Vertex> vertices)
     {
         if (vertices.size() != 4)
         {
@@ -36,7 +36,7 @@ namespace only2d
             capacity *= 2;
             assign(nullptr, 4 * size * sizeof(Vertex), 4 * size * sizeof(Vertex));
         }
-        assign((uint8_t *) vertices.data(), 4 * sizeof(Vertex), 4 * size * sizeof(Vertex));
+        assign(reinterpret_cast<uint8_t *>(vertices.data()), 4 * sizeof(Vertex), 4 * size * sizeof(Vertex));
         ++size;
     }
 

@@ -18,7 +18,7 @@ namespace only2d
     public:
         explicit Image(std::shared_ptr<ImageData> data);
 
-        ~Image();
+        virtual ~Image();
 
         virtual void draw() override;
 
