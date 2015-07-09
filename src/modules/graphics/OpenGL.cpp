@@ -9,7 +9,8 @@ namespace only2d
 {
     OpenGL::OpenGL() :
             drawCalls(0),
-            textureCount(0)
+            textureCount(0),
+            currentBlendMode(BlendMode::NONE)
     {
     }
 
@@ -356,5 +357,57 @@ namespace only2d
     const Viewport &OpenGL::getScissor() const
     {
         return scissor;
+    }
+
+    const BlendMode &OpenGL::getCurrentBlendMode() const
+    {
+        return currentBlendMode;
+    }
+
+    void OpenGL::setCurrentBlendMode(const BlendMode &mode)
+    {
+        if (mode == BlendMode::NONE || mode == currentBlendMode)
+        {
+            return;
+        }
+        currentBlendMode = mode;
+        GLenum func = GL_FUNC_ADD;
+        GLenum srcRGB = GL_ONE;
+        GLenum srcA = GL_ONE;
+        GLenum dstRGB = GL_ZERO;
+        GLenum dstA = GL_ZERO;
+        switch (currentBlendMode)
+        {
+            case BlendMode::ALPHA:
+                srcRGB = GL_SRC_ALPHA;
+                srcA = GL_ONE;
+                dstRGB = dstA = GL_ONE_MINUS_SRC_ALPHA;
+                break;
+            case BlendMode::MULTIPLY:
+                srcRGB = srcA = GL_DST_COLOR;
+                dstRGB = dstA = GL_ZERO;
+                break;
+            case BlendMode::PRE_MULTIPLIED:
+                srcRGB = srcA = GL_ONE;
+                dstRGB = dstA = GL_ONE_MINUS_SRC_ALPHA;
+                break;
+            case BlendMode::SUBTRACT:
+                func = GL_FUNC_REVERSE_SUBTRACT;
+            case BlendMode::ADD:
+                srcRGB = srcA = GL_SRC_ALPHA;
+                dstRGB = dstA = GL_ONE;
+                break;
+            case BlendMode::SCREEN:
+                srcRGB = srcA = GL_ONE;
+                dstRGB = dstA = GL_ONE_MINUS_SRC_COLOR;
+                break;
+            case BlendMode::REPLACE:
+            default:
+                srcRGB = srcA = GL_ONE;
+                dstRGB = dstA = GL_ZERO;
+                break;
+        }
+        glBlendEquation(func);
+        glBlendFuncSeparate(srcRGB, dstRGB, srcA, dstA);
     }
 }

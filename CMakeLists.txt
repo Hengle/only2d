@@ -52,6 +52,7 @@ set(module_filesystem_src
 )
 
 set(module_graphics_src
+    src/modules/graphics/BlendMode.h
     src/modules/graphics/Drawable.cpp
     src/modules/graphics/Graphics.cpp
     src/modules/graphics/Image.cpp

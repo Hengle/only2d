@@ -84,6 +84,7 @@
     <ClInclude Include="..\..\src\modules\filesystem\File.h" />
     <ClInclude Include="..\..\src\modules\filesystem\FileData.h" />
     <ClInclude Include="..\..\src\modules\filesystem\FileSystem.h" />
+    <ClInclude Include="..\..\src\modules\graphics\BlendMode.h" />
     <ClInclude Include="..\..\src\modules\graphics\Drawable.h" />
     <ClInclude Include="..\..\src\modules\graphics\Graphics.h" />
     <ClInclude Include="..\..\src\modules\graphics\Image.h" />

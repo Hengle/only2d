@@ -40,10 +40,11 @@ namespace only2d
 		shader.reset();
     }
 
-    void only2d::Image::draw()
+    void Image::draw()
     {
         if (visible)
         {
+            Drawable::draw();
             data->bind();
             shader->attach();
             shader->setVertexData(vertices);

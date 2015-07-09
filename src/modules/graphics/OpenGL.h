@@ -5,6 +5,7 @@
 #ifndef ONLY2D_OPENGL_H
 #define ONLY2D_OPENGL_H
 
+#include "BlendMode.h"
 #include "Viewport.h"
 
 #include "common/Data.h"
@@ -103,6 +104,10 @@ namespace only2d
 
         const Viewport &getScissor() const;
 
+        const BlendMode &getCurrentBlendMode() const;
+
+        void setCurrentBlendMode(const BlendMode &mode);
+
     private:
         int32_t drawCalls;
         int32_t textureCount;
@@ -110,6 +115,7 @@ namespace only2d
         int32_t maxTextureCount;
         Viewport viewport;
         Viewport scissor;
+        BlendMode currentBlendMode;
     };
 }
 

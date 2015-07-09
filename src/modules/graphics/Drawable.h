@@ -5,6 +5,9 @@
 #ifndef ONLY2D_DRAWABLE_H
 #define ONLY2D_DRAWABLE_H
 
+#include "BlendMode.h"
+#include "OpenGL.h"
+
 #include "common/Color.h"
 #include "common/Matrix.h"
 
@@ -17,7 +20,7 @@ namespace only2d
 
         virtual ~Drawable();
 
-        virtual void draw() = 0;
+        virtual void draw();
 
         float getX() const;
 
@@ -69,6 +72,10 @@ namespace only2d
 
         void setColor(const Color &color);
 
+        const BlendMode &getBlendMode() const;
+
+        void setBlendMode(const BlendMode &mode);
+
     protected:
         float x;
         float y;
@@ -86,6 +93,8 @@ namespace only2d
     private:
         bool update;
         Matrix matrix;
+        BlendMode mode;
+        std::shared_ptr<OpenGL> gl;
     };
 }
 

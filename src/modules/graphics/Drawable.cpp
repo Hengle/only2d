@@ -3,6 +3,9 @@
 //
 
 #include "Drawable.h"
+#include "Graphics.h"
+
+#include "common/Console.h"
 
 namespace only2d
 {
@@ -19,12 +22,27 @@ namespace only2d
             alpha(1.0f),
             color(255, 255, 255, 255),
             visible(true),
-            update(true)
+            update(true),
+            mode(BlendMode::ALPHA)
     {
+        auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
+        if (!graphics)
+        {
+            Console::error << "[Drawable] module graphics not found!" << Console::endl;
+        }
+        else
+        {
+            gl = graphics->getOpenGL();
+        }
     }
 
     Drawable::~Drawable()
     {
+    }
+
+    void Drawable::draw()
+    {
+        gl->setCurrentBlendMode(mode);
     }
 
     float Drawable::getX() const
@@ -164,5 +182,15 @@ namespace only2d
     void Drawable::setColor(const Color &color)
     {
         this->color = color;
+    }
+
+    const BlendMode &Drawable::getBlendMode() const
+    {
+        return mode;
+    }
+
+    void Drawable::setBlendMode(const BlendMode &mode)
+    {
+        this->mode = mode;
     }
 }

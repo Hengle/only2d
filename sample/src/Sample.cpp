@@ -39,14 +39,14 @@ void Sample::initialize()
     imagedata.reset();
     texturedata.reset();
 
-//    image->setAlpha(0.2f);
+    image->setAlpha(0.2f);
 //    image->setWidth(1024.0f);
 }
 
 void Sample::update(float delta)
 {
-    batch->draw();
-//    image->draw();
+//    batch->draw();
+    image->draw();
 //    image2->draw();
 }
 

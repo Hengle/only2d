@@ -31,6 +31,10 @@ namespace only2d
 
     void ImageBatch::addImage(std::shared_ptr<Image> image)
     {
+        if (!image->visible)
+        {
+            return;
+        }
         if (!data)
         {
             data = image->data;
@@ -60,6 +64,7 @@ namespace only2d
     {
         if (visible)
         {
+            Drawable::draw();
             vertices.bind();
             indices.bind();
             if (needSyncBuffer)
