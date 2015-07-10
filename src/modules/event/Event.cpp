@@ -21,23 +21,22 @@ namespace only2d
 
     Event::Event()
     {
-        registerModule(this);
     }
 
     Event::~Event()
     {
-        deregisterModule(this);
     }
 
     void Event::pollEvent()
     {
         SDL_Event event;
+		auto app = Module::getInstance<Application>(ModuleType::APPLICATION);
         while (SDL_PollEvent(&event))
         {
             switch (event.type)
             {
                 case SDL_QUIT:
-                    getInstance<Application>(ModuleType::APPLICATION)->quit();
+					app->quit();
                     break;
                 case SDL_KEYDOWN:
                     break;
@@ -45,5 +44,6 @@ namespace only2d
                     break;
             }
         }
+		app.reset();
     }
 }

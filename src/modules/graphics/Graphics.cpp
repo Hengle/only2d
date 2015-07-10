@@ -19,13 +19,11 @@ namespace only2d
     Graphics::Graphics() :
             gl(new OpenGL)
     {
-        registerModule(this);
         gl->initContext();
     }
 
     Graphics::~Graphics()
     {
-        deregisterModule(this);
     }
 
     void Graphics::setResolution(int32_t width, int32_t height)

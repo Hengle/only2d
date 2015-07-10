@@ -41,6 +41,10 @@ void Sample::initialize()
 
     image->setAlpha(0.2f);
 //    image->setWidth(1024.0f);
+
+	fileSystem.reset();
+	texture.reset();
+	graphics.reset();
 }
 
 void Sample::update(float delta)

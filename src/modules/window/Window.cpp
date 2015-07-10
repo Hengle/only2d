@@ -25,7 +25,6 @@ namespace only2d
             context(nullptr),
             title("only2d")
     {
-        registerModule(this);
         if (SDL_InitSubSystem(SDL_INIT_VIDEO) != 0)
         {
             Console::error << "initialize SDL video fail: " << SDL_GetError() << Console::endl;
@@ -34,7 +33,6 @@ namespace only2d
 
     Window::~Window()
     {
-        deregisterModule(this);
         destroyContext();
         destroyWindow();
         SDL_QuitSubSystem(SDL_INIT_VIDEO);

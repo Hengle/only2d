@@ -18,12 +18,10 @@ namespace only2d
 
     Texture::Texture()
     {
-        registerModule(this);
     }
 
     Texture::~Texture()
     {
-        deregisterModule(this);
     }
 
     std::shared_ptr<TextureData> Texture::createTextureData(std::shared_ptr<Data> data)

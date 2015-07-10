@@ -24,6 +24,7 @@ namespace only2d
         {
             shader = graphics->getImageShader();
         }
+		graphics.reset();
         vertices[0].position.set(0.0f, 0.0f);
         vertices[1].position.set(0.0f, static_cast<float>(height));
         vertices[2].position.set(static_cast<float>(width), 0.0f);

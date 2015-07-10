@@ -25,12 +25,10 @@ namespace only2d
             time(0.0f),
             lastUpdateFPS(0.0f)
     {
-        registerModule(this);
     }
 
     Timer::~Timer()
     {
-        deregisterModule(this);
     }
 
     float Timer::step()

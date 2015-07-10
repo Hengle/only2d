@@ -22,12 +22,10 @@ namespace only2d
 
     FileSystem::FileSystem()
     {
-        registerModule(this);
     }
 
     FileSystem::~FileSystem()
     {
-        deregisterModule(this);
     }
 
     void FileSystem::init(const char *path)

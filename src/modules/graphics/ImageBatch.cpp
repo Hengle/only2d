@@ -21,6 +21,7 @@ namespace only2d
         {
             shader = graphics->getImageBatchShader();
         }
+		graphics.reset();
     }
 
     ImageBatch::~ImageBatch()

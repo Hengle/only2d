@@ -23,6 +23,7 @@ namespace only2d
         {
             gl = graphics->getOpenGL();
         }
+		graphics.reset();
         load();
     }
 

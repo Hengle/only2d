@@ -23,6 +23,7 @@ namespace only2d
         {
             gl = graphics->getOpenGL();
         }
+		graphics.reset();
         if (vertex.empty() || fragment.empty())
         {
             Console::error << "[Shader] vertex for fragment shader source is empty!" << Console::endl;

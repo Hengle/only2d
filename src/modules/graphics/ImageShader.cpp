@@ -5,6 +5,8 @@
 #include "ImageShader.h"
 #include "Graphics.h"
 
+#include "common/Console.h"
+
 namespace only2d
 {
     static const std::string attribute_POSITION = "aPosition";
@@ -53,8 +55,16 @@ namespace only2d
             Shader(vertexSource, fragmentSource)
     {
         attach();
-        auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
-        setUniformMatrixData(uniform_PROJECTION_MATRIX, graphics->getProjectionMatrix());
+		auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
+		if (!graphics)
+		{
+			Console::error << "[ImageBatchShader] module graphics not found!" << Console::endl;
+		}
+		else
+		{
+			setUniformMatrixData(uniform_PROJECTION_MATRIX, graphics->getProjectionMatrix());
+		}
+		graphics.reset();
         detach();
     }
 

@@ -6,6 +6,6 @@
 
 int main(int argc, char *argv[])
 {
-    Sample app;
-    return app.run(argc, argv);
+    auto app = Module::open<Sample>(ModuleType::APPLICATION);
+    return app->run(argc, argv);
 }

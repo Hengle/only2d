@@ -6,6 +6,7 @@
 #define ONLY2D_MODULE_H
 
 #include <cstdint>
+#include <memory>
 
 namespace only2d
 {
@@ -30,18 +31,35 @@ namespace only2d
 
         virtual const char *getName() const = 0;
 
-        static void registerModule(Module *module);
+		template<typename T>
+        static std::shared_ptr<T> open(ModuleType type)
+		{
+			auto index = static_cast<int32_t>(type);
+			if (modules[index] == nullptr)
+			{
+				modules[index] = std::make_shared<T>();
+			}
+			return std::dynamic_pointer_cast<T>(modules[index]);
+		}
 
-        static void deregisterModule(Module *module);
+		template<typename T>
+        static void close(ModuleType type)
+		{
+			auto index = static_cast<int32_t>(type);
+			if (modules[index])
+			{
+				modules[index].reset();
+			}
+		}
 
         template<typename T>
-        static T *getInstance(ModuleType type)
+        static std::shared_ptr<T> getInstance(ModuleType type)
         {
-            return static_cast<T *>(modules[static_cast<int32_t>(type)]);
+            return std::dynamic_pointer_cast<T>(modules[static_cast<int32_t>(type)]);
         }
 
     private:
-        static Module *modules[static_cast<int32_t>(ModuleType::MAX_COUNT)];
+        static std::shared_ptr<Module> modules[static_cast<int32_t>(ModuleType::MAX_COUNT)];
     };
 }
 
