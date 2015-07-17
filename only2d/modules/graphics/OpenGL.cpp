@@ -69,6 +69,8 @@ namespace only2d
 					return GL_LINEAR;
 				case ImageDataFilterMode::NEAREST:
 					return GL_NEAREST;
+				default:
+					return GL_LINEAR;
 				}
 				return GL_LINEAR;
 			};
@@ -88,6 +90,8 @@ namespace only2d
 					return GL_REPEAT;
 				case ImageDataWrapMode::MIRRORED_REPEAT:
 					return GL_MIRRORED_REPEAT;
+				default:
+					return GL_CLAMP_TO_EDGE;
 				}
 				return GL_CLAMP_TO_EDGE;
 			};

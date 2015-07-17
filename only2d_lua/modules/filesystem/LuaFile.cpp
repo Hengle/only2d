@@ -39,7 +39,7 @@ namespace only2d
 	int32_t LuaFile::getSize(lua_State *L)
 	{
 		auto file = Lua::getObject<File>(L, 1, LuaType::File);
-		Lua::pushInteger(L, file->getSize());
+		Lua::pushInteger(L, static_cast<int64_t>(file->getSize()));
 		return 1;
 	}
 
@@ -95,22 +95,22 @@ namespace only2d
 	int32_t LuaFile::tell(lua_State *L)
 	{
 		auto file = Lua::getObject<File>(L, 1, LuaType::File);
-		Lua::pushInteger(L, file->tell());
+		Lua::pushInteger(L, static_cast<int64_t>(file->tell()));
 		return 1;
 	}
 
 	int32_t LuaFile::available(lua_State *L)
 	{
 		auto file = Lua::getObject<File>(L, 1, LuaType::File);
-		Lua::pushInteger(L, file->available());
+		Lua::pushInteger(L, static_cast<int64_t>(file->available()));
 		return 1;
 	}
 
 	int32_t LuaFile::seek(lua_State *L)
 	{
 		auto file = Lua::getObject<File>(L, 1, LuaType::File);
-		auto pos = Lua::getInteger(L, 2);
-		Lua::pushBoolean(L, file->seek(static_cast<size_t>(L , pos)));
+		auto pos = static_cast<size_t>(Lua::getInteger(L, 2));
+		Lua::pushBoolean(L, file->seek(pos));
 		return 1;
 	}
 }
