@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{bc751c59-8ad1-4751-8e38-166e56e28b56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="library">
+      <UniqueIdentifier>{fd896016-5eb9-4ed3-b988-76672ed2c9e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules">
+      <UniqueIdentifier>{89cfbb35-7bd5-47b9-bcfd-7ae33e61dfcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="library\lua">
+      <UniqueIdentifier>{ea939c1e-463d-42f0-b653-56dd080cf931}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\application">
+      <UniqueIdentifier>{3da8de27-5049-4e93-9390-88955051ef57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\event">
+      <UniqueIdentifier>{78516610-1916-4c00-9a45-3eec8f2e54a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\filesystem">
+      <UniqueIdentifier>{f0b16757-bbae-44b3-b9b3-e87acad51a52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\graphics">
+      <UniqueIdentifier>{601e1d50-2c06-437e-bb4f-125cec1f4b16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\texture">
+      <UniqueIdentifier>{7efa81ae-d2ae-4ef3-badb-f16a09fe994e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\timer">
+      <UniqueIdentifier>{9a69e15d-bd0b-4170-9dea-1631c20b843f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\window">
+      <UniqueIdentifier>{dede02bd-cf8b-43af-afad-6f721c632b37}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\only2d_lua\LuaOnly2D.cpp" />
+    <ClCompile Include="..\..\only2d_lua\main.cpp" />
+    <ClCompile Include="..\..\only2d_lua\common\Lua.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\application\LuaApplication.cpp">
+      <Filter>modules\application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\event\LuaEvent.cpp">
+      <Filter>modules\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\filesystem\LuaFileSystem.cpp">
+      <Filter>modules\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaGraphics.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\texture\LuaTexture.cpp">
+      <Filter>modules\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\timer\LuaTimer.cpp">
+      <Filter>modules\timer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\window\LuaWindow.cpp">
+      <Filter>modules\window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\filesystem\LuaFile.cpp">
+      <Filter>modules\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\common\LuaObject.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\filesystem\LuaFileData.cpp">
+      <Filter>modules\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\common\LuaData.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\texture\LuaTextureData.cpp">
+      <Filter>modules\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImage.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageBatch.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageData.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaShader.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\filesystem\LuaFileReadMode.cpp">
+      <Filter>modules\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaDrawable.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageDataFilterMode.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageDataWrapMode.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaBlendMode.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lapi.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lauxlib.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lbaselib.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lbitlib.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lcode.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lcorolib.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lctype.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\ldblib.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\ldebug.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\ldo.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\ldump.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lfunc.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lgc.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\linit.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\liolib.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\llex.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lmathlib.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lmem.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\loadlib.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lobject.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lopcodes.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\loslib.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lparser.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lstate.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lstring.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lstrlib.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\ltable.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\ltablib.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\ltm.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lundump.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lutf8lib.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lvm.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\library\lua\lzio.c">
+      <Filter>library\lua</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\only2d_lua\LuaOnly2D.h" />
+    <ClInclude Include="..\..\only2d_lua\common\Lua.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\application\LuaApplication.h">
+      <Filter>modules\application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\event\LuaEvent.h">
+      <Filter>modules\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\filesystem\LuaFileSystem.h">
+      <Filter>modules\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaGraphics.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\texture\LuaTexture.h">
+      <Filter>modules\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\timer\LuaTimer.h">
+      <Filter>modules\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\window\LuaWindow.h">
+      <Filter>modules\window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\common\LuaType.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\filesystem\LuaFile.h">
+      <Filter>modules\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\common\LuaObject.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\filesystem\LuaFileData.h">
+      <Filter>modules\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\common\LuaData.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\texture\LuaTextureData.h">
+      <Filter>modules\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImage.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageBatch.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageData.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaShader.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\filesystem\LuaFileReadMode.h">
+      <Filter>modules\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaDrawable.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageDataFilterMode.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageDataWrapMode.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaBlendMode.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lapi.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lauxlib.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lcode.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lctype.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\ldebug.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\ldo.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lfunc.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lgc.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\llex.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\llimits.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lmem.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lobject.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lopcodes.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lparser.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lprefix.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lstate.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lstring.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\ltable.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\ltm.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lua.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lua.hpp">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\luaconf.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lualib.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lundump.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lvm.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\library\lua\lzio.h">
+      <Filter>library\lua</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

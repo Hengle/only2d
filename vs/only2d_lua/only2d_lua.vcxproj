@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5139C442-8662-4A46-8E1A-33C6B8B62839}</ProjectGuid>
+    <RootNamespace>only2d_lua</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\..\sample\build\</OutDir>
+    <IntDir>$(SolutionDir)\obj\$(ProjectName)\</IntDir>
+    <IncludePath>$(SolutionDir)\..\only2d_lua;$(SolutionDir)\..\only2d;$(SolutionDir)\library\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\library\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SDL_MAIN_HANDLED;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\only2d_lua\common\Lua.cpp" />
+    <ClCompile Include="..\..\only2d_lua\common\LuaData.cpp" />
+    <ClCompile Include="..\..\only2d_lua\common\LuaObject.cpp" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lapi.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lauxlib.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lbaselib.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lbitlib.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lcode.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lcorolib.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lctype.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\ldblib.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\ldebug.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\ldo.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\ldump.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lfunc.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lgc.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\linit.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\liolib.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\llex.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lmathlib.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lmem.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\loadlib.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lobject.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lopcodes.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\loslib.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lparser.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lstate.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lstring.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lstrlib.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\ltable.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\ltablib.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\ltm.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lundump.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lutf8lib.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lvm.c" />
+    <ClCompile Include="..\..\only2d_lua\library\lua\lzio.c" />
+    <ClCompile Include="..\..\only2d_lua\LuaOnly2D.cpp" />
+    <ClCompile Include="..\..\only2d_lua\main.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\application\LuaApplication.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\event\LuaEvent.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\filesystem\LuaFile.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\filesystem\LuaFileData.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\filesystem\LuaFileReadMode.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\filesystem\LuaFileSystem.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaBlendMode.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaDrawable.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaGraphics.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImage.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageBatch.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageData.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageDataFilterMode.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageDataWrapMode.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaShader.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\texture\LuaTexture.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\texture\LuaTextureData.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\timer\LuaTimer.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\window\LuaWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\only2d_lua\common\Lua.h" />
+    <ClInclude Include="..\..\only2d_lua\common\LuaData.h" />
+    <ClInclude Include="..\..\only2d_lua\common\LuaObject.h" />
+    <ClInclude Include="..\..\only2d_lua\common\LuaType.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lapi.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lauxlib.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lcode.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lctype.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\ldebug.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\ldo.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lfunc.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lgc.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\llex.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\llimits.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lmem.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lobject.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lopcodes.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lparser.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lprefix.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lstate.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lstring.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\ltable.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\ltm.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lua.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lua.hpp" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\luaconf.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lualib.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lundump.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lvm.h" />
+    <ClInclude Include="..\..\only2d_lua\library\lua\lzio.h" />
+    <ClInclude Include="..\..\only2d_lua\LuaOnly2D.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\application\LuaApplication.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\event\LuaEvent.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\filesystem\LuaFile.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\filesystem\LuaFileData.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\filesystem\LuaFileReadMode.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\filesystem\LuaFileSystem.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaBlendMode.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaDrawable.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaGraphics.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImage.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageBatch.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageData.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageDataFilterMode.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageDataWrapMode.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaShader.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\texture\LuaTexture.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\texture\LuaTextureData.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\timer\LuaTimer.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\window\LuaWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\only2d\only2d.vcxproj">
+      <Project>{c3f76e6c-6242-444a-b34b-97894dde0957}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
