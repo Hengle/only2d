@@ -37,6 +37,9 @@
     <Filter Include="modules\window">
       <UniqueIdentifier>{23623ae5-576f-40a8-b7e6-e2d96276aa51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="modules\keyboard">
+      <UniqueIdentifier>{4d5c974b-dc22-4be1-ab58-c644c2cd668a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\only2d\common\Color.h">
@@ -145,6 +148,9 @@
     <ClInclude Include="..\..\only2d\library\stb\stb_image.h">
       <Filter>library\stb</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\keyboard\Keyboard.h">
+      <Filter>modules\keyboard</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\only2d\common\Console.cpp">
@@ -236,6 +242,9 @@
     </ClCompile>
     <ClCompile Include="..\..\only2d\library\glad\glad.c">
       <Filter>library\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d\modules\keyboard\Keyboard.cpp">
+      <Filter>modules\keyboard</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

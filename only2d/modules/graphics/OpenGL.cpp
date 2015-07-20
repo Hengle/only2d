@@ -22,7 +22,7 @@ namespace only2d
 	{
 		if (!gladLoadGL())
 		{
-			Console::error << "[OpenGL] initialize glew fail." << Console::endl;
+			Console::error << "[OpenGL] initialize OpenGL fail." << Console::endl;
 		}
 		glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxTextureSize);
 		glGetIntegerv(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS, &maxTextureCount);

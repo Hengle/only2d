@@ -23,6 +23,8 @@ namespace only2d
 		FileSystem,
 		// graphics
 		Graphics,
+		// keyboard,
+		Keyboard,
 		// texture
 		Texture,
 		// timer

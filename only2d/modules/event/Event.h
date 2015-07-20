@@ -16,10 +16,6 @@ namespace only2d
 
 		virtual ~Event();
 
-		virtual ModuleType getType() const override;
-
-		virtual const char *getName() const override;
-
 		void pollEvent();
 	};
 }

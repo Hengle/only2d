@@ -18,10 +18,6 @@ namespace only2d
 
 		virtual ~Timer();
 
-		virtual ModuleType getType() const override;
-
-		virtual const char *getName() const override;
-
 		float step();
 
 		float getTime() const;

@@ -56,6 +56,10 @@ set(module_graphics_src
     modules/graphics/Viewport.cpp
 )
 
+set(module_keyboard_src
+    modules/keyboard/Keyboard.cpp
+)
+
 set(module_texture_src
     modules/texture/Texture.cpp
     modules/texture/TextureData.cpp
@@ -76,6 +80,7 @@ set(module_src
     ${module_event_src}
     ${module_filesystem_src}
     ${module_graphics_src}
+    ${module_keyboard_src}
     ${module_only2d_src}
     ${module_texture_src}
     ${module_timer_src}

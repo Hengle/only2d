@@ -18,10 +18,6 @@ namespace only2d
 
 		virtual ~Application();
 
-		virtual ModuleType getType() const override;
-
-		virtual const char *getName() const override;
-
 		int32_t run(int32_t argc, char *argv[]);
 
 		void quit();

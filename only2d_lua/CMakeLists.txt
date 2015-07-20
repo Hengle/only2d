@@ -73,6 +73,11 @@ set(module_graphics_src
     modules/graphics/LuaShader.cpp
 )
 
+set(module_keyboard_src
+    modules/keyboard/LuaKey.cpp
+    modules/keyboard/LuaKeyboard.cpp
+)
+
 set(module_texture_src
     modules/texture/LuaTexture.cpp
     modules/texture/LuaTextureData.cpp
@@ -91,6 +96,7 @@ set(module_src
     ${module_event_src}
     ${module_filesystem_src}
     ${module_graphics_src}
+    ${module_keyboard_src}
     ${module_texture_src}
     ${module_timer_src}
     ${module_window_src}

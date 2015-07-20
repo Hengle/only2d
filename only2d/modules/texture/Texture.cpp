@@ -6,16 +6,6 @@
 
 namespace only2d
 {
-	ModuleType Texture::getType() const
-	{
-		return ModuleType::TEXTURE;
-	}
-
-	const char *Texture::getName() const
-	{
-		return "Texture";
-	}
-
 	Texture::Texture()
 	{
 	}

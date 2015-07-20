@@ -16,6 +16,7 @@ namespace only2d
 		EVENT,
 		FILESYSTEM,
 		GRAPHICS,
+		KEYBOARD,
 		TEXTURE,
 		TIMER,
 		WINDOW,
@@ -26,10 +27,6 @@ namespace only2d
 	{
 	public:
 		virtual ~Module();
-
-		virtual ModuleType getType() const = 0;
-
-		virtual const char *getName() const = 0;
 
 		template <typename T>
 		static std::shared_ptr<T> open(ModuleType type)
@@ -42,15 +39,7 @@ namespace only2d
 			return std::dynamic_pointer_cast<T>(modules[index]);
 		}
 
-		template <typename T>
-		static void close(ModuleType type)
-		{
-			auto index = static_cast<int32_t>(type);
-			if (modules[index])
-			{
-				modules[index].reset();
-			}
-		}
+		static void close(ModuleType type);
 
 		template <typename T>
 		static std::shared_ptr<T> getInstance(ModuleType type)

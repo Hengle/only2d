@@ -98,6 +98,7 @@
     <ClInclude Include="..\..\only2d\modules\graphics\VertexData.h" />
     <ClInclude Include="..\..\only2d\modules\graphics\VertexIndexData.h" />
     <ClInclude Include="..\..\only2d\modules\graphics\Viewport.h" />
+    <ClInclude Include="..\..\only2d\modules\keyboard\Keyboard.h" />
     <ClInclude Include="..\..\only2d\modules\texture\Texture.h" />
     <ClInclude Include="..\..\only2d\modules\texture\TextureData.h" />
     <ClInclude Include="..\..\only2d\modules\texture\TextureParser.h" />
@@ -131,6 +132,7 @@
     <ClCompile Include="..\..\only2d\modules\graphics\VertexData.cpp" />
     <ClCompile Include="..\..\only2d\modules\graphics\VertexIndexData.cpp" />
     <ClCompile Include="..\..\only2d\modules\graphics\Viewport.cpp" />
+    <ClCompile Include="..\..\only2d\modules\keyboard\Keyboard.cpp" />
     <ClCompile Include="..\..\only2d\modules\texture\Texture.cpp" />
     <ClCompile Include="..\..\only2d\modules\texture\TextureData.cpp" />
     <ClCompile Include="..\..\only2d\modules\texture\TextureParser.cpp" />

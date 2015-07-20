@@ -11,6 +11,7 @@
 #include "modules/event/LuaEvent.h"
 #include "modules/filesystem/LuaFileSystem.h"
 #include "modules/graphics/LuaGraphics.h"
+#include "modules/keyboard/LuaKeyboard.h"
 #include "modules/texture/LuaTexture.h"
 #include "modules/timer/LuaTimer.h"
 #include "modules/window/LuaWindow.h"
@@ -79,6 +80,7 @@ namespace only2d
 		{ LuaModule::Event, "event" },
 		{ LuaModule::FileSystem, "filesystem" },
 		{ LuaModule::Graphics, "graphics" },
+		{ LuaModule::Keyboard, "keyboard" },
 		{ LuaModule::Texture, "texture" },
 		{ LuaModule::Timer, "timer" },
 		{ LuaModule::Window, "window" },
@@ -206,6 +208,7 @@ namespace only2d
 				LuaEvent::openModule(l);
 				LuaFileSystem::openModule(l);
 				LuaGraphics::openModule(l);
+				LuaKeyboard::openModule(l);
 				LuaTexture::openModule(l);
 				LuaTimer::openModule(l);
 				LuaWindow::openModule(l);

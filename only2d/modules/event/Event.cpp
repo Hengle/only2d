@@ -9,16 +9,6 @@
 
 namespace only2d
 {
-	ModuleType Event::getType() const
-	{
-		return ModuleType::EVENT;
-	}
-
-	const char *Event::getName() const
-	{
-		return "Event";
-	}
-
 	Event::Event()
 	{
 	}
@@ -37,8 +27,6 @@ namespace only2d
 			{
 			case SDL_QUIT:
 				app->quit();
-				break;
-			case SDL_KEYDOWN:
 				break;
 			default:
 				break;

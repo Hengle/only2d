@@ -22,10 +22,6 @@ namespace only2d
 
 		virtual ~FileSystem();
 
-		virtual ModuleType getType() const override;
-
-		virtual const char *getName() const override;
-
 		void init(const char *path);
 
 		std::shared_ptr<File> createFile(const std::string &filename);

@@ -11,4 +11,13 @@ namespace only2d
 	Module::~Module()
 	{
 	}
+
+	void Module::close(ModuleType type)
+	{
+		auto index = static_cast<int32_t>(type);
+		if (modules[index])
+		{
+			modules[index].reset();
+		}
+	}
 }

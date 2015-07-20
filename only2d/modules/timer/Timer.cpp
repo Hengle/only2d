@@ -7,16 +7,6 @@
 
 namespace only2d
 {
-	ModuleType Timer::getType() const
-	{
-		return ModuleType::TIMER;
-	}
-
-	const char *Timer::getName() const
-	{
-		return "Timer";
-	}
-
 	Timer::Timer() :
 		lastUpdate(std::chrono::system_clock::now()),
 		count(0),

@@ -34,6 +34,9 @@
     <Filter Include="modules\window">
       <UniqueIdentifier>{dede02bd-cf8b-43af-afad-6f721c632b37}</UniqueIdentifier>
     </Filter>
+    <Filter Include="modules\keyboard">
+      <UniqueIdentifier>{9fd7a5d6-fd19-4f41-9acf-2169f1553cdc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\only2d_lua\LuaOnly2D.cpp" />
@@ -203,6 +206,12 @@
     <ClCompile Include="..\..\only2d_lua\library\lua\lzio.c">
       <Filter>library\lua</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\keyboard\LuaKeyboard.cpp">
+      <Filter>modules\keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\keyboard\LuaKey.cpp">
+      <Filter>modules\keyboard</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\only2d_lua\LuaOnly2D.h" />
@@ -352,6 +361,12 @@
     </ClInclude>
     <ClInclude Include="..\..\only2d_lua\library\lua\lzio.h">
       <Filter>library\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\keyboard\LuaKeyboard.h">
+      <Filter>modules\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\keyboard\LuaKey.h">
+      <Filter>modules\keyboard</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

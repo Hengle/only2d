@@ -14,6 +14,8 @@ end
 
 only2d.update = function ()
 	only2d.window.setTitle("FPS: " .. only2d.timer.getFPS())
-	sample.image:setX((sample.image:getX() + 1) % 1024)
+	if only2d.keyboard.isPressed(only2d.keyboard.Key.D) then
+		sample.image:setX((sample.image:getX() + 1) % 1024)
+	end
 	sample.image:draw()
 end

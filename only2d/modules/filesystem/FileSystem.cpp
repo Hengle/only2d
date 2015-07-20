@@ -10,16 +10,6 @@
 
 namespace only2d
 {
-	ModuleType FileSystem::getType() const
-	{
-		return ModuleType::FILESYSTEM;
-	}
-
-	const char *FileSystem::getName() const
-	{
-		return "FileSystem";
-	}
-
 	FileSystem::FileSystem()
 	{
 	}

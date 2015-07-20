@@ -125,6 +125,8 @@
     <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageDataFilterMode.cpp" />
     <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageDataWrapMode.cpp" />
     <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaShader.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\keyboard\LuaKey.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\keyboard\LuaKeyboard.cpp" />
     <ClCompile Include="..\..\only2d_lua\modules\texture\LuaTexture.cpp" />
     <ClCompile Include="..\..\only2d_lua\modules\texture\LuaTextureData.cpp" />
     <ClCompile Include="..\..\only2d_lua\modules\timer\LuaTimer.cpp" />
@@ -177,6 +179,8 @@
     <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageDataFilterMode.h" />
     <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageDataWrapMode.h" />
     <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaShader.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\keyboard\LuaKey.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\keyboard\LuaKeyboard.h" />
     <ClInclude Include="..\..\only2d_lua\modules\texture\LuaTexture.h" />
     <ClInclude Include="..\..\only2d_lua\modules\texture\LuaTextureData.h" />
     <ClInclude Include="..\..\only2d_lua\modules\timer\LuaTimer.h" />

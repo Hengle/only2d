@@ -6,16 +6,6 @@
 
 namespace only2d
 {
-	ModuleType Graphics::getType() const
-	{
-		return ModuleType::GRAPHICS;
-	}
-
-	const char *Graphics::getName() const
-	{
-		return "Graphics";
-	}
-
 	Graphics::Graphics() :
 		gl(new OpenGL)
 	{

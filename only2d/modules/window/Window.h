@@ -19,10 +19,6 @@ namespace only2d
 
 		virtual ~Window();
 
-		virtual ModuleType getType() const override;
-
-		virtual const char *getName() const override;
-
 		void setSettings(WindowSettings &settings);
 
 		void swapBuffers();

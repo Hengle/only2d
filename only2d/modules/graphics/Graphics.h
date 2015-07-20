@@ -23,10 +23,6 @@ namespace only2d
 
 		virtual ~Graphics();
 
-		virtual ModuleType getType() const override;
-
-		virtual const char *getName() const override;
-
 		void setResolution(int32_t width, int32_t height);
 
 		void clear();

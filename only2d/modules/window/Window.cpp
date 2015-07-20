@@ -10,16 +10,6 @@
 
 namespace only2d
 {
-	ModuleType Window::getType() const
-	{
-		return ModuleType::WINDOW;
-	}
-
-	const char *Window::getName() const
-	{
-		return "Window";
-	}
-
 	Window::Window() :
 		window(nullptr),
 		context(nullptr),
