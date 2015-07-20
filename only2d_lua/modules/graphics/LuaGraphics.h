@@ -27,6 +27,8 @@ namespace only2d
 
 		static int32_t setBackgroundColor(lua_State *L);
 
+		static int32_t getDrawCalls(lua_State *L);
+
 	private:
 		static const luaL_Reg functions[];
 	};

@@ -25,6 +25,7 @@ namespace only2d
 		{ "createImageBatch", createImageBatch },
 		{ "getBackgroundColor", getBackgroundColor },
 		{ "setBackgroundColor", setBackgroundColor },
+		{ "getDrawCalls", getDrawCalls },
 		{ nullptr, nullptr }
 	};
 
@@ -96,4 +97,11 @@ namespace only2d
 		graphics->setBackgroundColor(intToColor(color));
 		return 0;
 	}
+
+    int32_t LuaGraphics::getDrawCalls(lua_State *L)
+    {
+	    auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
+	    Lua::pushInteger(L, graphics->getOpenGL()->getDrawCalls());
+	    return 1;
+    }
 }

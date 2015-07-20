@@ -92,7 +92,7 @@ namespace only2d
 
 		int32_t getDrawCalls() const;
 
-		int32_t getTextureCount() const;
+		int32_t getBindTextureCount() const;
 
 		int32_t getMaxTextureSize() const;
 
@@ -110,7 +110,6 @@ namespace only2d
 
 	private:
 		int32_t drawCalls;
-		int32_t bindTextureCount;
 		int32_t maxTextureSize;
 		int32_t maxBindTextureCount;
 		Viewport viewport;

@@ -9,7 +9,6 @@ namespace only2d
 {
 	OpenGL::OpenGL() :
 		drawCalls(0),
-		bindTextureCount(0),
 		currentBlendMode(BlendMode::MinInvalid)
 	{
 	}
@@ -31,33 +30,24 @@ namespace only2d
 
 	void OpenGL::clear(float r, float g, float b, float a)
 	{
+		drawCalls = 0;
 		glClearColor(r, g, b, a);
 		glClear(GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
 	void OpenGL::generateTexture(GLuint &texture)
 	{
-		++bindTextureCount;
 		glGenTextures(1, &texture);
 	}
 
 	void OpenGL::deleteTexture(GLuint &texture)
 	{
-		--bindTextureCount;
 		glDeleteTextures(1, &texture);
 	}
 
 	void OpenGL::bindTexture(const GLuint &texture)
 	{
-		if (bindTextureCount < maxBindTextureCount)
-		{
-			++bindTextureCount;
-			glBindTexture(GL_TEXTURE_2D, texture);
-		}
-		else
-		{
-			Console::error << "[OpenGL] bind too many textures!" << Console::endl;
-		}
+		glBindTexture(GL_TEXTURE_2D, texture);
 	}
 
 	void OpenGL::setTextureFilter(const ImageDataFilter &filter)
@@ -329,11 +319,6 @@ namespace only2d
 	int32_t OpenGL::getDrawCalls() const
 	{
 		return drawCalls;
-	}
-
-	int32_t OpenGL::getTextureCount() const
-	{
-		return bindTextureCount;
 	}
 
 	int32_t OpenGL::getMaxTextureSize() const
