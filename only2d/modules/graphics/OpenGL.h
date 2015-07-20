@@ -110,9 +110,9 @@ namespace only2d
 
 	private:
 		int32_t drawCalls;
-		int32_t textureCount;
+		int32_t bindTextureCount;
 		int32_t maxTextureSize;
-		int32_t maxTextureCount;
+		int32_t maxBindTextureCount;
 		Viewport viewport;
 		Viewport scissor;
 		BlendMode currentBlendMode;
