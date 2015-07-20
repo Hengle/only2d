@@ -60,7 +60,7 @@ namespace only2d
 
 	int32_t Image::getHeight() const
 	{
-		return width;
+		return height;
 	}
 
 	void Image::setHeight(int32_t height)
@@ -71,7 +71,7 @@ namespace only2d
 
 	int32_t Image::getWidth() const
 	{
-		return height;
+		return width;
 	}
 
 	void Image::setWidth(int32_t width)

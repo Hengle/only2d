@@ -25,31 +25,31 @@ void Sample::initialize()
 	auto texturedata = texture->createTextureData(filedata);
 	auto imagedata = graphics->createImageData(texturedata->getWidth(), texturedata->getHeight(), texturedata);
 	image = graphics->createImage(imagedata);
-	image2 = graphics->createImage(imagedata);
-	image2->setX(100);
-
-	batch = graphics->createImageBatch();
-	batch->addImage(image);
-	batch->addImage(image2);
 
 	file.reset();
 	filedata.reset();
 	imagedata.reset();
 	texturedata.reset();
 
-	image->setAlpha(0.2f);
-	//    image->setWidth(1024.0f);
-
 	fileSystem.reset();
 	texture.reset();
 	graphics.reset();
+
+	image->setX(500);
+	image->setY(500);
+
+	image->setOffsetX(image->getWidth() / 2);
+	image->setOffsetY(image->getHeight() / 2);
+
+	image->setRotation(45 * 3.14 / 180);
+
+	image->setScaleX(0.5);
+	image->setScaleY(0.5);
 }
 
 void Sample::update(float delta)
 {
-	//    batch->draw();
 	image->draw();
-	//    image2->draw();
 }
 
 void Sample::finalize()
