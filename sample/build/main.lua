@@ -1,4 +1,4 @@
-local spine = require "spine.spine"
+local spine = require "spine"
 
 local json = spine.SkeletonJson.new()
 local skeletonData = json:readSkeletonDataFile("data/spineboy.json")
