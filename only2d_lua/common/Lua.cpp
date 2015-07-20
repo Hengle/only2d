@@ -402,6 +402,11 @@ namespace only2d
 		lua_setfield(L, index, name);
 	}
 
+	void Lua::pushNil(lua_State *L)
+	{
+		lua_pushnil(L);
+	}
+
 	void Lua::pushFunctions(lua_State *L, const luaL_Reg functions[])
 	{
 		luaL_setfuncs(L, functions, 0);

@@ -46,7 +46,7 @@ namespace only2d
 	int32_t LuaFile::read(lua_State *L)
 	{
 		auto file = Lua::getObject<File>(L, 1, LuaType::File);
-		auto mode = Lua::getEnum<FileReadMode>(L, 2);
+		auto mode = Lua::optionalEnum<FileReadMode>(L, 2, FileReadMode::MinInvalid);
 		if (mode > FileReadMode::MinInvalid && mode < FileReadMode::MaxInvalid)
 		{
 			auto size = Lua::optionalInteger(L, 3, 0);
@@ -56,8 +56,14 @@ namespace only2d
 		else
 		{
 			std::string line;
-			file->read(line);
-			Lua::pushString(L, line);
+			if (file->read(line))
+			{
+				Lua::pushString(L, line);
+			}
+			else
+			{
+				Lua::pushNil(L);
+			}
 		}
 		return 1;
 	}

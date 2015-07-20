@@ -47,6 +47,8 @@ namespace only2d
 
 		static void setField(lua_State *L, int32_t index, const char *name);
 
+		static void pushNil(lua_State *L);
+
 		static void pushFunctions(lua_State *L, const luaL_Reg functions[]);
 
 		static void pushInteger(lua_State *L, int64_t value);
