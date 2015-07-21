@@ -21,7 +21,7 @@ namespace only2d
 
 		static int32_t createImage(lua_State *L);
 
-		static int32_t createImageBatch(lua_State *L);
+		static int32_t createQuadBatch(lua_State *L);
 
 		static int32_t getBackgroundColor(lua_State *L);
 

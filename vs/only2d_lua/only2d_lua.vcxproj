@@ -124,6 +124,8 @@
     <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageData.cpp" />
     <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageDataFilterMode.cpp" />
     <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageDataWrapMode.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaQuad.cpp" />
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaQuadBatch.cpp" />
     <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaShader.cpp" />
     <ClCompile Include="..\..\only2d_lua\modules\keyboard\LuaKey.cpp" />
     <ClCompile Include="..\..\only2d_lua\modules\keyboard\LuaKeyboard.cpp" />
@@ -178,6 +180,8 @@
     <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageData.h" />
     <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageDataFilterMode.h" />
     <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageDataWrapMode.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaQuad.h" />
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaQuadBatch.h" />
     <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaShader.h" />
     <ClInclude Include="..\..\only2d_lua\modules\keyboard\LuaKey.h" />
     <ClInclude Include="..\..\only2d_lua\modules\keyboard\LuaKeyboard.h" />

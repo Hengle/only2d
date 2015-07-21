@@ -83,9 +83,6 @@
     <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImage.cpp">
       <Filter>modules\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageBatch.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageData.cpp">
       <Filter>modules\graphics</Filter>
     </ClCompile>
@@ -212,6 +209,15 @@
     <ClCompile Include="..\..\only2d_lua\modules\keyboard\LuaKey.cpp">
       <Filter>modules\keyboard</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaQuadBatch.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageBatch.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaQuad.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\only2d_lua\LuaOnly2D.h" />
@@ -258,9 +264,6 @@
       <Filter>modules\texture</Filter>
     </ClInclude>
     <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImage.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageBatch.h">
       <Filter>modules\graphics</Filter>
     </ClInclude>
     <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageData.h">
@@ -367,6 +370,15 @@
     </ClInclude>
     <ClInclude Include="..\..\only2d_lua\modules\keyboard\LuaKey.h">
       <Filter>modules\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaQuadBatch.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageBatch.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaQuad.h">
+      <Filter>modules\graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

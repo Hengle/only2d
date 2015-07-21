@@ -226,8 +226,6 @@ namespace only2d
 
 		static const std::string &getName(LuaModule module);
 
-		static LuaType getType(const std::string &name);
-
 	protected:
 		static int32_t newIndex(lua_State *L);
 
@@ -248,8 +246,6 @@ namespace only2d
 		static const std::map<LuaType, std::string> type2name;
 
 		static const std::map<LuaModule, std::string> module2name;
-
-		static const std::map<std::string, LuaType> name2type;
 
 		static const std::string invalid;
 	};

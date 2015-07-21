@@ -49,6 +49,8 @@ namespace only2d
 		Image,
 		ImageBatch,
 		ImageData,
+		Quad,
+		QuadBatch,
 		Shader,
 		// texture
 		TextureData,

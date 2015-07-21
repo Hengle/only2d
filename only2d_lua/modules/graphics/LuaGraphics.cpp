@@ -6,14 +6,16 @@
 
 #include "modules/graphics/Graphics.h"
 
-#include "modules/graphics/LuaBlendMode.h"
-#include "modules/graphics/LuaDrawable.h"
-#include "modules/graphics/LuaImage.h"
-#include "modules/graphics/LuaImageBatch.h"
-#include "modules/graphics/LuaImageData.h"
-#include "modules/graphics/LuaImageDataFilterMode.h"
-#include "modules/graphics/LuaImageDataWrapMode.h"
-#include "modules/graphics/LuaShader.h"
+#include "LuaBlendMode.h"
+#include "LuaDrawable.h"
+#include "LuaImage.h"
+#include "LuaImageBatch.h"
+#include "LuaImageData.h"
+#include "LuaImageDataFilterMode.h"
+#include "LuaImageDataWrapMode.h"
+#include "LuaQuad.h"
+#include "LuaQuadBatch.h"
+#include "LuaShader.h"
 
 namespace only2d
 {
@@ -22,7 +24,7 @@ namespace only2d
 		{ "createShader", createShader },
 		{ "createImageData", createImageData },
 		{ "createImage", createImage },
-		{ "createImageBatch", createImageBatch },
+		{ "createQuadBatch", createQuadBatch},
 		{ "getBackgroundColor", getBackgroundColor },
 		{ "setBackgroundColor", setBackgroundColor },
 		{ "getDrawCalls", getDrawCalls },
@@ -38,6 +40,8 @@ namespace only2d
 		LuaImageDataWrapMode::openEnum(L);
 		Lua::finishModule(L, LuaModule::Graphics);
 		LuaDrawable::openType(L);
+		LuaQuad::openType(L);
+		LuaQuadBatch::openType(L);
 		LuaImage::openType(L);
 		LuaImageBatch::openType(L);
 		LuaImageData::openType(L);
@@ -74,11 +78,11 @@ namespace only2d
 		return 1;
 	}
 
-	int32_t LuaGraphics::createImageBatch(lua_State *L)
+	int32_t LuaGraphics::createQuadBatch(lua_State *L)
 	{
 		auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
-		auto imageBatch = graphics->createImageBatch();
-		Lua::pushObject(L, LuaType::ImageBatch, imageBatch);
+		auto quadBatch = graphics->createQuadBatch();
+		Lua::pushObject(L, LuaType::QuadBatch, quadBatch);
 		return 1;
 	}
 

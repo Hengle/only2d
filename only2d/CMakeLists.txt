@@ -41,15 +41,16 @@ set(module_filesystem_src
 
 set(module_graphics_src
     modules/graphics/BlendMode.h
+    modules/graphics/DefaultShader.cpp
     modules/graphics/Drawable.cpp
     modules/graphics/Graphics.cpp
     modules/graphics/Image.cpp
     modules/graphics/ImageBatch.cpp
-    modules/graphics/ImageBatchShader.cpp
     modules/graphics/ImageData.cpp
-    modules/graphics/ImageShader.cpp
     modules/graphics/OpenGL.cpp
     modules/graphics/OpenGLData.cpp
+    modules/graphics/Quad.cpp
+    modules/graphics/QuadBatch.cpp
     modules/graphics/Shader.cpp
     modules/graphics/VertexData.cpp
     modules/graphics/VertexIndexData.cpp

@@ -11,10 +11,8 @@ namespace only2d
 	const luaL_Reg LuaImage::functions[] =
 	{
 		{ "draw", draw },
-		{ "getWidth", getWidth },
-		{ "setWidth", setWidth },
-		{ "getHeight", getHeight },
-		{ "setHeight", setHeight },
+		{ "getImageData", getImageData },
+		{ "setImageData", setImageData },
 		{ nullptr, nullptr }
 	};
 
@@ -22,7 +20,7 @@ namespace only2d
 	{
 		Lua::beginType(L, LuaType::Image);
 		Lua::pushFunctions(L, functions);
-		Lua::finishType(L, LuaType::Drawable);
+		Lua::finishType(L, LuaType::Quad);
 	}
 
 	int32_t LuaImage::draw(lua_State *L)
@@ -32,33 +30,18 @@ namespace only2d
 		return 0;
 	}
 
-	int32_t LuaImage::getWidth(lua_State *L)
+	int32_t LuaImage::getImageData(lua_State *L)
 	{
 		auto image = Lua::getObject<Image>(L, 1, LuaType::Image);
-		Lua::pushInteger(L, image->getWidth());
+		Lua::pushObject(L, LuaType::ImageData, image->getImageData());
 		return 1;
 	}
 
-	int32_t LuaImage::setWidth(lua_State *L)
+	int32_t LuaImage::setImageData(lua_State *L)
 	{
 		auto image = Lua::getObject<Image>(L, 1, LuaType::Image);
-		auto width = static_cast<int32_t>(Lua::getInteger(L, 2));
-		image->setWidth(width);
-		return 0;
-	}
-
-	int32_t LuaImage::getHeight(lua_State *L)
-	{
-		auto image = Lua::getObject<Image>(L, 1, LuaType::Image);
-		Lua::pushInteger(L, image->getHeight());
-		return 1;
-	}
-
-	int32_t LuaImage::setHeight(lua_State *L)
-	{
-		auto image = Lua::getObject<Image>(L, 1, LuaType::Image);
-		auto height = static_cast<int32_t>(Lua::getInteger(L, 2));
-		image->setHeight(height);
+		auto imageData = Lua::getObject<ImageData>(L, 2, LuaType::ImageData);
+		image->setImageData(imageData);
 		return 0;
 	}
 }

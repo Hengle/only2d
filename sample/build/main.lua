@@ -24,18 +24,18 @@ state:setAnimationByName(0, "walk", true)
 state:addAnimationByName(0, "jump", true, 3)
 state:addAnimationByName(0, "run", true, 0)
 
-state.onStart = function (trackIndex)
-	print(trackIndex.." start: "..state:getCurrent(trackIndex).animation.name)
-end
-state.onEnd = function (trackIndex)
-	print(trackIndex.." end: "..state:getCurrent(trackIndex).animation.name)
-end
-state.onComplete = function (trackIndex, loopCount)
-	print(trackIndex.." complete: "..state:getCurrent(trackIndex).animation.name..", "..loopCount)
-end
-state.onEvent = function (trackIndex, event)
-	print(trackIndex.." event: "..state:getCurrent(trackIndex).animation.name..", "..event.data.name..", "..event.intValue..", "..event.floatValue..", '"..(event.stringValue or "").."'")
-end
+-- state.onStart = function (trackIndex)
+-- 	print(trackIndex.." start: "..state:getCurrent(trackIndex).animation.name)
+-- end
+-- state.onEnd = function (trackIndex)
+-- 	print(trackIndex.." end: "..state:getCurrent(trackIndex).animation.name)
+-- end
+-- state.onComplete = function (trackIndex, loopCount)
+-- 	print(trackIndex.." complete: "..state:getCurrent(trackIndex).animation.name..", "..loopCount)
+-- end
+-- state.onEvent = function (trackIndex, event)
+-- 	print(trackIndex.." event: "..state:getCurrent(trackIndex).animation.name..", "..event.data.name..", "..event.intValue..", "..event.floatValue..", '"..(event.stringValue or "").."'")
+-- end
 
 function only2d.update ()
 	-- Update the state with the delta time, apply it, and update the world transforms.

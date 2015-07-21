@@ -33,6 +33,10 @@ namespace only2d
 
 		void setUniformMatrixData(const std::string &name, const Matrix &matrix);
 
+		void drawArrays(GLenum mode, GLint first, GLsizei count);
+
+		void drawElements(GLenum mode, GLsizei count, GLenum type, const GLvoid *buffer);
+
 		void attach();
 
 		void detach();

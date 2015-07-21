@@ -17,13 +17,9 @@ namespace only2d
 	protected:
 		static int32_t draw(lua_State *L);
 
-		static int32_t getWidth(lua_State *L);
+		static int32_t getImageData(lua_State *L);
 
-		static int32_t setWidth(lua_State *L);
-
-		static int32_t getHeight(lua_State *L);
-
-		static int32_t setHeight(lua_State *L);
+		static int32_t setImageData(lua_State *L);
 
 	private:
 		static const luaL_Reg functions[];

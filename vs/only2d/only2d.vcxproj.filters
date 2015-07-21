@@ -79,27 +79,6 @@
     <ClInclude Include="..\..\only2d\modules\filesystem\FileSystem.h">
       <Filter>modules\filesystem</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\Drawable.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\Graphics.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\Image.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\ImageData.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\OpenGL.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\Shader.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\Viewport.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\only2d\modules\window\Window.h">
       <Filter>modules\window</Filter>
     </ClInclude>
@@ -118,27 +97,6 @@
     <ClInclude Include="..\..\only2d\modules\texture\TextureParser.h">
       <Filter>modules\texture</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\ImageBatch.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\ImageBatchShader.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\ImageShader.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\OpenGLData.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\VertexData.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\VertexIndexData.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\BlendMode.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\only2d\library\glad\glad.h">
       <Filter>library\glad</Filter>
     </ClInclude>
@@ -150,6 +108,51 @@
     </ClInclude>
     <ClInclude Include="..\..\only2d\modules\keyboard\Keyboard.h">
       <Filter>modules\keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\BlendMode.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\DefaultShader.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\Drawable.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\Graphics.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\Image.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\ImageData.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\OpenGL.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\OpenGLData.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\Quad.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\QuadBatch.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\Shader.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\VertexData.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\VertexIndexData.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\Viewport.h">
+      <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\modules\graphics\ImageBatch.h">
+      <Filter>modules\graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -183,27 +186,6 @@
     <ClCompile Include="..\..\only2d\modules\filesystem\FileSystem.cpp">
       <Filter>modules\filesystem</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\graphics\Drawable.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\graphics\Graphics.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\graphics\Image.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\graphics\ImageData.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\graphics\OpenGL.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\graphics\Shader.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\graphics\Viewport.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\only2d\modules\window\Window.cpp">
       <Filter>modules\window</Filter>
     </ClCompile>
@@ -222,16 +204,40 @@
     <ClCompile Include="..\..\only2d\modules\texture\TextureParser.cpp">
       <Filter>modules\texture</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\graphics\ImageBatch.cpp">
+    <ClCompile Include="..\..\only2d\library\glad\glad.c">
+      <Filter>library\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d\modules\keyboard\Keyboard.cpp">
+      <Filter>modules\keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d\modules\graphics\DefaultShader.cpp">
       <Filter>modules\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\graphics\ImageBatchShader.cpp">
+    <ClCompile Include="..\..\only2d\modules\graphics\Drawable.cpp">
       <Filter>modules\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\graphics\ImageShader.cpp">
+    <ClCompile Include="..\..\only2d\modules\graphics\Graphics.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d\modules\graphics\Image.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d\modules\graphics\ImageData.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d\modules\graphics\OpenGL.cpp">
       <Filter>modules\graphics</Filter>
     </ClCompile>
     <ClCompile Include="..\..\only2d\modules\graphics\OpenGLData.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d\modules\graphics\Quad.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d\modules\graphics\QuadBatch.cpp">
+      <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d\modules\graphics\Shader.cpp">
       <Filter>modules\graphics</Filter>
     </ClCompile>
     <ClCompile Include="..\..\only2d\modules\graphics\VertexData.cpp">
@@ -240,11 +246,11 @@
     <ClCompile Include="..\..\only2d\modules\graphics\VertexIndexData.cpp">
       <Filter>modules\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\only2d\library\glad\glad.c">
-      <Filter>library\glad</Filter>
+    <ClCompile Include="..\..\only2d\modules\graphics\Viewport.cpp">
+      <Filter>modules\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\keyboard\Keyboard.cpp">
-      <Filter>modules\keyboard</Filter>
+    <ClCompile Include="..\..\only2d\modules\graphics\ImageBatch.cpp">
+      <Filter>modules\graphics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

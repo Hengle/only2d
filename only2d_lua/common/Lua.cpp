@@ -50,16 +50,6 @@ namespace only2d
 		return invalid;
 	}
 
-	LuaType Lua::getType(const std::string &name)
-	{
-		auto iterator = name2type.find(name);
-		if (iterator != name2type.end())
-		{
-			return iterator->second;
-		}
-		return LuaType::MinInvalid;
-	}
-
 	const std::map<LuaType, std::string> Lua::type2name =
 	{
 		{ LuaType::Data, "only2d.Data" },
@@ -69,6 +59,8 @@ namespace only2d
 		{ LuaType::Image, "only2d.Image" },
 		{ LuaType::ImageBatch, "only2d.ImageBatch" },
 		{ LuaType::ImageData, "only2d.ImageData" },
+		{ LuaType::Quad, "only2d.Quad" },
+		{ LuaType::QuadBatch, "only2d.QuadBatch" },
 		{ LuaType::Shader, "only2d.Shader" },
 		{ LuaType::TextureData, "only2d.TextureData" },
 	};
@@ -84,19 +76,6 @@ namespace only2d
 		{ LuaModule::Texture, "texture" },
 		{ LuaModule::Timer, "timer" },
 		{ LuaModule::Window, "window" },
-	};
-
-	const std::map<std::string, LuaType> Lua::name2type =
-	{
-		{ "only2d.Data", LuaType::Data },
-		{ "only2d.File", LuaType::File },
-		{ "only2d.FileData", LuaType::FileData },
-		{ "only2d.Drawable", LuaType::Drawable },
-		{ "only2d.Image", LuaType::Image },
-		{ "only2d.ImageBatch", LuaType::ImageBatch },
-		{ "only2d.ImageData", LuaType::ImageData },
-		{ "only2d.Shader", LuaType::Shader },
-		{ "only2d.TextureData", LuaType::TextureData },
 	};
 
 	void Lua::protectedCall(lua_State *L)
@@ -172,6 +151,10 @@ namespace only2d
 			auto name = getName(*luaModule);
 			lua_pushstring(L, name.c_str());
 		}
+		else
+		{
+			lua_pushstring(L, "unknown module");
+		}
 		return 1;
 	}
 
@@ -182,6 +165,10 @@ namespace only2d
 		{
 			auto name = getName(luaObject->type);
 			lua_pushstring(L, name.c_str());
+		}
+		else
+		{
+			lua_pushstring(L, "unknown type");
 		}
 		return 1;
 	}

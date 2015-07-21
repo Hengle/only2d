@@ -136,7 +136,17 @@ namespace only2d
 		}
 	}
 
-	void Shader::attach()
+    void Shader::drawArrays(GLenum mode, GLint first, GLsizei count)
+    {
+		gl->drawArrays(mode, first, count);
+    }
+
+    void Shader::drawElements(GLenum mode, GLsizei count, GLenum type, const GLvoid *buffer)
+    {
+		gl->drawElements(mode, count, type, buffer);
+    }
+
+    void Shader::attach()
 	{
 		if (program != 0)
 		{

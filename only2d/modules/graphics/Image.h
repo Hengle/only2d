@@ -5,42 +5,28 @@
 #ifndef ONLY2D_IMAGE_H
 #define ONLY2D_IMAGE_H
 
-#include "Drawable.h"
 #include "ImageData.h"
-#include "ImageShader.h"
+#include "Quad.h"
 
 #include <memory>
 
 namespace only2d
 {
-	class Image : public Drawable
+	class Image : public Quad
 	{
 	public:
-		explicit Image(std::shared_ptr<ImageData> data);
+		explicit Image(std::shared_ptr<ImageData> imageData);
 
 		virtual ~Image();
 
 		virtual void draw() override;
 
-		int32_t getHeight() const;
+		const std::shared_ptr<ImageData> &getImageData() const;
 
-		void setHeight(int32_t height);
-
-		int32_t getWidth() const;
-
-		void setWidth(int32_t width);
-
-	private:
-		void updateVertices();
+		void setImageData(const std::shared_ptr<ImageData> &imageData);
 
 	protected:
-		std::shared_ptr<ImageData> data;
-		std::shared_ptr<ImageShader> shader;
-		std::vector<Vertex> vertices;
-		int32_t width;
-		int32_t height;
-
-		friend class ImageBatch;
+		std::shared_ptr<ImageData> imageData;
 	};
 }
 
