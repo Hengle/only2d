@@ -5,7 +5,7 @@ local skeletonData = json:readSkeletonDataFile("data/spineboy.json")
 
 local skeleton = spine.Skeleton.new(skeletonData)
 skeleton.x = 500
-skeleton.y = 100
+skeleton.y = 0
 skeleton.flipX = false
 skeleton.flipY = false
 skeleton.debugBones = false -- Omit or set to false to not draw debug lines on top of the images.

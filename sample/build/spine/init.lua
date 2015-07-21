@@ -105,9 +105,6 @@ function spine.Skeleton.new (skeletonData, group)
 				end
 				if not image then -- Create new image.
 					image = self:createImage(attachment)
-					for k,v in pairs(getmetatable(getmetatable(image))) do
-						print(k,v)
-					end
 					if image then
 						local imageWidth = image:getWidth()
 						local imageHeight = image:getHeight()
