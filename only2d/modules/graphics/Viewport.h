@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/6/1.
 //
 
-#ifndef ONLY2D_VIEWPORT_H
-#define ONLY2D_VIEWPORT_H
+#pragma once
 
 #include <cstdint>
 
@@ -28,6 +27,3 @@ namespace only2d
 		int32_t height;
 	};
 }
-
-#endif //ONLY2D_VIEWPORT_H
-

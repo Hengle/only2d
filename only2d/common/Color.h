@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#ifndef ONLY2D_COLOR_H
-#define ONLY2D_COLOR_H
+#pragma once
 
 #include <cstdint>
 
@@ -125,6 +124,3 @@ namespace only2d
 		return color.r << 24 | color.g << 16 | color.b << 8 | color.a;
 	}
 }
-
-#endif //ONLY2D_COLOR_H
-

@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/7/21.
 //
 
-#ifndef ONLY2D_QUAD_H
-#define ONLY2D_QUAD_H
+#pragma once
 
 #include "Drawable.h"
 #include "Shader.h"
@@ -41,5 +40,3 @@ namespace only2d
 	    friend class QuadBatch;
     };
 }
-
-#endif //ONLY2D_QUAD_H

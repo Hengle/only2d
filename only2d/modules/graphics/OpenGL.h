@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#ifndef ONLY2D_OPENGL_H
-#define ONLY2D_OPENGL_H
+#pragma once
 
 #include "BlendMode.h"
 #include "Viewport.h"
@@ -92,8 +91,6 @@ namespace only2d
 
 		int32_t getDrawCalls() const;
 
-		int32_t getBindTextureCount() const;
-
 		int32_t getMaxTextureSize() const;
 
 		void setViewport(const Viewport &viewport);
@@ -111,12 +108,8 @@ namespace only2d
 	private:
 		int32_t drawCalls;
 		int32_t maxTextureSize;
-		int32_t maxBindTextureCount;
 		Viewport viewport;
 		Viewport scissor;
 		BlendMode currentBlendMode;
 	};
 }
-
-#endif //ONLY2D_OPENGL_H
-

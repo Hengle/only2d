@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/6/15.
 //
 
-#ifndef ONLY2D_QUADBATCH_H
-#define ONLY2D_QUADBATCH_H
+#pragma once
 
 #include "Quad.h"
 #include "Shader.h"
@@ -32,6 +31,3 @@ namespace only2d
 		bool needSyncBuffer;
 	};
 }
-
-#endif //ONLY2D_QUADBATCH_H
-

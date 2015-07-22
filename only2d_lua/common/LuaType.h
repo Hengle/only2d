@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/7/14.
 //
 
-#ifndef ONLY2D_LUATYPE_H
-#define ONLY2D_LUATYPE_H
+#pragma once
 
 #include <cstdint>
 
@@ -58,6 +57,3 @@ namespace only2d
 		MaxInvalid
 	};
 }
-
-#endif //ONLY2D_LUATYPE_H
-

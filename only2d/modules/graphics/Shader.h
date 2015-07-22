@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/6/1.
 //
 
-#ifndef ONLY2D_SHADER_H
-#define ONLY2D_SHADER_H
+#pragma once
 
 #include "OpenGL.h"
 
@@ -57,6 +56,3 @@ namespace only2d
 		std::shared_ptr<OpenGL> gl;
 	};
 }
-
-#endif //ONLY2D_SHADER_H
-

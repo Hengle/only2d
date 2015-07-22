@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/6/12.
 //
 
-#ifndef ONLY2D_OPENGLDATA_H
-#define ONLY2D_OPENGLDATA_H
+#pragma once
 
 #include "OpenGL.h"
 
@@ -36,6 +35,3 @@ namespace only2d
 		std::shared_ptr<OpenGL> gl;
 	};
 }
-
-#endif //ONLY2D_OPENGLDATA_H
-

@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/7/21.
 //
 
-#ifndef ONLY2D_DEFAULTSHADER_H
-#define ONLY2D_DEFAULTSHADER_H
+#pragma once
 
 #include "Shader.h"
 
@@ -96,5 +95,3 @@ namespace only2d
 	    static std::shared_ptr<Shader> cache[static_cast<int32_t>(ShaderType::MaxCount)];
     };
 }
-
-#endif //ONLY2D_DEFAULTSHADER_H

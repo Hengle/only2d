@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/6/3.
 //
 
-#ifndef ONLY2D_MATRIX_H
-#define ONLY2D_MATRIX_H
+#pragma once
 
 #include "Vector.h"
 
@@ -62,6 +61,3 @@ namespace only2d
 		float data[16];
 	};
 }
-
-#endif //ONLY2D_MATRIX_H
-

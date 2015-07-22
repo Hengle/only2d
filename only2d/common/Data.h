@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/29.
 //
 
-#ifndef ONLY2D_DATA_H
-#define ONLY2D_DATA_H
+#pragma once
 
 #include <cstdint>
 #include <vector>
@@ -29,6 +28,3 @@ namespace only2d
 		std::vector<uint8_t> data;
 	};
 }
-
-#endif //ONLY2D_DATA_H
-

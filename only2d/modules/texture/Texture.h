@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/29.
 //
 
-#ifndef ONLY2D_TEXTURE_H
-#define ONLY2D_TEXTURE_H
+#pragma once
 
 #include "TextureData.h"
 
@@ -25,6 +24,3 @@ namespace only2d
 		std::shared_ptr<TextureData> createTextureData(int32_t width, int32_t height, const Color &color);
 	};
 }
-
-#endif //ONLY2D_TEXTURE_H
-

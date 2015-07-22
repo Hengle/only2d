@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/29.
 //
 
-#ifndef ONLY2D_FILEDATA_H
-#define ONLY2D_FILEDATA_H
+#pragma once
 
 #include "common/Data.h"
 
@@ -26,6 +25,3 @@ namespace only2d
 		std::string filename;
 	};
 }
-
-#endif //ONLY2D_FILEDATA_H
-

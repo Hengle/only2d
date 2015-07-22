@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/6/1.
 //
 
-#ifndef ONLY2D_VECTOR_H
-#define ONLY2D_VECTOR_H
+#pragma once
 
 namespace only2d
 {
@@ -54,6 +53,3 @@ namespace only2d
 		float y;
 	};
 }
-
-#endif //ONLY2D_VECTOR_H
-

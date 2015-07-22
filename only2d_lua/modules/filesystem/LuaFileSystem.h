@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/7/13.
 //
 
-#ifndef ONLY2D_LUAFILESYSTEM_H
-#define ONLY2D_LUAFILESYSTEM_H
+#pragma once
 
 #include "common/Lua.h"
 
@@ -33,6 +32,3 @@ namespace only2d
 		static const luaL_Reg functions[];
 	};
 }
-
-#endif //ONLY2D_LUAFILESYSTEM_H
-

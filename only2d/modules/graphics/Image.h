@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/6/1.
 //
 
-#ifndef ONLY2D_IMAGE_H
-#define ONLY2D_IMAGE_H
+#pragma once
 
 #include "ImageData.h"
 #include "Quad.h"
@@ -29,6 +28,3 @@ namespace only2d
 		std::shared_ptr<ImageData> imageData;
 	};
 }
-
-#endif //ONLY2D_IMAGE_H
-

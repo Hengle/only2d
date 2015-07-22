@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#ifndef ONLY2D_GRAPHICS_H
-#define ONLY2D_GRAPHICS_H
+#pragma once
 
 #include "OpenGL.h"
 #include "Image.h"
@@ -51,6 +50,3 @@ namespace only2d
 		Matrix projectionMatrix;
 	};
 }
-
-#endif //ONLY2D_GRAPHICS_H
-

@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/7/9.
 //
 
-#ifndef ONLY2D_BLENDMODE_H
-#define ONLY2D_BLENDMODE_H
+#pragma once
 
 namespace only2d
 {
@@ -20,6 +19,3 @@ namespace only2d
 		MaxInvalid
 	};
 }
-
-#endif //ONLY2D_BLENDMODE_H
-

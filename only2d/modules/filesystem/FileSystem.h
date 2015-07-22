@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/29.
 //
 
-#ifndef ONLY2D_FILESYSTEM_H
-#define ONLY2D_FILESYSTEM_H
+#pragma once
 
 #include "File.h"
 #include "FileData.h"
@@ -53,6 +52,3 @@ namespace only2d
 		std::vector<std::pair<std::string, std::string>> settings;
 	};
 }
-
-#endif //ONLY2D_FILESYSTEM_H
-

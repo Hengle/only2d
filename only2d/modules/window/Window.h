@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#ifndef ONLY2D_WINDOW_H
-#define ONLY2D_WINDOW_H
+#pragma once
 
 #include "WindowSettings.h"
 #include "common/Module.h"
@@ -40,6 +39,3 @@ namespace only2d
 		std::string title;
 	};
 }
-
-#endif //ONLY2D_WINDOW_H
-

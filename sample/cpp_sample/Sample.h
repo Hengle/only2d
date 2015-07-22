@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/6/4.
 //
 
-#ifndef ONLY2D_SAMPLE_H
-#define ONLY2D_SAMPLE_H
+#pragma once
 
 #include "Only2D.h"
 
@@ -25,7 +24,3 @@ public:
 private:
 	std::shared_ptr<Image> image;
 };
-
-
-#endif //ONLY2D_SAMPLE_H
-

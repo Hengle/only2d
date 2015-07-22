@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/6/1.
 //
 
-#ifndef ONLY2D_IMAGEDATA_H
-#define ONLY2D_IMAGEDATA_H
+#pragma once
 
 #include "OpenGL.h"
 
@@ -91,6 +90,3 @@ namespace only2d
 		bool usingDefaultData;
 	};
 }
-
-#endif //ONLY2D_IMAGEDATA_H
-

@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/6/4.
 //
 
-#ifndef ONLY2D_APPLICATION_H
-#define ONLY2D_APPLICATION_H
+#pragma once
 
 #include "common/Module.h"
 
@@ -32,7 +31,3 @@ namespace only2d
 		bool running;
 	};
 }
-
-
-#endif //ONLY2D_APPLICATION_H
-

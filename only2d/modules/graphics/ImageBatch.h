@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/7/21.
 //
 
-#ifndef ONLY2D_IMAGEBATCH_H
-#define ONLY2D_IMAGEBATCH_H
+#pragma once
 
 #include "Image.h"
 #include "QuadBatch.h"
@@ -27,5 +26,3 @@ namespace only2d
 	    std::shared_ptr<ImageData> data;
     };
 }
-
-#endif //ONLY2D_IMAGEBATCH_H

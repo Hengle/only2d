@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#ifndef ONLY2D_WINDOWSETTINGS_H
-#define ONLY2D_WINDOWSETTINGS_H
+#pragma once
 
 #include "common/Color.h"
 
@@ -43,6 +42,3 @@ namespace only2d
 		bool window;
 	};
 }
-
-#endif //ONLY2D_WINDOWSETTINGS_H
-

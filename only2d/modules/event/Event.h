@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#ifndef ONLY2D_EVENT_H
-#define ONLY2D_EVENT_H
+#pragma once
 
 #include "common/Module.h"
 
@@ -19,6 +18,3 @@ namespace only2d
 		void pollEvent();
 	};
 }
-
-#endif //ONLY2D_EVENT_H
-

@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/7/10.
 //
 
-#ifndef ONLY2D_LUAONLY2D_H
-#define ONLY2D_LUAONLY2D_H
+#pragma once
 
 #include "Only2D.h"
 
@@ -28,6 +27,3 @@ namespace only2d
 		lua_State *L;
 	};
 }
-
-#endif //ONLY2D_LUAONLY2D_H
-

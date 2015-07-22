@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#ifndef ONLY2D_CONSOLE_H
-#define ONLY2D_CONSOLE_H
+#pragma once
 
 #include <iostream>
 
@@ -36,6 +35,3 @@ namespace only2d
 		static const Console error;
 	};
 }
-
-#endif //ONLY2D_CONSOLE_H
-

@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/7/21.
 //
 
-#ifndef ONLY2D_LUAIMAGEBATCH_H
-#define ONLY2D_LUAIMAGEBATCH_H
+#pragma once
 
 #include "common/Lua.h"
 
@@ -25,5 +24,3 @@ namespace only2d
 		static const luaL_Reg functions[];
 	};
 }
-
-#endif //ONLY2D_LUAIMAGEBATCH_H

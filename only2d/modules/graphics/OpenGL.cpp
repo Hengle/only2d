@@ -24,7 +24,6 @@ namespace only2d
 			Console::error << "[OpenGL] initialize OpenGL fail." << Console::endl;
 		}
 		glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxTextureSize);
-		glGetIntegerv(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS, &maxBindTextureCount);
 		glEnable(GL_BLEND);
 	}
 

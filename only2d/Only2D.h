@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#ifndef ONLY2D_ONLY2D_H
-#define ONLY2D_ONLY2D_H
+#pragma once
 
 #include "common/Color.h"
 #include "common/Console.h"
@@ -41,6 +40,3 @@
 
 #include "modules/window/Window.h"
 #include "modules/window/WindowSettings.h"
-
-#endif //ONLY2D_ONLY2D_H
-

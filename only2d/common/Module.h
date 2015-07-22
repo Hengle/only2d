@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/5/28.
 //
 
-#ifndef ONLY2D_MODULE_H
-#define ONLY2D_MODULE_H
+#pragma once
 
 #include <cstdint>
 #include <memory>
@@ -51,6 +50,3 @@ namespace only2d
 		static std::shared_ptr<Module> modules[static_cast<int32_t>(ModuleType::MAX_COUNT)];
 	};
 }
-
-#endif //ONLY2D_MODULE_H
-

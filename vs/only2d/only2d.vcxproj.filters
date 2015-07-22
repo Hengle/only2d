@@ -40,6 +40,9 @@
     <Filter Include="modules\keyboard">
       <UniqueIdentifier>{4d5c974b-dc22-4be1-ab58-c644c2cd668a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="modules\network">
+      <UniqueIdentifier>{242ef142-1034-425e-8a41-81dad4d7bdcc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\only2d\common\Color.h">
@@ -97,15 +100,6 @@
     <ClInclude Include="..\..\only2d\modules\texture\TextureParser.h">
       <Filter>modules\texture</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\only2d\library\glad\glad.h">
-      <Filter>library\glad</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\library\glad\khrplatform.h">
-      <Filter>library\glad</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\library\stb\stb_image.h">
-      <Filter>library\stb</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\only2d\modules\keyboard\Keyboard.h">
       <Filter>modules\keyboard</Filter>
     </ClInclude>
@@ -153,6 +147,15 @@
     </ClInclude>
     <ClInclude Include="..\..\only2d\modules\graphics\ImageBatch.h">
       <Filter>modules\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\library\glad\glad.h">
+      <Filter>library\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\library\glad\khrplatform.h">
+      <Filter>library\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\only2d\library\stb\stb_image.h">
+      <Filter>library\stb</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -204,9 +207,6 @@
     <ClCompile Include="..\..\only2d\modules\texture\TextureParser.cpp">
       <Filter>modules\texture</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\only2d\library\glad\glad.c">
-      <Filter>library\glad</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\only2d\modules\keyboard\Keyboard.cpp">
       <Filter>modules\keyboard</Filter>
     </ClCompile>
@@ -251,6 +251,9 @@
     </ClCompile>
     <ClCompile Include="..\..\only2d\modules\graphics\ImageBatch.cpp">
       <Filter>modules\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\only2d\library\glad\glad.c">
+      <Filter>library\glad</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

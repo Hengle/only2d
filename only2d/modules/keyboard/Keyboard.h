@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/7/20.
 //
 
-#ifndef ONLY2D_KEYBOARD_H
-#define ONLY2D_KEYBOARD_H
+#pragma once
 
 #include "common/Module.h"
 
@@ -268,5 +267,3 @@ namespace only2d
 		static const std::map<Key, SDL_Keycode> key2code;
     };
 }
-
-#endif //ONLY2D_KEYBOARD_H

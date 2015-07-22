@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/6/15.
 //
 
-#ifndef ONLY2D_VERTEXDATA_H
-#define ONLY2D_VERTEXDATA_H
+#pragma once
 
 #include "OpenGLData.h"
 
@@ -29,6 +28,3 @@ namespace only2d
 		int32_t capacity;
 	};
 }
-
-#endif //ONLY2D_VERTEXDATA_H
-

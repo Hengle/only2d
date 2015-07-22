@@ -2,8 +2,7 @@
 // Created by leafnsand on 2015/7/11.
 //
 
-#ifndef ONLY2D_LUA_H
-#define ONLY2D_LUA_H
+#pragma once
 
 #include "LuaObject.h"
 
@@ -250,6 +249,3 @@ namespace only2d
 		static const std::string invalid;
 	};
 }
-
-#endif //ONLY2D_LUA_H
-

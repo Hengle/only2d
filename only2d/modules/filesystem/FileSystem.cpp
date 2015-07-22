@@ -45,9 +45,7 @@ namespace only2d
 			std::string line;
 			std::getline(file, line);
 			auto separatorIndex = line.find(":");
-			auto setting = std::pair<std::string, std::string>(line.substr(0, separatorIndex),
-			                                                   line.substr(separatorIndex + 1,
-			                                                               line.size() - separatorIndex - 1));
+			auto setting = std::pair<std::string, std::string>(line.substr(0, separatorIndex), line.substr(separatorIndex + 1, line.size() - separatorIndex - 1));
 			if (setting.first == "company")
 			{
 				company = setting.second;

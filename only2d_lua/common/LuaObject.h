@@ -2,8 +2,7 @@
 // Created by Xavier Jiang on 15/7/14.
 //
 
-#ifndef ONLY2D_LUAOBJECT_H
-#define ONLY2D_LUAOBJECT_H
+#pragma once
 
 #include "LuaType.h"
 
@@ -23,6 +22,3 @@ namespace only2d
 		std::shared_ptr<void> object;
 	};
 }
-
-#endif //ONLY2D_LUAOBJECT_H
-
