@@ -1,8 +1,6 @@
-//
-// Created by leafnsand on 2015/7/13.
-//
-
 #include "LuaWindow.h"
+
+#include "common/Module.h"
 
 #include "modules/window/Window.h"
 

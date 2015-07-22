@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/7/16.
-//
-
 #include "LuaImageDataWrapMode.h"
 
 #include "common/Lua.h"

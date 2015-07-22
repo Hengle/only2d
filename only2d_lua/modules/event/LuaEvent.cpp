@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/7/13.
-//
-
 #include "LuaEvent.h"
 
 namespace only2d

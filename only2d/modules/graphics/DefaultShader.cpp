@@ -1,9 +1,7 @@
-//
-// Created by leafnsand on 2015/7/21.
-//
-
 #include "DefaultShader.h"
 #include "Graphics.h"
+
+#include "common/Module.h"
 
 namespace only2d
 {

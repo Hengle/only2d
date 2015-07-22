@@ -1,8 +1,7 @@
-//
-// Created by leafnsand on 2015/5/28.
-//
-
 #include "Event.h"
+
+#include "common/Module.h"
+
 #include "modules/application/Application.h"
 
 #include <SDL2/SDL_events.h>

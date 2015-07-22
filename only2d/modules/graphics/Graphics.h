@@ -1,20 +1,17 @@
-//
-// Created by leafnsand on 2015/5/28.
-//
-
 #pragma once
 
 #include "OpenGL.h"
 #include "Image.h"
-#include "QuadBatch.h"
+#include "ImageBatch.h"
 #include "ImageData.h"
+#include "Quad.h"
+#include "QuadBatch.h"
 
 #include "common/Color.h"
-#include "common/Module.h"
 
 namespace only2d
 {
-	class Graphics : public Module
+	class Graphics
 	{
 	public:
 		Graphics();
@@ -32,6 +29,10 @@ namespace only2d
 		std::shared_ptr<ImageData> createImageData(int32_t width, int32_t height, std::shared_ptr<Data> data);
 
 		std::shared_ptr<Image> createImage(std::shared_ptr<ImageData> data);
+
+		std::shared_ptr<ImageBatch> createImageBatch();
+
+		std::shared_ptr<Quad> createQuad(int32_t width, int32_t height);
 
 		std::shared_ptr<QuadBatch> createQuadBatch();
 

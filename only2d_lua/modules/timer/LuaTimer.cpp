@@ -1,8 +1,6 @@
-//
-// Created by leafnsand on 2015/7/13.
-//
-
 #include "LuaTimer.h"
+
+#include "common/Module.h"
 
 #include "modules/timer/Timer.h"
 

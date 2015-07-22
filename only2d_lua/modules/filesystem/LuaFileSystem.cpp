@@ -1,11 +1,9 @@
-//
-// Created by leafnsand on 2015/7/13.
-//
-
 #include "LuaFile.h"
 #include "LuaFileData.h"
 #include "LuaFileReadMode.h"
 #include "LuaFileSystem.h"
+
+#include "common/Module.h"
 
 #include "modules/filesystem/FileSystem.h"
 

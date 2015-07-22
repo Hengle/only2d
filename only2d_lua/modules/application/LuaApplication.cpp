@@ -1,8 +1,6 @@
-//
-// Created by leafnsand on 2015/7/11.
-//
-
 #include "LuaApplication.h"
+
+#include "common/Module.h"
 
 #include "modules/application/Application.h"
 

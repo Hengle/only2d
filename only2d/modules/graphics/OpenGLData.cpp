@@ -1,11 +1,8 @@
-//
-// Created by leafnsand on 2015/6/12.
-//
-
 #include "OpenGLData.h"
 #include "Graphics.h"
 
 #include "common/Console.h"
+#include "common/Module.h"
 
 namespace only2d
 {

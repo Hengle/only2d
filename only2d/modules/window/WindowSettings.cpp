@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/5/28.
-//
-
 #include "WindowSettings.h"
 
 #include "common/Console.h"

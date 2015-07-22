@@ -1,16 +1,10 @@
-//
-// Created by leafnsand on 2015/6/4.
-//
-
 #pragma once
-
-#include "common/Module.h"
 
 #include <chrono>
 
 namespace only2d
 {
-	class Timer : public Module
+	class Timer
 	{
 	public:
 		Timer();

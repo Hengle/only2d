@@ -40,9 +40,6 @@
     <Filter Include="modules\keyboard">
       <UniqueIdentifier>{4d5c974b-dc22-4be1-ab58-c644c2cd668a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="modules\network">
-      <UniqueIdentifier>{242ef142-1034-425e-8a41-81dad4d7bdcc}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\only2d\common\Color.h">

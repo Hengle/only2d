@@ -1,17 +1,12 @@
-//
-// Created by leafnsand on 2015/5/28.
-//
-
 #pragma once
 
 #include "WindowSettings.h"
-#include "common/Module.h"
 
 #include <SDL2/SDL.h>
 
 namespace only2d
 {
-	class Window : public Module
+	class Window
 	{
 	public:
 		Window();

@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/7/21.
-//
-
 #include "LuaQuad.h"
 
 #include "modules/graphics/Quad.h"

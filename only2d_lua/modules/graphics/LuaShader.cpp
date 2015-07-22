@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/7/16.
-//
-
 #include "LuaShader.h"
 
 #include "modules/graphics/Shader.h"

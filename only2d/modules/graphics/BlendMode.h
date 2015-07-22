@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/7/9.
-//
-
 #pragma once
 
 namespace only2d

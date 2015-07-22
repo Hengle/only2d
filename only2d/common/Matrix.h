@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/6/3.
-//
-
 #pragma once
 
 #include "Vector.h"

@@ -1,10 +1,4 @@
-//
-// Created by leafnsand on 2015/7/20.
-//
-
 #pragma once
-
-#include "common/Module.h"
 
 #include <SDL2/SDL_keycode.h>
 
@@ -254,7 +248,7 @@ namespace only2d
 		MaxInvalid
 	};
 
-    class Keyboard : public Module
+    class Keyboard
     {
 	public:
 		Keyboard();

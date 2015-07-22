@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/5/29.
-//
-
 #pragma once
 
 #include "common/Color.h"

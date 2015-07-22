@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/7/13.
-//
-
 #pragma once
 
 #include "common/Lua.h"
@@ -19,6 +15,10 @@ namespace only2d
 		static int32_t createImageData(lua_State *L);
 
 		static int32_t createImage(lua_State *L);
+
+		static int32_t createImageBatch(lua_State *L);
+
+		static int32_t createQuad(lua_State *L);
 
 		static int32_t createQuadBatch(lua_State *L);
 

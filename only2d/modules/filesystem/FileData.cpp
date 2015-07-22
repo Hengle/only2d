@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/5/29.
-//
-
 #include "FileData.h"
 
 namespace only2d

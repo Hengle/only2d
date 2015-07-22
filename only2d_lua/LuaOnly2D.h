@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/7/10.
-//
-
 #pragma once
 
 #include "Only2D.h"

@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/6/15.
-//
-
 #include "QuadBatch.h"
 #include "DefaultShader.h"
 

@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/7/20.
-//
-
 #include "Keyboard.h"
 
 #include <SDL2/SDL_keyboard.h>

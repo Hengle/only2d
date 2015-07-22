@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/7/10.
-//
-
 #include "LuaOnly2D.h"
 
 #include "common/Lua.h"

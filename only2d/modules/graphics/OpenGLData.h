@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/6/12.
-//
-
 #pragma once
 
 #include "OpenGL.h"

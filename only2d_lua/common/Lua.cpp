@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/7/11.
-//
-
 #include "Lua.h"
 #include "LuaData.h"
 

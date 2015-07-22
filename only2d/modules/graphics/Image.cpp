@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/6/1.
-//
-
 #include "Image.h"
 #include "DefaultShader.h"
 

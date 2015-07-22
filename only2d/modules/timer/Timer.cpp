@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/6/4.
-//
-
 #include "Timer.h"
 #include "common/Console.h"
 

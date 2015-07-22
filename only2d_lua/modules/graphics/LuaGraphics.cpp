@@ -1,11 +1,4 @@
-//
-// Created by leafnsand on 2015/7/13.
-//
-
 #include "LuaGraphics.h"
-
-#include "modules/graphics/Graphics.h"
-
 #include "LuaBlendMode.h"
 #include "LuaDrawable.h"
 #include "LuaImage.h"
@@ -17,6 +10,10 @@
 #include "LuaQuadBatch.h"
 #include "LuaShader.h"
 
+#include "common/Module.h"
+
+#include "modules/graphics/Graphics.h"
+
 namespace only2d
 {
 	const luaL_Reg LuaGraphics::functions[] =
@@ -24,6 +21,8 @@ namespace only2d
 		{ "createShader", createShader },
 		{ "createImageData", createImageData },
 		{ "createImage", createImage },
+		{ "createImageBatch", createImageBatch },
+		{ "createQuad", createQuad },
 		{ "createQuadBatch", createQuadBatch},
 		{ "getBackgroundColor", getBackgroundColor },
 		{ "setBackgroundColor", setBackgroundColor },
@@ -75,6 +74,24 @@ namespace only2d
 		auto imageData = Lua::getObject<ImageData>(L, 1, LuaType::ImageData);
 		auto image = graphics->createImage(imageData);
 		Lua::pushObject(L, LuaType::Image, image);
+		return 1;
+	}
+
+	int32_t LuaGraphics::createImageBatch(lua_State * L)
+	{
+		auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
+		auto imageBatch = graphics->createImageBatch();
+		Lua::pushObject(L, LuaType::QuadBatch, imageBatch);
+		return 1;
+	}
+
+	int32_t LuaGraphics::createQuad(lua_State * L)
+	{
+		auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
+		auto width = static_cast<int32_t>(Lua::getInteger(L, 1));
+		auto height = static_cast<int32_t>(Lua::getInteger(L, 2));
+		auto quad = graphics->createQuad(width, height);
+		Lua::pushObject(L, LuaType::Image, quad);
 		return 1;
 	}
 

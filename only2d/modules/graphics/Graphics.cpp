@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/5/28.
-//
-
 #include "Graphics.h"
 
 namespace only2d
@@ -48,6 +44,16 @@ namespace only2d
 	std::shared_ptr<Image> Graphics::createImage(std::shared_ptr<ImageData> data)
 	{
 		return std::make_shared<Image>(data);
+	}
+
+	std::shared_ptr<ImageBatch> Graphics::createImageBatch()
+	{
+		return std::make_shared<ImageBatch>();
+	}
+
+	std::shared_ptr<Quad> Graphics::createQuad(int32_t width, int32_t height)
+	{
+		return std::make_shared<Quad>(width, height);
 	}
 
 	std::shared_ptr<QuadBatch> Graphics::createQuadBatch()

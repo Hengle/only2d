@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/5/29.
-//
-
 #include "FileSystem.h"
 #include "common/Console.h"
 

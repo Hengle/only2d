@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/6/15.
-//
-
 #pragma once
 
 #include "OpenGLData.h"

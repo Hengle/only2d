@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/5/30.
-//
-
 #include "TextureParser.h"
 
 #include "library/stb/stb_image.h"

@@ -1,12 +1,7 @@
-//
-// Created by leafnsand on 2015/5/29.
-//
-
 #pragma once
 
 #include "File.h"
 #include "FileData.h"
-#include "common/Module.h"
 
 #include <vector>
 #include <utility>
@@ -14,7 +9,7 @@
 
 namespace only2d
 {
-	class FileSystem : public Module
+	class FileSystem
 	{
 	public:
 		FileSystem();

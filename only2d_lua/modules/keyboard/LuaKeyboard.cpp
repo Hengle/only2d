@@ -1,9 +1,7 @@
-//
-// Created by leafnsand on 2015/7/20.
-//
-
 #include "LuaKeyboard.h"
 #include "LuaKey.h"
+
+#include "common/Module.h"
 
 #include "modules/keyboard/Keyboard.h"
 

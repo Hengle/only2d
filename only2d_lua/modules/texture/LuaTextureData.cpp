@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/7/16.
-//
-
 #include "LuaTextureData.h"
 
 #include "modules/texture/TextureData.h"

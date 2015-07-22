@@ -1,8 +1,6 @@
-//
-// Created by leafnsand on 2015/6/4.
-//
-
 #include "Application.h"
+
+#include "common/Module.h"
 
 #include "modules/event/Event.h"
 #include "modules/filesystem/FileSystem.h"

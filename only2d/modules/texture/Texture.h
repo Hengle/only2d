@@ -1,18 +1,12 @@
-//
-// Created by leafnsand on 2015/5/29.
-//
-
 #pragma once
 
 #include "TextureData.h"
-
-#include "common/Module.h"
 
 #include <memory>
 
 namespace only2d
 {
-	class Texture : public Module
+	class Texture
 	{
 	public:
 		Texture();

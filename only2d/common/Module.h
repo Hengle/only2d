@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/5/28.
-//
-
 #pragma once
 
 #include <cstdint>
@@ -25,8 +21,6 @@ namespace only2d
 	class Module
 	{
 	public:
-		virtual ~Module();
-
 		template <typename T>
 		static std::shared_ptr<T> open(ModuleType type)
 		{
@@ -35,7 +29,7 @@ namespace only2d
 			{
 				modules[index] = std::make_shared<T>();
 			}
-			return std::dynamic_pointer_cast<T>(modules[index]);
+			return std::static_pointer_cast<T>(modules[index]);
 		}
 
 		static void close(ModuleType type);
@@ -43,10 +37,10 @@ namespace only2d
 		template <typename T>
 		static std::shared_ptr<T> getInstance(ModuleType type)
 		{
-			return std::dynamic_pointer_cast<T>(modules[static_cast<int32_t>(type)]);
+			return std::static_pointer_cast<T>(modules[static_cast<int32_t>(type)]);
 		}
 
 	private:
-		static std::shared_ptr<Module> modules[static_cast<int32_t>(ModuleType::MAX_COUNT)];
+		static std::shared_ptr<void> modules[static_cast<int32_t>(ModuleType::MAX_COUNT)];
 	};
 }

@@ -1,7 +1,3 @@
-//
-// Created by leafnsand on 2015/6/4.
-//
-
 #include "Sample.h"
 
 Sample::Sample()
@@ -38,13 +34,13 @@ void Sample::initialize()
 	image->setX(500);
 	image->setY(500);
 
-	image->setOffsetX(image->getWidth() / 2);
-	image->setOffsetY(image->getHeight() / 2);
+	image->setOffsetX(image->getWidth() / 2.0f);
+	image->setOffsetY(image->getHeight() / 2.0f);
 
-	image->setRotation(45 * 3.14 / 180);
+	image->setRotation(45.0f * 3.14f / 180.0f);
 
-	image->setScaleX(0.5);
-	image->setScaleY(0.5);
+	image->setScaleX(0.5f);
+	image->setScaleY(0.5f);
 }
 
 void Sample::update(float delta)
