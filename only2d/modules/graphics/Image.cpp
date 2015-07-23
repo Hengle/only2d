@@ -39,6 +39,7 @@ namespace only2d
 
 	void Image::onMatrixChange(const Matrix &matrix)
 	{
+		updateVertices();
 		for (auto i = 0; i < 4; ++i)
 		{
 			vertices[i].position = matrix.transform(vertices[i].position);
@@ -87,7 +88,8 @@ namespace only2d
 
 	void Image::updateVertices()
 	{
-		vertices[1].position.set(0.0f, width);
+		vertices[0].position.set(0.0f, 0.0f);
+		vertices[1].position.set(0.0f, height);
 		vertices[2].position.set(width, 0.0f);
 		vertices[3].position.set(width, height);
 	}
