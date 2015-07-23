@@ -50,10 +50,6 @@ namespace only2d
 
 		static int32_t setAlpha(lua_State *L);
 
-		static int32_t isVisible(lua_State *L);
-
-		static int32_t setVisible(lua_State *L);
-
 		static int32_t getColor(lua_State *L);
 
 		static int32_t setColor(lua_State *L);

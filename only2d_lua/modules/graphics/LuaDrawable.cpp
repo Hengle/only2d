@@ -27,8 +27,6 @@ namespace only2d
 		{ "setSkewY", setSkewY },
 		{ "getAlpha", getAlpha },
 		{ "setAlpha", setAlpha },
-		{ "isVisible", isVisible },
-		{ "setVisible", setVisible },
 		{ "getColor", getColor },
 		{ "setColor", setColor },
 		{ "getBlendMode", getBlendMode },
@@ -190,21 +188,6 @@ namespace only2d
 		auto drawable = Lua::getObject<Drawable>(L, 1, LuaType::Drawable);
 		auto alpha = static_cast<float>(Lua::getNumber(L, 2));
 		drawable->setAlpha(alpha);
-		return 0;
-	}
-
-	int32_t LuaDrawable::isVisible(lua_State *L)
-	{
-		auto drawable = Lua::getObject<Drawable>(L, 1, LuaType::Drawable);
-		Lua::pushBoolean(L, drawable->isVisible());
-		return 1;
-	}
-
-	int32_t LuaDrawable::setVisible(lua_State *L)
-	{
-		auto drawable = Lua::getObject<Drawable>(L, 1, LuaType::Drawable);
-		auto visible = Lua::getBoolean(L, 2);
-		drawable->setVisible(visible);
 		return 0;
 	}
 

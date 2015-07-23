@@ -18,7 +18,6 @@ namespace only2d
 		skewY(0.0f),
 		alpha(1.0f),
 		color(255, 255, 255, 255),
-		visible(true),
 		update(true),
 		mode(BlendMode::ALPHA)
 	{
@@ -150,16 +149,6 @@ namespace only2d
 	void Drawable::setAlpha(float alpha)
 	{
 		this->alpha = alpha;
-	}
-
-	bool Drawable::isVisible() const
-	{
-		return visible;
-	}
-
-	void Drawable::setVisible(bool visible)
-	{
-		this->visible = visible;
 	}
 
 	const Matrix &Drawable::getMatrix()

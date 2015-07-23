@@ -28,25 +28,22 @@ namespace only2d
 
 	void Quad::draw()
 	{
-		if (visible)
-		{
-			Drawable::draw();
-			shader->attach();
-			shader->setAttributeData(attribute_POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), &vertices.data()[0].position);
-			shader->setAttributeData(attribute_TEXCOORD, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), &vertices.data()[0].texcoord);
-			static std::vector<float> colorData(4);
-			colorData[0] = color.r / 255.0f;
-			colorData[1] = color.g / 255.0f;
-			colorData[2] = color.b / 255.0f;
-			colorData[3] = color.a / 255.0f;
-			shader->setUniformFloatData(uniform_COLOR, colorData);
-			static std::vector<float> alphaData(1);
-			alphaData[0] = alpha;
-			shader->setUniformFloatData(uniform_ALPHA, alphaData);
-			shader->setUniformMatrixData(uniform_MVP_MATRIX, getMatrix());
-			shader->drawArrays(GL_TRIANGLE_STRIP, 0, 4);
-			shader->detach();
-		}
+		Drawable::draw();
+		shader->attach();
+		shader->setAttributeData(attribute_POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), &vertices.data()[0].position);
+		shader->setAttributeData(attribute_TEXCOORD, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), &vertices.data()[0].texcoord);
+		static std::vector<float> colorData(4);
+		colorData[0] = color.r / 255.0f;
+		colorData[1] = color.g / 255.0f;
+		colorData[2] = color.b / 255.0f;
+		colorData[3] = color.a / 255.0f;
+		shader->setUniformFloatData(uniform_COLOR, colorData);
+		static std::vector<float> alphaData(1);
+		alphaData[0] = alpha;
+		shader->setUniformFloatData(uniform_ALPHA, alphaData);
+		shader->setUniformMatrixData(uniform_MVP_MATRIX, getMatrix());
+		shader->drawArrays(GL_TRIANGLE_STRIP, 0, 4);
+		shader->detach();
 	}
 
 	int32_t Quad::getHeight() const

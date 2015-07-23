@@ -57,10 +57,6 @@ namespace only2d
 
 		void setAlpha(float alpha);
 
-		bool isVisible() const;
-
-		void setVisible(bool visible);
-
 		const Matrix &getMatrix();
 
 		const Color &getColor() const;
@@ -82,7 +78,6 @@ namespace only2d
 		float skewX;
 		float skewY;
 		float alpha;
-		bool visible;
 		Color color;
 
 	private:
