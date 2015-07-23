@@ -93,8 +93,6 @@
     <ClInclude Include="..\..\only2d\modules\graphics\ImageData.h" />
     <ClInclude Include="..\..\only2d\modules\graphics\OpenGL.h" />
     <ClInclude Include="..\..\only2d\modules\graphics\OpenGLData.h" />
-    <ClInclude Include="..\..\only2d\modules\graphics\Quad.h" />
-    <ClInclude Include="..\..\only2d\modules\graphics\QuadBatch.h" />
     <ClInclude Include="..\..\only2d\modules\graphics\Shader.h" />
     <ClInclude Include="..\..\only2d\modules\graphics\VertexData.h" />
     <ClInclude Include="..\..\only2d\modules\graphics\VertexIndexData.h" />
@@ -128,8 +126,6 @@
     <ClCompile Include="..\..\only2d\modules\graphics\ImageData.cpp" />
     <ClCompile Include="..\..\only2d\modules\graphics\OpenGL.cpp" />
     <ClCompile Include="..\..\only2d\modules\graphics\OpenGLData.cpp" />
-    <ClCompile Include="..\..\only2d\modules\graphics\Quad.cpp" />
-    <ClCompile Include="..\..\only2d\modules\graphics\QuadBatch.cpp" />
     <ClCompile Include="..\..\only2d\modules\graphics\Shader.cpp" />
     <ClCompile Include="..\..\only2d\modules\graphics\VertexData.cpp" />
     <ClCompile Include="..\..\only2d\modules\graphics\VertexIndexData.cpp" />

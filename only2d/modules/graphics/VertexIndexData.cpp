@@ -20,7 +20,7 @@ namespace only2d
 
 	void VertexIndexData::syncBuffer()
 	{
-		gl->setBufferData(target, 6 * size * sizeof(GLushort), getBuffer(), usage);
+		OpenGL::getInstance()->setBufferData(target, 6 * size * sizeof(GLushort), getBuffer(), usage);
 	}
 
 	void VertexIndexData::add(int32_t count)

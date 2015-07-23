@@ -1,11 +1,11 @@
 #include "Graphics.h"
+#include "ImageBatch.h"
 
 namespace only2d
 {
-	Graphics::Graphics() :
-		gl(new OpenGL)
+	Graphics::Graphics()
 	{
-		gl->initContext();
+		OpenGL::getInstance()->initContext();
 	}
 
 	Graphics::~Graphics()
@@ -17,18 +17,23 @@ namespace only2d
 		viewport.x = viewport.y = 0;
 		viewport.width = width;
 		viewport.height = height;
-		gl->setViewport(viewport);
+		OpenGL::getInstance()->setViewport(viewport);
 		projectionMatrix.setOrthographic(0.0f, static_cast<float>(width), 0.0f, static_cast<float>(height));
 	}
 
 	void Graphics::clear()
 	{
-		gl->clear(backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
+		OpenGL::getInstance()->clear(backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
+	}
+
+	void Graphics::finish()
+	{
+		ImageBatch::getInstance()->draw();
 	}
 
 	void Graphics::checkOpenGLError()
 	{
-		gl->checkErrors();
+		OpenGL::getInstance()->checkErrors();
 	}
 
 	std::shared_ptr<Shader> Graphics::createShader(std::string &vertex, std::string fragment)
@@ -46,19 +51,9 @@ namespace only2d
 		return std::make_shared<Image>(data);
 	}
 
-	std::shared_ptr<ImageBatch> Graphics::createImageBatch()
+	std::shared_ptr<Image> Graphics::createImage(float width, float height, const Color &color)
 	{
-		return std::make_shared<ImageBatch>();
-	}
-
-	std::shared_ptr<Quad> Graphics::createQuad(int32_t width, int32_t height)
-	{
-		return std::make_shared<Quad>(width, height);
-	}
-
-	std::shared_ptr<QuadBatch> Graphics::createQuadBatch()
-	{
-		return std::make_shared<QuadBatch>();
+		return std::make_shared<Image>(width, height, color);
 	}
 
 	Color Graphics::getBackgroundColor() const
@@ -78,10 +73,5 @@ namespace only2d
 	const Matrix &Graphics::getProjectionMatrix() const
 	{
 		return projectionMatrix;
-	}
-
-	std::shared_ptr<OpenGL> &Graphics::getOpenGL()
-	{
-		return gl;
 	}
 }

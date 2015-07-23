@@ -17,7 +17,7 @@ namespace only2d
 
 	void VertexData::syncBuffer()
 	{
-		gl->setBufferData(target, 4 * size * sizeof(Vertex), getBuffer(), usage);
+		OpenGL::getInstance()->setBufferData(target, 4 * size * sizeof(Vertex), getBuffer(), usage);
 	}
 
 	void VertexData::add(std::vector<Vertex> vertices)

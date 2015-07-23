@@ -124,12 +124,6 @@
     <ClInclude Include="..\..\only2d\modules\graphics\OpenGLData.h">
       <Filter>modules\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\Quad.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d\modules\graphics\QuadBatch.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\only2d\modules\graphics\Shader.h">
       <Filter>modules\graphics</Filter>
     </ClInclude>
@@ -226,12 +220,6 @@
       <Filter>modules\graphics</Filter>
     </ClCompile>
     <ClCompile Include="..\..\only2d\modules\graphics\OpenGLData.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\graphics\Quad.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\only2d\modules\graphics\QuadBatch.cpp">
       <Filter>modules\graphics</Filter>
     </ClCompile>
     <ClCompile Include="..\..\only2d\modules\graphics\Shader.cpp">

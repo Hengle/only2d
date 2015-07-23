@@ -43,4 +43,6 @@ function only2d.update ()
 	state:apply(skeleton)
 	skeleton:updateWorldTransform()
 	skeleton:draw()
+
+	only2d.window.setTitle("FPS: " .. only2d.timer.getFPS() .. " drawcalls: " .. only2d.graphics.getDrawCalls())
 end

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Color.h"
 #include "Vector.h"
 
 namespace only2d
@@ -9,5 +10,6 @@ namespace only2d
 	public:
 		Vector position;
 		Vector texcoord;
+		Color color;
 	};
 }

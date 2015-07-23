@@ -1,15 +1,30 @@
 #include "Image.h"
-#include "DefaultShader.h"
-
-#include "common/Console.h"
+#include "ImageBatch.h"
 
 namespace only2d
 {
 	Image::Image(std::shared_ptr<ImageData> imageData) :
-		Quad(imageData->getWidth(), imageData->getHeight()),
-		imageData(imageData)
+		Image(imageData, static_cast<float>(imageData->getWidth()), static_cast<float>(imageData->getHeight()), ColorWhite)
 	{
-		shader = DefaultShader::getShader(ShaderType::ImageShader);
+	}
+
+	Image::Image(float width, float height, const Color &color) :
+		Image(nullptr, width, height, color)
+	{
+	}
+
+	Image::Image(std::shared_ptr<ImageData> imageData, float width, float height, const Color &color) :
+		imageData(imageData),
+		width(width),
+		height(height)
+	{
+		vertices = 
+		{
+			{ { 0.0f, 0.0f }, { 0.0f, 1.0f }, color }, 
+			{ { 0.0f, height }, { 0.0f, 0.0f }, color },
+			{ { width, 0.0f }, { 1.0f, 1.0f }, color },
+			{ { width, height }, { 1.0f, 0.0f }, color }
+		};
 	}
 
 	Image::~Image()
@@ -19,12 +34,26 @@ namespace only2d
 
 	void Image::draw()
 	{
-		imageData->bind();
-		Quad::draw();
-		imageData->unbind();
+		ImageBatch::getInstance()->add(imageData, mode, getMatrix(), vertices);
 	}
 
-    const std::shared_ptr<ImageData> &Image::getImageData() const
+	void Image::onMatrixChange(const Matrix &matrix)
+	{
+		for (auto i = 0; i < 4; ++i)
+		{
+			vertices[i].position = matrix.transform(vertices[i].position);
+		}
+	}
+
+	void Image::onColorChange()
+	{
+		for (auto i = 0; i < 4; ++i)
+		{
+			vertices[i].color = color;
+		}
+	}
+
+	const std::shared_ptr<ImageData> &Image::getImageData() const
     {
 	    return imageData;
     }
@@ -33,4 +62,33 @@ namespace only2d
     {
 		this->imageData = imageData;
     }
+
+	float Image::getHeight() const
+	{
+		return height;
+	}
+
+	void Image::setHeight(float height)
+	{
+		this->height = height;
+		updateVertices();
+	}
+
+	float Image::getWidth() const
+	{
+		return width;
+	}
+
+	void Image::setWidth(float width)
+	{
+		this->width = width;
+		updateVertices();
+	}
+
+	void Image::updateVertices()
+	{
+		vertices[1].position.set(0.0f, width);
+		vertices[2].position.set(width, 0.0f);
+		vertices[3].position.set(width, height);
+	}
 }

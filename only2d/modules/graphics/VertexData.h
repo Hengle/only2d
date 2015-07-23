@@ -22,5 +22,7 @@ namespace only2d
 	private:
 		int32_t size;
 		int32_t capacity;
+
+		friend class ImageBatch;
 	};
 }

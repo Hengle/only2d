@@ -101,11 +101,15 @@ namespace only2d
 
 		void setCurrentBlendMode(const BlendMode &mode);
 
+		static std::shared_ptr<OpenGL> getInstance();
+
 	private:
 		int32_t drawCalls;
 		int32_t maxTextureSize;
 		Viewport viewport;
 		Viewport scissor;
 		BlendMode currentBlendMode;
+
+		static std::shared_ptr<OpenGL> instance;
 	};
 }

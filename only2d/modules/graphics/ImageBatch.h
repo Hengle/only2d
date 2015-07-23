@@ -1,24 +1,32 @@
 #pragma once
 
-#include "Image.h"
-#include "QuadBatch.h"
+#include "ImageData.h"
+#include "VertexData.h"
+#include "VertexIndexData.h"
 
 namespace only2d
 {
-    class ImageBatch : public QuadBatch
+    class ImageBatch
     {
     public:
-	    ImageBatch();
+		ImageBatch();
 
-	    virtual ~ImageBatch();
+		virtual ~ImageBatch();
 
-	    virtual void clear() override;
+		void add(const std::shared_ptr<ImageData> imageData, const BlendMode &blendMode, const Matrix &matrix, const std::vector<Vertex> &vertices);
 
-	    virtual void draw() override;
+		void clear();
 
-	    void addImage(std::shared_ptr<Image> image);
+		void draw();
+
+		static std::shared_ptr<ImageBatch> getInstance();
 
     protected:
-	    std::shared_ptr<ImageData> data;
+	    std::shared_ptr<ImageData> imageData;
+		BlendMode blendMode;
+		VertexIndexData indices;
+		VertexData vertices;
+
+		static std::shared_ptr<ImageBatch> instance;
     };
 }

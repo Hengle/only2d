@@ -3,6 +3,17 @@
 
 namespace only2d
 {
+	std::shared_ptr<OpenGL> OpenGL::instance(nullptr);
+
+	std::shared_ptr<OpenGL> OpenGL::getInstance()
+	{
+		if (!instance)
+		{
+			instance = std::make_shared<OpenGL>();
+		}
+		return instance;
+	}
+
 	OpenGL::OpenGL() :
 		drawCalls(0),
 		currentBlendMode(BlendMode::MinInvalid)

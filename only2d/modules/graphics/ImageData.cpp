@@ -1,8 +1,6 @@
 #include "ImageData.h"
-#include "Graphics.h"
 
 #include "common/Console.h"
-#include "common/Module.h"
 
 namespace only2d
 {
@@ -13,16 +11,6 @@ namespace only2d
 		data(data),
 		usingDefaultData(false)
 	{
-		auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
-		if (!graphics)
-		{
-			Console::error << "[ImageData] module graphics not found!" << Console::endl;
-		}
-		else
-		{
-			gl = graphics->getOpenGL();
-		}
-		graphics.reset();
 		loadData();
 	}
 
@@ -30,17 +18,16 @@ namespace only2d
 	{
 		unloadData();
 		data.reset();
-		gl.reset();
 	}
 
 	void ImageData::bind()
 	{
-		gl->bindTexture(texture);
+		OpenGL::getInstance()->bindTexture(texture);
 	}
 
 	void ImageData::unbind()
 	{
-		gl->bindTexture(0);
+		OpenGL::getInstance()->bindTexture(0);
 	}
 
 	int32_t ImageData::getWidth() const
@@ -76,8 +63,8 @@ namespace only2d
 	void ImageData::setWrap(const ImageDataWrap &wrap)
 	{
 		this->wrap = wrap;
-		gl->bindTexture(texture);
-		gl->setTextureWrap(this->wrap);
+		OpenGL::getInstance()->bindTexture(texture);
+		OpenGL::getInstance()->setTextureWrap(this->wrap);
 	}
 
 	const ImageDataFilter &ImageData::getFilter() const
@@ -88,22 +75,22 @@ namespace only2d
 	void ImageData::setFilter(const ImageDataFilter &filter)
 	{
 		this->filter = filter;
-		gl->bindTexture(texture);
-		gl->setTextureFilter(this->filter);
+		OpenGL::getInstance()->bindTexture(texture);
+		OpenGL::getInstance()->setTextureFilter(this->filter);
 	}
 
 	void ImageData::loadData()
 	{
-		gl->generateTexture(texture);
-		gl->bindTexture(texture);
+		OpenGL::getInstance()->generateTexture(texture);
+		OpenGL::getInstance()->bindTexture(texture);
 		setFilter(filter);
 		setWrap(wrap);
-		if (width > gl->getMaxTextureSize() || height > gl->getMaxTextureSize())
+		if (width > OpenGL::getInstance()->getMaxTextureSize() || height > OpenGL::getInstance()->getMaxTextureSize())
 		{
 			loadDefaultData();
 			return;
 		}
-		if (!gl->setTextureData(width, height, data))
+		if (!OpenGL::getInstance()->setTextureData(width, height, data))
 		{
 			Console::log << "[ImageData] update texture data fail." << Console::endl;
 			unloadData();
@@ -114,7 +101,7 @@ namespace only2d
 	{
 		Console::log << "[ImageData] using default image data!" << Console::endl;
 		usingDefaultData = true;
-		gl->bindTexture(texture);
+		OpenGL::getInstance()->bindTexture(texture);
 		setFilter(filter);
 		Data defaultData(16);
 		defaultData[0] = 0xFF;
@@ -133,7 +120,7 @@ namespace only2d
 		defaultData[13] = 0xFF;
 		defaultData[14] = 0xFF;
 		defaultData[15] = 0xFF;
-		if (!gl->setTextureData(2, 2, std::shared_ptr<Data>(&defaultData)))
+		if (!OpenGL::getInstance()->setTextureData(2, 2, std::shared_ptr<Data>(&defaultData)))
 		{
 			Console::log << "[ImageData] update texture data fail." << Console::endl;
 			unloadData();
@@ -144,7 +131,7 @@ namespace only2d
 	{
 		if (texture != 0)
 		{
-			gl->deleteTexture(texture);
+			OpenGL::getInstance()->deleteTexture(texture);
 			texture = 0;
 		}
 	}

@@ -49,8 +49,6 @@ set(module_graphics_src
     modules/graphics/ImageData.cpp
     modules/graphics/OpenGL.cpp
     modules/graphics/OpenGLData.cpp
-    modules/graphics/Quad.cpp
-    modules/graphics/QuadBatch.cpp
     modules/graphics/Shader.cpp
     modules/graphics/VertexData.cpp
     modules/graphics/VertexIndexData.cpp

@@ -2,10 +2,8 @@
 
 #include "OpenGL.h"
 #include "Image.h"
-#include "ImageBatch.h"
 #include "ImageData.h"
-#include "Quad.h"
-#include "QuadBatch.h"
+#include "Shader.h"
 
 #include "common/Color.h"
 
@@ -22,6 +20,8 @@ namespace only2d
 
 		void clear();
 
+		void finish();
+
 		void checkOpenGLError();
 
 		std::shared_ptr<Shader> createShader(std::string &vertex, std::string fragment);
@@ -30,11 +30,7 @@ namespace only2d
 
 		std::shared_ptr<Image> createImage(std::shared_ptr<ImageData> data);
 
-		std::shared_ptr<ImageBatch> createImageBatch();
-
-		std::shared_ptr<Quad> createQuad(int32_t width, int32_t height);
-
-		std::shared_ptr<QuadBatch> createQuadBatch();
+		std::shared_ptr<Image> createImage(float width, float height, const Color &color);
 
 		Color getBackgroundColor() const;
 
@@ -42,10 +38,7 @@ namespace only2d
 
 		const Matrix &getProjectionMatrix() const;
 
-		std::shared_ptr<OpenGL> &getOpenGL();
-
 	private:
-		std::shared_ptr<OpenGL> gl;
 		FloatColor backgroundColor;
 		Viewport viewport;
 		Matrix projectionMatrix;

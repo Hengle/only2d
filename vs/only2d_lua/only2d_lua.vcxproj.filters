@@ -110,15 +110,6 @@
     <ClCompile Include="..\..\only2d_lua\modules\keyboard\LuaKey.cpp">
       <Filter>modules\keyboard</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaQuadBatch.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaImageBatch.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\only2d_lua\modules\graphics\LuaQuad.cpp">
-      <Filter>modules\graphics</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\only2d_lua\library\lua\lapi.c">
       <Filter>library\lua</Filter>
     </ClCompile>
@@ -292,15 +283,6 @@
     </ClInclude>
     <ClInclude Include="..\..\only2d_lua\modules\keyboard\LuaKey.h">
       <Filter>modules\keyboard</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaQuadBatch.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaImageBatch.h">
-      <Filter>modules\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\only2d_lua\modules\graphics\LuaQuad.h">
-      <Filter>modules\graphics</Filter>
     </ClInclude>
     <ClInclude Include="..\..\only2d_lua\library\lua\lapi.h">
       <Filter>library\lua</Filter>

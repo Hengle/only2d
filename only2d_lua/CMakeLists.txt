@@ -66,12 +66,9 @@ set(module_graphics_src
     modules/graphics/LuaDrawable.cpp
     modules/graphics/LuaGraphics.cpp
     modules/graphics/LuaImage.cpp
-    modules/graphics/LuaImageBatch.cpp
     modules/graphics/LuaImageData.cpp
     modules/graphics/LuaImageDataFilterMode.cpp
     modules/graphics/LuaImageDataWrapMode.cpp
-    modules/graphics/LuaQuad.cpp
-    modules/graphics/LuaQuadBatch.cpp
     modules/graphics/LuaShader.cpp
 )
 

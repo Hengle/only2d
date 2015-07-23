@@ -21,6 +21,9 @@ void Sample::initialize()
 	auto texturedata = texture->createTextureData(filedata);
 	auto imagedata = graphics->createImageData(texturedata->getWidth(), texturedata->getHeight(), texturedata);
 	image = graphics->createImage(imagedata);
+	image2 = graphics->createImage(500, 500, ColorRed);
+	image->setColor(ColorGreen);
+	image->setAlpha(0.5f);
 
 	file.reset();
 	filedata.reset();
@@ -45,6 +48,7 @@ void Sample::initialize()
 
 void Sample::update(float delta)
 {
+	image2->draw();
 	image->draw();
 }
 

@@ -1,8 +1,4 @@
 #include "Drawable.h"
-#include "Graphics.h"
-
-#include "common/Console.h"
-#include "common/Module.h"
 
 namespace only2d
 {
@@ -16,30 +12,14 @@ namespace only2d
 		offsetY(0.0f),
 		skewX(0.0f),
 		skewY(0.0f),
-		alpha(1.0f),
 		color(255, 255, 255, 255),
-		update(true),
-		mode(BlendMode::ALPHA)
+		mode(BlendMode::ALPHA),
+		update(true)
 	{
-		auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
-		if (!graphics)
-		{
-			Console::error << "[Drawable] module graphics not found!" << Console::endl;
-		}
-		else
-		{
-			gl = graphics->getOpenGL();
-		}
-		graphics.reset();
 	}
 
 	Drawable::~Drawable()
 	{
-	}
-
-	void Drawable::draw()
-	{
-		gl->setCurrentBlendMode(mode);
 	}
 
 	float Drawable::getX() const
@@ -143,12 +123,13 @@ namespace only2d
 
 	float Drawable::getAlpha() const
 	{
-		return alpha;
+		return color.a / 255.0f;
 	}
 
 	void Drawable::setAlpha(float alpha)
 	{
-		this->alpha = alpha;
+		color.a = static_cast<uint8_t>(255 * alpha);
+		onColorChange();
 	}
 
 	const Matrix &Drawable::getMatrix()
@@ -156,6 +137,7 @@ namespace only2d
 		if (update)
 		{
 			matrix.setTransformation(x, y, rotation, scaleX, scaleY, offsetX, offsetY, skewX, skewY);
+			onMatrixChange(matrix);
 			update = false;
 		}
 		return matrix;
@@ -169,6 +151,7 @@ namespace only2d
 	void Drawable::setColor(const Color &color)
 	{
 		this->color = color;
+		onColorChange();
 	}
 
 	const BlendMode &Drawable::getBlendMode() const

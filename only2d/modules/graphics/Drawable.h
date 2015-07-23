@@ -15,7 +15,11 @@ namespace only2d
 
 		virtual ~Drawable();
 
-		virtual void draw();
+		virtual void draw() = 0;
+
+		virtual void onMatrixChange(const Matrix &matrix) = 0;
+
+		virtual void onColorChange() = 0;
 
 		float getX() const;
 
@@ -77,13 +81,12 @@ namespace only2d
 		float offsetY;
 		float skewX;
 		float skewY;
-		float alpha;
 		Color color;
+
+		BlendMode mode;
 
 	private:
 		bool update;
 		Matrix matrix;
-		BlendMode mode;
-		std::shared_ptr<OpenGL> gl;
 	};
 }

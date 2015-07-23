@@ -19,4 +19,5 @@ public:
 
 private:
 	std::shared_ptr<Image> image;
+	std::shared_ptr<Image> image2;
 };

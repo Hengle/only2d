@@ -42,10 +42,7 @@ namespace only2d
 		// graphics
 		Drawable,
 		Image,
-		ImageBatch,
 		ImageData,
-		Quad,
-		QuadBatch,
 		Shader,
 		// texture
 		TextureData,

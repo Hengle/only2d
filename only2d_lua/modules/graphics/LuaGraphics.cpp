@@ -2,12 +2,9 @@
 #include "LuaBlendMode.h"
 #include "LuaDrawable.h"
 #include "LuaImage.h"
-#include "LuaImageBatch.h"
 #include "LuaImageData.h"
 #include "LuaImageDataFilterMode.h"
 #include "LuaImageDataWrapMode.h"
-#include "LuaQuad.h"
-#include "LuaQuadBatch.h"
 #include "LuaShader.h"
 
 #include "common/Module.h"
@@ -21,9 +18,6 @@ namespace only2d
 		{ "createShader", createShader },
 		{ "createImageData", createImageData },
 		{ "createImage", createImage },
-		{ "createImageBatch", createImageBatch },
-		{ "createQuad", createQuad },
-		{ "createQuadBatch", createQuadBatch},
 		{ "getBackgroundColor", getBackgroundColor },
 		{ "setBackgroundColor", setBackgroundColor },
 		{ "getDrawCalls", getDrawCalls },
@@ -39,10 +33,7 @@ namespace only2d
 		LuaImageDataWrapMode::openEnum(L);
 		Lua::finishModule(L, LuaModule::Graphics);
 		LuaDrawable::openType(L);
-		LuaQuad::openType(L);
-		LuaQuadBatch::openType(L);
 		LuaImage::openType(L);
-		LuaImageBatch::openType(L);
 		LuaImageData::openType(L);
 		LuaShader::openType(L);
 	}
@@ -77,32 +68,6 @@ namespace only2d
 		return 1;
 	}
 
-	int32_t LuaGraphics::createImageBatch(lua_State * L)
-	{
-		auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
-		auto imageBatch = graphics->createImageBatch();
-		Lua::pushObject(L, LuaType::QuadBatch, imageBatch);
-		return 1;
-	}
-
-	int32_t LuaGraphics::createQuad(lua_State * L)
-	{
-		auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
-		auto width = static_cast<int32_t>(Lua::getInteger(L, 1));
-		auto height = static_cast<int32_t>(Lua::getInteger(L, 2));
-		auto quad = graphics->createQuad(width, height);
-		Lua::pushObject(L, LuaType::Image, quad);
-		return 1;
-	}
-
-	int32_t LuaGraphics::createQuadBatch(lua_State *L)
-	{
-		auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
-		auto quadBatch = graphics->createQuadBatch();
-		Lua::pushObject(L, LuaType::QuadBatch, quadBatch);
-		return 1;
-	}
-
 	int32_t LuaGraphics::getBackgroundColor(lua_State *L)
 	{
 		auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
@@ -121,8 +86,7 @@ namespace only2d
 
     int32_t LuaGraphics::getDrawCalls(lua_State *L)
     {
-	    auto graphics = Module::getInstance<Graphics>(ModuleType::GRAPHICS);
-	    Lua::pushInteger(L, graphics->getOpenGL()->getDrawCalls());
+	    Lua::pushInteger(L, OpenGL::getInstance()->getDrawCalls());
 	    return 1;
     }
 }

@@ -13,11 +13,13 @@ namespace only2d
 	class Shader
 	{
 	public:
-		Shader(std::string &vertex, std::string &fragment);
+		Shader(const std::string &vertex, const std::string &fragment);
 
 		virtual ~Shader();
 
 		bool match(const std::string &vertex, const std::string &fragment);
+
+		void setBlendMode(const BlendMode &mode);
 
 		void setAttributeData(const std::string &name, GLint size, GLenum type, GLboolean normalized, GLsizei stride,
 		                      const GLvoid *pointer);
@@ -44,11 +46,10 @@ namespace only2d
 		GLuint compile(GLenum type, const std::string &source);
 
 	protected:
-		std::string vertex;
-		std::string fragment;
+		const std::string vertex;
+		const std::string fragment;
 		GLuint program;
 		std::map<const std::string, GLint> attributes;
 		std::map<const std::string, GLint> uniforms;
-		std::shared_ptr<OpenGL> gl;
 	};
 }

@@ -57,6 +57,7 @@ namespace only2d
 			event->pollEvent();
 			graphics->clear();
 			update(timer->step());
+			graphics->finish();
 			window->swapBuffers();
 			graphics->checkOpenGLError();
 		}

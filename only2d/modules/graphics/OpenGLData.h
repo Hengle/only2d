@@ -28,6 +28,5 @@ namespace only2d
 		GLenum target;
 		GLenum usage;
 		GLuint buffer;
-		std::shared_ptr<OpenGL> gl;
 	};
 }

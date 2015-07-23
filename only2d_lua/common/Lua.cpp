@@ -53,10 +53,7 @@ namespace only2d
 		{ LuaType::FileData, "only2d.FileData" },
 		{ LuaType::Drawable, "only2d.Drawable" },
 		{ LuaType::Image, "only2d.Image" },
-		{ LuaType::ImageBatch, "only2d.ImageBatch" },
 		{ LuaType::ImageData, "only2d.ImageData" },
-		{ LuaType::Quad, "only2d.Quad" },
-		{ LuaType::QuadBatch, "only2d.QuadBatch" },
 		{ LuaType::Shader, "only2d.Shader" },
 		{ LuaType::TextureData, "only2d.TextureData" },
 	};

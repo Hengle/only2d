@@ -82,7 +82,6 @@ namespace only2d
 		ImageDataWrap wrap;
 		ImageDataFilter filter;
 		std::shared_ptr<Data> data;
-		std::shared_ptr<OpenGL> gl;
 		bool usingDefaultData;
 	};
 }
